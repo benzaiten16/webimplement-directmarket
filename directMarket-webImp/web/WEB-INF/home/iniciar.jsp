@@ -27,7 +27,7 @@
         </script>
 
         
-        <jsp:include page="/WEB-INF/template/Sesion.jsp"/>
+        <jsp:include page="/WEB-INF/template/cesion.jsp"/>
 
         
         

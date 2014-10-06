@@ -42,7 +42,8 @@ public class Login extends HttpServlet {
         Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
-		// chequea contraseña
+		try {
+                // chequea contraseña
 		    //Si no es cliente, entonces es proveedor distinto de null
                    if( (ICC.findCliente(login) == null ) && ( ICP.findProveedor(login) != null ) )
                         if(!ICP.findProveedor(login).getPassword().equals(password)){
@@ -66,8 +67,10 @@ public class Login extends HttpServlet {
                    else{
                        	nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
 		   }
+                }catch(Exception ex){
+			nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
+		}
 		 
-		
         objSesion.setAttribute("estado_sesion", nuevoEstado);
 		
 		// redirige a la página principal para que luego rediriga a la página
