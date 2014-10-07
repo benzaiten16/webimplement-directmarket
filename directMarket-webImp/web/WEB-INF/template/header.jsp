@@ -14,8 +14,20 @@
             </div>
             
             <div id="headerr-barra">
-                
+            
+                <%-- BUSCADOR --%>
+                <div id="buscador">
+                    <jsp:include page="/WEB-INF/template/buscador.jsp"/>
+                </div>
                
+               <div class="usuario">
+                Bienvenido <a href="/perfil"> lalalla </a> 
+                |   <a href="/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
+                 <a href="/">Cerrar Cesión</a> 
+                <br>
+		  (lalal@gmail.com)
+                </div>
+                
                 <%--
                 <%
 		try {
@@ -37,8 +49,7 @@
 		<a href="/usuarios">...</a>     acá linkea con el listado de USUARIOS
 		(<%= usr.getEmail() %>)
 	</div>
-	<% } %> --%>
-               
+	<% } %> --%>               
                 
                 
             </div>

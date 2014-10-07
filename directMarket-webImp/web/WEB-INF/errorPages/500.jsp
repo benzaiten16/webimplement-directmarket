@@ -11,19 +11,25 @@
     
 </head>
 <body id="error_page">
-    <div id="body-container">
-        <div class="gameover">500: R.I.P</div>
-
-        <p>Ocurrió un error al procesar la página. Puedes intentar recargar o 
-        <a href="/">volver</a> al inicio.
-        </p>
     
-        <div id="dead_mario"></div>
-        <div class="main">
+    <div class="gameover">500 :     R . I . P 
+       
+           
+        <img id="imageGato" src="../../media/images/dead500cat.png" alt="Gato de los Simpson"/>       
+          
+        </div>
+         <p>Ocurrió un error al procesar la página. Puedes intentar recargar o 
+            <a href="/">volver</a> al inicio. </p>
+        
+	  
+           
+        <div class="main">                    
             <pre><%= exception.getClass().getName() %>: <%= exception.getMessage() %>
 <% for(StackTraceElement ste: exception.getStackTrace()){ %><%= ste.toString() %>
 <% } %></pre>
         </div>
-    </div>
+        
+    
+
 </body>
 </html>

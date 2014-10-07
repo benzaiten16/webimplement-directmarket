@@ -308,14 +308,7 @@ div#usuario {
     color: white;
 }
 
-#error_page .gameover
-{
-    font-family: "SinGatosRegular";
-    font-size: 250%;
-    margin-left: 25px;
-    margin-top: 20px;
-    text-align: center;
-}
+
 
 #error_page .main pre
 {
@@ -332,15 +325,6 @@ div#usuario {
 	text-align: center;
 }
 
-#error_page #dead_mario
-{
-    background: url("../images/dead500cat.png") no-repeat scroll 0 0 transparent;
-    height: 40px;
-    position: absolute;
-    right: 15%;
-    top: 364px;
-    width: 38px;
-}
 
 /** Listar **/
 
@@ -371,7 +355,18 @@ div#usuario {
     display: inline-block;
 }
 
-/*Loca de los gatos*/
+
+#error_page .gameover
+{
+    font-family: "SinGatosRegular";
+   
+    font-size: 250%;
+    margin-left: 25px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*ERROR 404*/
 div#SinGatossss{
     position: absolute;
     margin: 0 auto;
@@ -387,6 +382,17 @@ div#SinGatossss{
     left: 250px;
     alignment-adjust: central;
 }
+
+/*ERROR 500*/
+
+#imageGato{
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    alignment-adjust: central;
+    
+}
+
 
 .tachado{color:#DDDDDD; text-decoration:line-through;}
 
