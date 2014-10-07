@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import Servlets.exceptions.UsuarioNoEncontrado;
 
 /**
  *
@@ -45,15 +46,16 @@ public class Login extends HttpServlet {
 		try {
                 // chequea contraseña
 		    //Si no es cliente, entonces es proveedor distinto de null
-                   if( (ICC.findCliente(login) == null ) && ( ICP.findProveedor(login) != null ) )
+                   if( (ICC.findCliente(login) == null ) && ( ICP.findProveedor(login) != null ) ){
                         if(!ICP.findProveedor(login).getPassword().equals(password)){
 				nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
                             }   
                         else {
 				nuevoEstado = EstadoSesion.LOGIN_CORRECTO;
 				// setea el usuario logueado
-				request.getSession().setAttribute("usuario_logueado", ICP.findProveedor(login).getMail());
+				request.getSession().setAttribute("usuario_logueado", ICP.findProveedor(login).getNickname());
 			}
+                   }
                    else if( (ICC.findCliente(login) != null ) && ( ICP.findProveedor(login) == null ) ){
                                 if(!ICC.findCliente(login).getPassword().equals(password)){
 				nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
@@ -61,13 +63,15 @@ public class Login extends HttpServlet {
                             else {
 				nuevoEstado = EstadoSesion.LOGIN_CORRECTO;
 				// setea el usuario logueado
-				request.getSession().setAttribute("usuario_logueado", ICC.findCliente(login).getMail());
+				request.getSession().setAttribute("usuario_logueado", ICC.findCliente(login).getNickname());
 			}
                    }
                    else{
                        	nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
 		   }
-                }catch(Exception ex){
+                   
+                }
+                catch(Exception ex){
 			nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
 		}
 		 
@@ -79,6 +83,30 @@ public class Login extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    
+    /**
+	 * Devuelve el usuario logueado
+	 * @param request
+	 * @return
+	 * @throws UsuarioNoEncontrado 
+	 */
+    
+    
+	static public String getUsuarioLogueado(HttpServletRequest request)
+			throws UsuarioNoEncontrado
+	{
+         Fabrica fabrica = Fabrica.getInstance();
+         IcontroladorCliente ICC = fabrica.getControladorCliente();
+         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
+        try{
+           if( (ICC.findCliente(request.getSession().getAttribute("usuario_logueado").toString()) != null )|| (ICP.findProveedor(request.getSession().getAttribute("usuario_logueado").toString()) != null)){
+               return request.getSession().getAttribute("usuario_logueado").toString();
+           }
+        }catch(Exception ex){
+            return null;
+        } 
+        return null;
+     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -117,5 +145,5 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
+

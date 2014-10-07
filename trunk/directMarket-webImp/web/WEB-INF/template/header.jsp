@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@page import="com.gamebook.controllers.Login"%>
-<%@page import="com.gamebook.model.Usuario"%>
+<%@page import="Servlets.Login"%>
 
     
     <%--  Comienzo del cabezal     --%>
@@ -17,17 +16,16 @@
             <div id="headerr-barra">
                 
                
-                
+                <%--
                 <%
-		Usuario usr;
 		try {
-			usr = Login.getUsuarioLogueado(request);
+                    Login.getUsuarioLogueado(request);
 		} catch(Exception ex){
 			usr = null;
 		}
 		
 		if(usr != null) {
-	%>
+	%> 
          <div id="buscador">
                     <jsp:include page="/WEB-INF/template/buscador.jsp"/>
                 </div>
@@ -36,26 +34,18 @@
                 |   <a href="/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
                  <a href="/">Cerrar Cesión</a> 
                 <br>
-		<%-- <a href="/usuarios">...</a>     acá linkea con el listado de USUARIOS--%>
+		<a href="/usuarios">...</a>     acá linkea con el listado de USUARIOS
 		(<%= usr.getEmail() %>)
 	</div>
-	<% } %> 
+	<% } %> --%>
                
                 
                 
             </div>
                 
-                 
-                
-           
-            
             
         </div>
     
     <%--  FIN del cabezal     --%>
-    
-	
-	
-
 
 <div id="body-container">
