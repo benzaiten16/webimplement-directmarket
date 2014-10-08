@@ -26,8 +26,9 @@
             }
         </script>
 
-        
-        <jsp:include page="/WEB-INF/template/cesion.jsp"/>
+        <jsp:include page="../categorias/listarCategoria.jsp"/>
+        <%-- <jsp:include page="/WEB-INF/template/cesion.jsp"/> --%>
+         
 
         
         

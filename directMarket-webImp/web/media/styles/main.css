@@ -231,18 +231,21 @@ div#usuario {
 
 /* Perfil */
 
-#perfil_izquierda
-{
-    float:left;
-    border-right: 2px solid #DDDDDD;
-    padding: 25px;
-    margin: 25px;
-}
-
 #perfil_derecha
 {
+    float:right;
+    border-left: 2px solid #DDDDDD;
+    border-left-style: dotted;
     padding: 25px;
     margin: 25px;
+    
+}
+
+#perfil_izquierda
+{
+    padding: 25px;
+    margin: 25px;
+    
 }
 
 /* Pagina de error */
@@ -332,7 +335,7 @@ div#usuario {
 }
 
 #listar .usuario {
-	border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
     margin-top: 10px;
     padding-bottom: 15px;
     width: 50%;
