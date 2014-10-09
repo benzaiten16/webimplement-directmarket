@@ -59,23 +59,23 @@
         <%-- SI se INICIO --%>
         <div class="usuario">
             Bienvenido <a href="/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
-            |   <a href="/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
+            |   <a href="<%= request.getContextPath()%>/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
             <a href="/">Cerrar Cesión</a> 
             <br>
             (<%= ICC.findCliente(request.getAttribute("usuario").toString()).getMail()%>)
         </div>
-        
+
         <%-- si NO se INICIO --%>
-        <% } else { %> 
+        <% } else {%> 
         <div class = "usuario">
             Bienvenido INVITADO <br>
-            <a href="/perfil"> Registrar</a> |
-            <a href="<%= request.getContextPath() %>/inicar-sesion">Iniciar Seción ===</a>
+            <a href="<%= request.getContextPath()%>/registrar"> Registrar</a> |
+            <a href="<%= request.getContextPath()%>/iniciar-sesion">Iniciar Sesión </a>
 
         </div>
         <% }%>      
 
-
+        <%-- fin --%>
 
     </div>
 

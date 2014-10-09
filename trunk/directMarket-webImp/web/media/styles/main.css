@@ -2,10 +2,10 @@
     font-family: 'FacebookLetterFacesRegular';
     src: url('../fonts/facebolf-webfont.eot');
     src: url('../fonts/FACEBOLF.OTF'),
-		 url('../fonts/facebolf-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/facebolf-webfont.woff') format('woff'),
-         url('../fonts/facebolf-webfont.ttf') format('truetype'),
-         url('../fonts/facebolf-webfont.svg#FacebookLetterFacesRegular') format('svg');
+        url('../fonts/facebolf-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/facebolf-webfont.woff') format('woff'),
+        url('../fonts/facebolf-webfont.ttf') format('truetype'),
+        url('../fonts/facebolf-webfont.svg#FacebookLetterFacesRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,9 +15,9 @@
     font-family: 'GameOverRegular';
     src: url('../fonts/game_over-webfont.eot');
     src: url('../fonts/game_over-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/game_over-webfont.woff') format('woff'),
-         url('../fonts/game_over-webfont.ttf') format('truetype'),
-         url('../fonts/game_over-webfont.svg#GameOverRegular') format('svg');
+        url('../fonts/game_over-webfont.woff') format('woff'),
+        url('../fonts/game_over-webfont.ttf') format('truetype'),
+        url('../fonts/game_over-webfont.svg#GameOverRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -61,21 +61,21 @@ div#headerr {
     margin-top: 0px;
     margin-left: 0px;
     height: 220px;
-    
+
     width: 100%;
     background-color: #999999;
-        
+
 }
 
 div#headerr-izquierda{
     margin-top: 0px;
     margin-left: 0px;
     height: 155px;
-    
-    
+
+
     width: 20%;
     float: left;
-    
+
     min-width: 175px;
 
 }
@@ -85,17 +85,17 @@ image#logo{
     margin-top: 0px;
     margin-left: 10px;
     display: initial;
-    
-    
+
+
 }
 
 div#headerr-derecha{
     margin-top: 0px;
     margin-left: 0px;
     height: 155px;
-    
+
     width: 50%;
-  
+
     float: left;
 }
 
@@ -103,19 +103,19 @@ div#headerr-barra{
     font-family: "rizos";
     color: #EEE;
     margin-top: 120px;
-    
+
     font-size: 150%;
-   
+
     text-align: center;
-    
-    
+
+
     height: 105px;
-   
-        
+
+
     width: 100%;
-      
+
     clear: left;
-    
+
 }
 
 /*FIN imagen TOP*/
@@ -144,14 +144,14 @@ div#usuario {
 
 #header a
 {
-	color: #FFFFFF;
-	text-decoration:  none;
+    color: #FFFFFF;
+    text-decoration:  none;
 }
 
 #header a:hover
 {
-	text-decoration: underline;
-	text-shadow: 0px 0px 2px white;
+    text-decoration: underline;
+    text-shadow: 0px 0px 2px white;
 }
 
 /* footer */
@@ -177,27 +177,27 @@ div#usuario {
 
 #footer div
 {
-	margin: 3px 10px;
+    margin: 3px 10px;
 }
 
 /* general */
 
 #body-container
 {
-  background: url("../images/fondo.jpg") repeat scroll 0 0 transparent;
-  padding-top: 60px;
-  background-repeat: repeat;
-  padding-bottom: 60px;
- 
+    background: url("../images/fondo.jpg") repeat scroll 0 0 transparent;
+    padding-top: 60px;
+    background-repeat: repeat;
+    padding-bottom: 60px;
+
 }
 
 .main
 {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.93);
-	  border: 1px solid #CCCCCC;
+    border: 1px solid #CCCCCC;
     margin: 0 auto;
     width: 80%;
-	border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
     box-shadow: 0 0 8px #FFFFFF;
     padding: 30px;
 }
@@ -238,14 +238,17 @@ div#usuario {
     border-left-style: dotted;
     padding: 25px;
     margin: 25px;
+    width: 30%;
     
+
 }
 
 #perfil_izquierda
 {
     padding: 25px;
     margin: 25px;
-    
+    width: 40%;
+
 }
 
 /* Pagina de error */
@@ -262,6 +265,7 @@ div#usuario {
 .fila_input
 {
     margin-top: 5px;
+
 }
 
 .fila_input label
@@ -269,6 +273,8 @@ div#usuario {
     width: 100px;
     font-size: 12px;
     font-weight: bold;
+
+
 }
 
 .fila_input label
@@ -278,16 +284,66 @@ div#usuario {
     width: 120px;
     font-size: 12px;
     font-weight: bold;
+
 }
 
+/*INPUT text*/
+input[type=text] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+                  width: 180px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+                    cursor:pointer;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px; 
+                    width: 80px;
+}
+
+
+/*INPUT pasword*/
+input[type=password] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+                  width: 180px;
+}
+input[type=password]:focus {border-color:#333; }
+
+
+/*Boton*/
 .fila_input .con_margen
 {
-    margin-left: 120px;
+    margin-top: 20px;
+    margin-left: 100px;
+
 }
+
+.con_margen{
+   border:1px solid #999999; -webkit-border-radius: 11px; -moz-border-radius: 11px;border-radius: 11px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 20px 10px 20px; text-decoration:none; display:inline-block;text-shadow: 1px 1px 0 rgba(255,255,255,0.3);font-weight:bold; color: #4D4D4D;
+ background-color: #FFFFFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CFCFCF));
+ background-image: -webkit-linear-gradient(top, #FFFFFF, #CFCFCF);
+ background-image: -moz-linear-gradient(top, #FFFFFF, #CFCFCF);
+ background-image: -ms-linear-gradient(top, #FFFFFF, #CFCFCF);
+ background-image: -o-linear-gradient(top, #FFFFFF, #CFCFCF);
+ background-image: linear-gradient(to bottom, #FFFFFF, #CFCFCF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#CFCFCF);
+}
+
+.con_margen:hover{
+     border:1px solid #7A7A7A;
+ background-color: #F2F2F2; background-image: -webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(#C4C4C4));
+ background-image: -webkit-linear-gradient(top, #F2F2F2, #C4C4C4);
+ background-image: -moz-linear-gradient(top, #F2F2F2, #C4C4C4);
+ background-image: -ms-linear-gradient(top, #F2F2F2, #C4C4C4);
+ background-image: -o-linear-gradient(top, #F2F2F2, #C4C4C4);
+ background-image: linear-gradient(to bottom, #F2F2F2, #C4C4C4);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F2F2F2, endColorstr=#C4C4C4);
+}
+/*Fin del boton*/
 
 .formulario_centrar
 {
-    width: 500px;
+    width: 700px;
 }
 
 .rotulo
@@ -315,17 +371,17 @@ div#usuario {
 
 #error_page .main pre
 {
-	color: #000000;
+    color: #000000;
 }
 
 #error_page .main
 {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 #error_page p
 {
-	text-align: center;
+    text-align: center;
 }
 
 
@@ -342,12 +398,12 @@ div#usuario {
 }
 
 #listar .usuario:last-child {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 #listar .usuario img
 {
-	height: 42px;
+    height: 42px;
 }
 
 #listar .usuario .email {
@@ -362,7 +418,7 @@ div#usuario {
 #error_page .gameover
 {
     font-family: "SinGatosRegular";
-   
+
     font-size: 250%;
     margin-left: 25px;
     margin-top: 20px;
@@ -375,7 +431,7 @@ div#SinGatossss{
     margin: 0 auto;
     top: auto;
     left: 10%;
-   
+
     alignment-adjust: central;
 }
 
@@ -393,7 +449,7 @@ div#SinGatossss{
     top: 0px;
     right: 50px;
     alignment-adjust: central;
-    
+
 }
 
 
@@ -402,39 +458,39 @@ div#SinGatossss{
 /*   BUSCADOR   */
 
 div #buscador{
-   
+
     margin-left: 30px;
     height: 155px;
-    
-    
+
+
     width: 30%;
     float: left;
-    
+
     min-width: 175px;
 }
 
-  .cf:before, .cf:after {
+.cf:before, .cf:after {
     content:"";
     display:table;
-  }
-  .cf:after {clear:both; }
-  .cf { zoom:1; }
+}
+.cf:after {clear:both; }
+.cf { zoom:1; }
 
-   /* el formulario en si mismo */
-  .formulariodemo {
+/* el formulario en si mismo */
+.formulariodemo {
     background-color: #2F4F4F;
     float: left;
-    
+
     border-radius: 10px;
     box-shadow: 0 0 2px #606971 inset;
     margin: 0 auto;
     padding: 8px;
     width: 450px;
-    
-  }
 
-   /* la caja donde se ingresa el texto a buscar */
-  .formulariodemo input {
+}
+
+/* la caja donde se ingresa el texto a buscar */
+.formulariodemo input {
     background-color: #EEE;
     border: none;
     border-radius: 3px 0 0 3px;
@@ -443,23 +499,23 @@ div #buscador{
     height: 15px;
     padding: 10px 5px;
     width: 330px;
-  }
-  .formulariodemo input:focus {
+}
+.formulariodemo input:focus {
     outline: 0;
     background: #FFF;
     box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-  }
+}
 
-  /* el estilo de del atributo placeholder debe ser declarado para cada navegador de modo separado */
-  .formulariodemo input:-moz-placeholder { color: #999; font-weight: normal; font-style: italic; }
-  .formulariodemo input::-webkit-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
-  .formulariodemo input:-ms-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+/* el estilo de del atributo placeholder debe ser declarado para cada navegador de modo separado */
+.formulariodemo input:-moz-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input::-webkit-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input:-ms-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
 
-  /* aquí iría el estilo de del atributo required si es que se desea definirlo */
-  .formulariodemo input:required { box-shadow: none; }
+/* aquí iría el estilo de del atributo required si es que se desea definirlo */
+.formulariodemo input:required { box-shadow: none; }
 
-   /* el botón de envio */
-  .formulariodemo button {
+/* el botón de envio */
+.formulariodemo button {
     background-color: #9099A1;
     border: none;
     border-radius: 0 3px 3px 0;
@@ -476,10 +532,10 @@ div #buscador{
     text-transform: uppercase;
     text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
     width: 110px;
-  }
-  .formulariodemo button:hover{ background: #FA8072; } 
-  .formulariodemo button:active, .formulariodemo button:focus{ background: #DB7093; }
-  .formulariodemo button:before { /* el detalle del triángulo izquierdo */
+}
+.formulariodemo button:hover{ background: #FA8072; } 
+.formulariodemo button:active, .formulariodemo button:focus{ background: #DB7093; }
+.formulariodemo button:before { /* el detalle del triángulo izquierdo */
     content: "";
     border-color: transparent #9099A1 transparent;
     border-style: solid solid solid none;
@@ -487,9 +543,9 @@ div #buscador{
     left: -6px;
     position: absolute;
     top: 12px;
-  }
-  .formulariodemo button:hover:before { border-right-color: #FA8072; }
-  .formulariodemo button:focus:before { border-right-color: #C42F2F; }    
+}
+.formulariodemo button:hover:before { border-right-color: #FA8072; }
+.formulariodemo button:focus:before { border-right-color: #C42F2F; }    
 
 
 /*fin Buscador*/
