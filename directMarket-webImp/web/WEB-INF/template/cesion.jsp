@@ -17,25 +17,26 @@
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
 
         <div id="perfil" class ="main">
+           <div id="perfil_derecha">
+                <img src="../../media/images/GatoRison.png" alt="Login"/>
+            </div>
+            <h2>Ingrese sus Datos</h2>
             <div id="perfil_izquierda">
-                <div class="contenedor">
-                    <h2>Ingresa tus datos para iniciar sesión</h2>
-                    
-                    <!-- formulario de login -->
-                    <form action="iniciar-sesion" method="POST">
-                        <input class="input_blur" type="text" name="login"
-                               value="email..."	onMouseDown="sacarBlurReset(event);"/>
-                        <br/>
-                        <input type="password" name="password"/>
-                        <br/>
-                        <input type="button" value="Entrar" onclick="submit()"/>
-                    </form>
 
-
-
-
+                <div class="fila_input">
+                    <label for="error_login">Correo: </label>
+                    <input id="error_login" type="text" name="login"/>
                 </div>
 
+                <div class="fila_input">
+                    <label for="error_password">Contraseña:</label>
+                    <input id="error_password" type="password" name="password"/>
+                </div>
+
+                <div class="fila_input">
+                    <input class="con_margen" type="button"
+                           value="E n t r a r" onclick="submit()"/>
+                </div>
 
             </div>
         </div>
