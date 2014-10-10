@@ -2,6 +2,7 @@
    H E A D E R
 --%>
 
+<%@page import="Logica_Clases.IcontroladorProveedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="Servlets.Login"%>
 <%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
@@ -43,6 +44,7 @@
 
         <% Fabrica fabrica = Fabrica.getInstance();  %>
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
+        <% IcontroladorProveedor ICP = fabrica.getControladorProveedor(); %>
 
         <% String usr = "";%>
 
@@ -58,11 +60,29 @@
 
         <%-- SI se INICIO --%>
         <div class="usuario">
-            Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
-            |   <a href="<%= request.getContextPath()%>/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
+            
+             <% if (ICC.findCliente(request.getAttribute("usuario").toString()) != null) {%>
+
+                <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
+                
+                 Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
+            |   <a href="<%= request.getContextPath()%>/ordenCompra"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
             <a href="/">Cerrar Cesión</a> 
             <br>
             (<%= ICC.findCliente(request.getAttribute("usuario").toString()).getMail()%>)
+                
+             <% } else { %>
+              <%-- ___________________________SI ES UN PROVEEDOR_______________________________ --%>
+             
+
+            Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICP.findProveedor(request.getAttribute("usuario").toString()).getNombre()%></a> 
+            |   <a href="<%= request.getContextPath()%>/producto"> <img id="trolley" src="../../media/images/box_icon.png"  alt="Venta Producto"/></a>   |
+            <a href="/">Cerrar Cesión</a> 
+            <br>
+            (<%= ICP.findProveedor(request.getAttribute("usuario").toString()).getMail()%>)
+            
+            <%}%> <%-- Si es un Cliente vs Proveedor --%>
+            
         </div>
 
         <%-- si NO se INICIO --%>

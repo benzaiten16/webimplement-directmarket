@@ -6,7 +6,9 @@
 <!-- para el icono de la página -->
 <link href="media/images/favicon.ico" rel="icon" type="image/x-icon" />
 <link href="media/images/favicon.ico" rel="shortcut icon" />
-<div id="categorias" class ="main">
+
+
+<div id="listarCategorias" class ="main">
 
     <div id="perfil_izquierda">
 

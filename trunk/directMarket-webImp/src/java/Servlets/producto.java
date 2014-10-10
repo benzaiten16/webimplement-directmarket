@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class registrar extends HttpServlet {
+public class producto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,8 +29,8 @@ public class registrar extends HttpServlet {
             String usr = Login.getUsuarioLogueado(request);
             request.setAttribute("usuario", usr);
             //Si no está logeado puedo cargar el Registrar
-            request.getSession().setAttribute("estado_sesion", EstadoSesion.NO_LOGIN);
-            request.getRequestDispatcher("/WEB-INF/usuarios/registrar.jsp").forward(request, response);
+            request.getSession().setAttribute("estado_sesion", EstadoSesion.LOGIN_CORRECTO);
+            request.getRequestDispatcher("/WEB-INF/producto/producto.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
