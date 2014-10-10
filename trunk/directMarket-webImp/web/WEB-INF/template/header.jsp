@@ -58,7 +58,7 @@
 
         <%-- SI se INICIO --%>
         <div class="usuario">
-            Bienvenido <a href="/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
+            Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
             |   <a href="<%= request.getContextPath()%>/jugar"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
             <a href="/">Cerrar Cesión</a> 
             <br>

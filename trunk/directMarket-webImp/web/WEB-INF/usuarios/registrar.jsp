@@ -4,6 +4,8 @@
 <%@page import="Logica_Clases.Fabrica"%>
 <%@page import="Logica_Clases.IcontroladorCliente"%>
 
+<%@page import="java.util.Calendar"%>
+
 <!doctype html>
 <html>
     <head>
@@ -38,6 +40,7 @@
                     </div>
                     <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                     <br><br>
+
                     <div class="contenedor">
                         <h2>Datos Personales</h2>
                         <label class="rotulo">Nombre:</label> <input type="text" name="nombre">
@@ -45,72 +48,61 @@
                         <label class="rotulo">Apellido:</label> <input type="text" name="apellido">
                         <br>
                         <label class="rotulo">Fecha de Nacimiento:</label> <input type="text" name="apellido">
-                        <br>
-
-
-
-
-
-
+                        <br> 
                         <label class="rotulo">¿Qué eres?:</label> 
-
-
-                        <div>
-                            
+                        <div>                          
                             <select  id="dropdown"  onchange="evento(this);">
                                 <option value="1" selected>C l i e n t e</option>
                                 <option value="2">P r o v e  e d o r</option>
                             </select>
-
-
                         </div> 
                         <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                         <br><br>
 
                         <%-- Comenzando a ocultar  --%>
+                    </div>
+                    <%-- el div lo oculto --%>
 
-                        <%-- el div lo oculto --%>
-                        <div id='ver' style=' display: none ;'>
-                            <h2>Datos Empresa</h2>
-                            <div class="contenedor" >
-                                <label class="rotulo">Nombre Compañia:</label> <input type="text" name="nomComp">
-                                <br>
-                                <label class="rotulo">Web:</label> <input type="text" name="web">
-                                <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
-                                <br><br>
-                            </div>
+                    <div id='ver' style=' display: none ;'>
+                        <h2>Datos Empresa</h2>
+                        <div class="contenedor" >
+                            <label class="rotulo">Nombre Compañia:</label> <input type="text" name="nomComp">
+                            <br>
+                            <label class="rotulo">Web:</label> <input type="text" name="web">
+                            <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
+                            <br><br>
                         </div>
-
-                        <%-- la función del div --%>
-                            
-                        <script type="text/javascript">
-                            function evento(sel) {
-                                if (sel.value == "1") {
-
-
-                                    divT = document.getElementById("ver");
-                                    divT.style.display = "none";
-
-                                } else {
-
-
-
-                                    divT = document.getElementById("ver");
-                                    divT.style.display = "";
-                                }
-                            }
-                        </script>
-
-                        <%--  ...................................   --%>
-
-
-                        <input type="submit" value="guardar">
-                        </form>
                     </div>
 
-            </div>
+                    <%-- la función del div --%>
 
-            <jsp:include page="/WEB-INF/template/footer.jsp"/>
+                    <script type="text/javascript">
+                        function evento(sel) {
+                            if (sel.value == "1") {
+
+
+                                divT = document.getElementById("ver");
+                                divT.style.display = "none";
+
+                            } else {
+
+
+
+                                divT = document.getElementById("ver");
+                                divT.style.display = "";
+                            }
+                        }
+                    </script>
+
+                    <%--  ...................................   --%>
+
+                    <input type="submit" value="guardar">
+                </form>
+
+
+            </div>
+        </div>
 
     </body>
+    <jsp:include page="/WEB-INF/template/footer.jsp"/>
 </html>
