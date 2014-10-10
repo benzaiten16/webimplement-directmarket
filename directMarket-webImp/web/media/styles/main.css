@@ -162,11 +162,13 @@ div#usuario {
 #footer
 {
     background-image: url( ../images/footer.png);
+    background-repeat: repeat-x;
     background-color: #999999;
     color: #FFFFFF;
     font-size: 0.9em;
-    height: 69px;
+    height: 80px;
     padding-top: 16px;
+    
 }
 
 #footer_copyright
@@ -181,6 +183,7 @@ div#usuario {
 #footer div
 {
     margin: 3px 10px;
+    
 }
 
 /* general */
