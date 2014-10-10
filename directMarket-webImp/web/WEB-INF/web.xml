@@ -16,6 +16,14 @@
         <servlet-name>registrar</servlet-name>
         <servlet-class>Servlets.registrar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>producto</servlet-name>
+        <servlet-class>Servlets.producto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ordenCompra</servlet-name>
+        <servlet-class>Servlets.ordenCompra</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <url-pattern>/iniciar-sesion</url-pattern>
@@ -38,6 +46,14 @@
     <servlet-mapping>
         <servlet-name>registrar</servlet-name>
         <url-pattern>/registrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>producto</servlet-name>
+        <url-pattern>/producto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ordenCompra</servlet-name>
+        <url-pattern>/ordenCompra</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
