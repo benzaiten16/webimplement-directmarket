@@ -17,6 +17,10 @@
         <servlet-class>Servlets.registrar</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>listarProductos</servlet-name>
+        <servlet-class>Servlets.listarProductos</servlet-class>
+    </servlet>
+      <servlet>
         <servlet-name>producto</servlet-name>
         <servlet-class>Servlets.producto</servlet-class>
     </servlet>
@@ -54,6 +58,10 @@
     <servlet-mapping>
         <servlet-name>ordenCompra</servlet-name>
         <url-pattern>/ordenCompra</url-pattern>
+    </servlet-mapping>
+      <servlet-mapping>
+        <servlet-name>listarProductos</servlet-name>
+        <url-pattern>/productos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

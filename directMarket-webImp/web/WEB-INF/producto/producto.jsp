@@ -20,8 +20,9 @@
         <% IcontroladorProveedor ICP = fabrica.getControladorProveedor();%>
 
         <div id="producto" class ="main">
-
-            
+        <h1>Bienvenid@ ! !</h1>
+        <h2>Datos producto (producto)</h2>    
+         
             
             
             <%-- bla bla bla --%>
