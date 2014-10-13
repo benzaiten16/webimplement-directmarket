@@ -20,13 +20,17 @@
         <servlet-name>listarProductos</servlet-name>
         <servlet-class>Servlets.listarProductos</servlet-class>
     </servlet>
-      <servlet>
+    <servlet>
         <servlet-name>producto</servlet-name>
         <servlet-class>Servlets.producto</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ordenCompra</servlet-name>
         <servlet-class>Servlets.ordenCompra</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Servlets.Logout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
@@ -59,9 +63,13 @@
         <servlet-name>ordenCompra</servlet-name>
         <url-pattern>/ordenCompra</url-pattern>
     </servlet-mapping>
-      <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>listarProductos</servlet-name>
         <url-pattern>/productos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

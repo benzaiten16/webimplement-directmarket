@@ -67,7 +67,7 @@
                 
                  Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
             |   <a href="<%= request.getContextPath()%>/ordenCompra"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
-            <a href="/">Cerrar Cesión</a> 
+            <a href="<%= request.getContextPath()%>/Logout">Cerrar Cesión</a> 
             <br>
             (<%= ICC.findCliente(request.getAttribute("usuario").toString()).getMail()%>)
                 
@@ -77,7 +77,7 @@
 
             Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICP.findProveedor(request.getAttribute("usuario").toString()).getNombre()%></a> 
             |   <a href="<%= request.getContextPath()%>/producto"> <img id="trolley" src="../../media/images/box_icon.png"  alt="Venta Producto"/></a>   |
-            <a href="/">Cerrar Cesión</a> 
+            <a href="<%= request.getContextPath()%>/Logout">Cerrar Cesión</a> 
             <br>
             (<%= ICP.findProveedor(request.getAttribute("usuario").toString()).getMail()%>)
             
