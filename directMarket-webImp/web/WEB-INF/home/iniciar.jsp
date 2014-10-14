@@ -4,7 +4,7 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/template/head.jsp"/>
-        <title>Iniciar sesión :: Direct Market</title>
+        <title>Bienvenido a Direct Market</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
@@ -26,12 +26,29 @@
             }
         </script>
 
-        <jsp:include page="../categorias/listarCategoria.jsp"/>
-        <%-- <jsp:include page="/WEB-INF/template/cesion.jsp"/> --%>
-         
+          <%--SE REALIZA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>
+       <div id="perfil_derecha">
+           
+         <form class=formulariodemoGuillermo action="iniciar-sesion" ACTION="POST">
+            <h4>Iniciar Sesion</h4>
+            <div class="fila_input">
+               <label for="inputCorreo">Correo: </label>
+               <input id="inputCorreo" type="text" name="login"/>
+            </div>
+            <div class="fila_input">
+               <label for="InputPasswd">Contraseña:</label>
+               <input id="InputPasswd" type="password" name="password"/>
+            </div>
+            <div class="fila_input">
+               <input type="button"  value="Ingresar" onclick="submit()"/>
+            </div>
+               </form>
+        <%--TERMINA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>
+        
+         </div>
 
-        
-        
+        <jsp:include page="../categorias/listarCategoria.jsp"/>
+
         <jsp:include page="/WEB-INF/template/footer.jsp"/>
     </body>
 </html>

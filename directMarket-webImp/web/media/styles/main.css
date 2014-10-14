@@ -242,11 +242,10 @@ div#usuario {
     float:right;
     border-left: 2px solid #DDDDDD;
     border-left-style: dotted;
-    padding: 25px;
-    margin: 25px;
+    padding:25px;
+    margin:25px;
     width: 30%;
-
-
+   
 }
 
 #perfil_izquierda
@@ -514,6 +513,16 @@ div #buscador{
     padding: 8px;
     width: 450px;
 
+}
+
+.formulariodemoGuillermo {
+    background-color: #EEE;
+    float: right;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #606971 inset;
+    margin: auto;
+    padding: 8px;
+    width: 250px;
 }
 
 /* la caja donde se ingresa el texto a buscar */
