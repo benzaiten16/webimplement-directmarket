@@ -14,7 +14,7 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/template/head.jsp"/>
-        <title>Perfil :: DirectMarket</title>
+        <title>ListaProductos :: DirectMarket</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
@@ -22,28 +22,30 @@
         <% Fabrica fabrica = Fabrica.getInstance();  %>
         <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
         <% IcontroladorProducto ICP = fabrica.getControladorProducto();
-        List<Categoria> ListaCategoria;
-        ListaCategoria = ICC.findCategoriaEntities();%>
-        
+            List<Categoria> ListaCategoria;
+            ListaCategoria = ICC.findCategoriaEntities();%>
+
         <div id="producto" class ="main">
-        <h2>Listar productos (productos)</h2>    
-         <select  id="cat"  onchange="evento(this);">
-                                <option>Seleccione categoria</option>
-                                <%
-                                for(int i = 0; i < ListaCategoria.size(); i++) {
-                                Boolean tiene = ListaCategoria.get(i).getTieneProductos();
-                                //Si tiene productos me interesa mostrarlo
-                                if (tiene){
-                                String ncategoria = ListaCategoria.get(i).getNombre();
-                                %>
-                                <option><%= ncategoria %>  </option>
-                                <%
-                                }
-                                }
-                                %>
-        
-                                
-         </select>
+            <h1>Lista de Productos</h1>    
+
+
+            <select  id="dropdown"  onchange="evento(this);">
+                <option>Seleccione categoria</option>
+                <%
+                    for (int i = 0; i < ListaCategoria.size(); i++) {
+                        Boolean tiene = ListaCategoria.get(i).getTieneProductos();
+                        //Si tiene productos me interesa mostrarlo
+                        if (tiene) {
+                            String ncategoria = ListaCategoria.get(i).getNombre();
+                %>
+                <option><%= ncategoria%>  </option>
+                <%
+                        }
+                    }
+                %>
+
+
+            </select>
         </div>
 
         <jsp:include page="/WEB-INF/template/footer.jsp"/>

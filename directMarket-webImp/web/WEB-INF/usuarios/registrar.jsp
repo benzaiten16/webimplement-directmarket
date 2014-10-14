@@ -47,7 +47,7 @@
                         <br>
                         <label class="rotulo">Apellido:</label> <input type="text" name="apellido">
                         <br>
-                        <label class="rotulo">Fecha de Nacimiento:</label> <input type="text" name="apellido">
+                        <label class="rotulo">Fecha de Nacimiento: (No Explorer)</label> <input type="date" name="nacimiento"> 
                         <br> 
                         <label class="rotulo">¿Qué eres?:</label> 
                         <div>                          
@@ -79,7 +79,6 @@
                     <script type="text/javascript">
                         function evento(sel) {
                             if (sel.value == "1") {
-
 
                                 divT = document.getElementById("ver");
                                 divT.style.display = "none";
