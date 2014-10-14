@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
         HttpSession objSesion = request.getSession();
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        EstadoSesion nuevoEstado;
+        EstadoSesion nuevoEstado = null;
         
         Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
@@ -46,7 +46,8 @@ public class Login extends HttpServlet {
 		try {
                 // chequea contraseña
 		    //Si no es cliente, entonces es proveedor distinto de null
-                   if( (ICC.findCliente(login) == null ) && ( ICP.findProveedor(login) != null ) ){
+                   //if(!request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)){
+                    if( (ICC.findCliente(login) == null ) && ( ICP.findProveedor(login) != null ) ){
                         if(!ICP.findProveedor(login).getPassword().equals(password)){
 				nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
                             }   
@@ -71,8 +72,9 @@ public class Login extends HttpServlet {
 		   }
                    
                 }
+              //}
                 catch(Exception ex){
-			nuevoEstado = EstadoSesion.LOGIN_INCORRECTO;
+			nuevoEstado = EstadoSesion.NO_LOGIN;
 		}
 		 
         objSesion.setAttribute("estado_sesion", nuevoEstado);

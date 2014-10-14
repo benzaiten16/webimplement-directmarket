@@ -2,6 +2,7 @@
    H E A D E R
 --%>
 
+<%@page import="Servlets.EstadoSesion"%>
 <%@page import="Logica_Clases.IcontroladorProveedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="Servlets.Login"%>
@@ -89,9 +90,10 @@
         <% } else {%> 
         <div class = "usuario">
             Bienvenido INVITADO <br>
-            <a href="<%= request.getContextPath()%>/registrar"> Registrar</a> |
-            <a href="<%= request.getContextPath()%>/iniciar-sesion">Iniciar Sesión </a>
-
+            <a href="<%= request.getContextPath()%>/registrar"> Registrarse</a> |
+            <% if ( (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
+            <a href="<%= request.getContextPath()%>/home"> Go Home</a>
+             <%}%>   
         </div>
         <% }%>      
 
