@@ -33,6 +33,7 @@
                 <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
 
                 <div class="contenedor">
+                    <h1>Cliente</h1>
                     <h2>Información Usuario</h2>
                     <label class="rotulo">Nick:</label>
                     <label class="valor"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNickname()%></label>
@@ -64,8 +65,11 @@
                     <label class="valor"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getFechNacim()%></label>
                     <br/>
                 </div>
-
                 <br/>
+                 <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
+                 <div class="contenedor">
+                     <h2>Orden(es) de Compra</h2>
+                 </div>
 
 
                 <% } else {%>
@@ -73,7 +77,7 @@
 
                 <%-- ___________________________SI ES UN PROVEEDOR_______________________________ --%>
 
-                <label class="valor">Proveedor</label>
+                <h1>Proveedor</h1>
 
                 <div class="contenedor">
                     <h2>Información Usuario</h2>
