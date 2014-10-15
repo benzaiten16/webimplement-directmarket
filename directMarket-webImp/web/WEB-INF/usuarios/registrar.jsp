@@ -27,7 +27,7 @@
 
             <%-- Ingreso de Datos --%>
             <div id="perfil_izquierda">
-                <form action="guardar" method="POST">
+                <form action="registro-usuarios" method="POST">
                     <div class="contenedor">
                         <h1>Direct Market</h1>
                         <h2>Datos Usuario</h2>
@@ -53,7 +53,7 @@
                         <br> 
                         <label class="rotulo">¿Qué eres?:</label> 
                         <div>                          
-                            <select  id="dropdown"  onchange="evento(this);">
+                            <select  id="dropdown"  onchange="evento(this);" name="tipoUsuario">
                                 <option value="1" selected>C l i e n t e</option>
                                 <option value="2">P r o v e  e d o r</option>
                             </select>
@@ -97,7 +97,7 @@
 
                     <%--  ...................................   --%>
 
-                    <input type="submit" value="guardar">
+                    <input type="submit" value="Enviar">
                 </form>
 
 
