@@ -260,10 +260,12 @@ div#usuario {
 
 .error
 {
-    background-color:#FFEBE8;
-    border: 2px solid #DD3C10;
+    background-color:#fdf2fd;
+    border: 2px solid #DB7093;
     padding: 6px;
     margin-bottom: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 

@@ -14,7 +14,13 @@
         <form class="formulario_centrar main" action="iniciar-sesion" ACTION="POST">
 
             <div id="perfil_derecha">
+                <div class="error">
+                    <label> <i>Usuario </i> y/o <i>Contraseña</i> <br> Ingresado Incorrectamente</label>  
+                </div>
                 <img src="../../media/images/pushen.png" alt="Login"/>
+                
+                
+                
             </div>
             <h2>Ingrese sus Datos Nuevamente</h2>
             <div id="perfil_izquierda">

@@ -32,6 +32,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>Servlets.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>Servlets.search</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <url-pattern>/iniciar-sesion</url-pattern>
@@ -70,6 +74,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

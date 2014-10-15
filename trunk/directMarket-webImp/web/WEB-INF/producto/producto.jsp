@@ -42,13 +42,13 @@
                     <div class="contenedor">
                         <h1>Direct Market</h1>
                         <h2>Datos Producto</h2>
-                        <label class="rotulo">Titulo: </label> <input type="text" name="tituloProducto"> 
+                        <label class="rotulo" >Titulo: </label> <input type="text" name="tituloProducto" placeholder="ingresar Titulo..."> 
                         <br>
-                        <label class="rotulo">Numero Referencia:</label> <input type="text" name="numRefProducto"> 
+                        <label class="rotulo">Numero Referencia:</label> <input type="text" name="numRefProducto" placeholder="ingresar Numero de Referencia..."> 
                         <br>
-                        <label class="rotulo">Descripción:</label><textarea class=textarea cols="60" rows="8"></textarea>
+                        <label class="rotulo">Descripción:</label><textarea class=textarea cols="60" rows="8" placeholder="ingresar Una descripción..."></textarea>
                         <br>
-                        <label class="rotulo">Precio:</label> <input type="password" name="passR">
+                        <label class="rotulo">Precio:</label> <input type="password" name="passR" placeholder="ingresar Precio...">
                         <br>
                     </div>
                     <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
