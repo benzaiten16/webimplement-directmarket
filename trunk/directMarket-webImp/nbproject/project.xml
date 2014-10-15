@@ -15,24 +15,15 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.Paplicaciones.jar}</file>
-                </library>
-                <library dirs="200">
                     <file>${file.reference.jcalendar-1.4.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.postgresql-9.3-1102.jdbc3.jar}</file>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.jcalendar-1.4.jar-1}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.Paplicaciones.jar-1}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.postgresql-9.3-1102.jdbc3.jar-1}</file>
+                    <file>${file.reference.Paplicaciones.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
