@@ -26,7 +26,7 @@
         <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
             List<Categoria> ListaCategoria;
             ListaCategoria = ICCA.findCategoriaEntities();%>
-            
+
 
 
 
@@ -55,8 +55,8 @@
                     <br><br><br>
                     <label class="rotulo">Seleccione la(s) Categoria(s):</label>
                     <div class="contenedor">
-                        
-                        <select  id="dropdown" name="catego" onchange="lolo(this);">
+
+                        <select  id="dropdown" name="catego">
                             <%-- carga el select Box --%>
                             <option>Categorias</option>
                             <%
@@ -71,31 +71,33 @@
                                     }
                                 }
                             %>
-                            
+
                         </select>
-                        <input type="button" value="+" >
-                        
-                    </div>
                            
+                        <%--<button type="button" value="cat" onclick="javascript:add()" > + </button> --%>
+                        <button type="button" value="cat" onclick="add()" > + </button>
+
+                    </div>
+                    <br><br>
+                    <table id="tabla">
+                        <th>Categoria(s) Seleccionadas</th>
+                    </table>
+
+                    <%-- <% int i = 0;%> --%>
+                    
+                    
                     <%-- Funcion add() --%>
-                     <script type="text/javascript">
-                         function lolo(lo){
-                             
-                             <% String lala = request.getParameter("dropdown") ; %>
-                            <% out.println( lala ); %>
-                            <% lala = getInitParameter("catego") ; %>
-                            <% out.println( lala ); %>
-                           request.getParameterValues('dropdown');
-                             
-                         }
-                        if (request.getParameter("+") != null) {
-                          myClass.function1();
-                         } 
+                    <script type="text/javascript">
+                        function add() {
+
+                            $('#dropdown').find(":selected").text();
+                            <h2> lslsl </h2>
+                        }
                     </script>  
-                        
+
                     <br>
                     categoria1 <br> categoria2 <br> <i> (falta q cargue las categorias seleccionadas </i>
-                    
+
                     <br><br><br>
                     <input type="submit" value="guardar">
                 </form>

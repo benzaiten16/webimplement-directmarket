@@ -206,6 +206,7 @@ div#usuario {
     border-radius: 30px 30px 30px 30px;
     box-shadow: 0 0 8px #FFFFFF;
     padding: 30px;
+ 
 }
 
 /* iniciar */
@@ -298,7 +299,7 @@ div#usuario {
 input[type=text] {padding:5px; border:2px solid #ccc; 
                   -webkit-border-radius: 5px;
                   border-radius: 5px;
-                  width: 180px;
+                  width: 280px;
 }
 input[type=text]:focus {border-color:#333; }
 
@@ -314,7 +315,7 @@ input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
 input[type=password] {padding:5px; border:2px solid #ccc; 
                       -webkit-border-radius: 5px;
                       border-radius: 5px;
-                      width: 180px;
+                      width: 280px;
 }
 input[type=password]:focus {border-color:#333; }
 
@@ -367,7 +368,7 @@ input[type=password]:focus {border-color:#333; }
 
 .textarea{
 
-    width:185px;
+    width:285px;
     height:100px;
     border: 2px solid #C4C4C4;
     -webkit-border-radius: 5px;
@@ -394,8 +395,6 @@ input[type=password]:focus {border-color:#333; }
 {
     color: white;
 }
-
-
 
 #error_page .main pre
 {
@@ -467,6 +466,13 @@ div#SinGatossss{
     position: absolute;
     top: 60px;
     left: 250px;
+    alignment-adjust: central;
+}
+
+#pantera{
+    position: absolute;
+    top: 10%;
+    
     alignment-adjust: central;
 }
 
@@ -592,7 +598,7 @@ div #buscador{
 
 select#dropdown
 {
-    width: 193px;
+    width: 285px;
     height: 25px;
     color: #2F4F4F;
     background-color: #DDDDDD;
@@ -602,3 +608,9 @@ select#dropdown
     border-radius: 5px;
 }
 
+#ok{
+ padding: 90px;   
+ background-color: white;
+ top: 10%;
+ text-align: center;
+}

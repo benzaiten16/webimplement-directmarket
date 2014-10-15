@@ -30,7 +30,7 @@
 
 
             <select  id="dropdown"  onchange="evento(this);">
-                <option>Seleccione categoria</option>
+                <option>Seleccione Producto</option>
                 <%
                     String name = request.getParameter("search");
                     for (int i = 0; i < ListaProducto.size(); i++) {

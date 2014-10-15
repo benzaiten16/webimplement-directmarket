@@ -14,7 +14,8 @@
             
                 <div id="perfil_izquierdar">
            
-            <jsp:include page="../categorias/listarCategoria.jsp"/></div>
+            <jsp:include page="../categorias/listarCategoria.jsp"/>
+                </div>
         </div>
 
 
