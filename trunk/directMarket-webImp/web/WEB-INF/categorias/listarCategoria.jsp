@@ -8,7 +8,7 @@
 <link href="media/images/favicon.ico" rel="shortcut icon" />
 
 
-<div id="listarCategorias" class ="main">
+
 
     <div id="perfil_izquierda">
 
@@ -32,4 +32,3 @@
         </div>
 
     </div>
-</div>
