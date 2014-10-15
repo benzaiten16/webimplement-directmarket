@@ -1,7 +1,4 @@
-<%-- 
-    Document   : head
-    Author     : Igui
---%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!-- referencia al CSS maestro -->
