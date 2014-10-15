@@ -38,7 +38,7 @@
 
         <%-- BUSCADOR --%>
         <div id="buscador">
-            <jsp:include page="/WEB-INF/template/buscador.jsp"/>
+            <jsp:include page="/WEB-INF/buscandou/buscador.jsp"/>
         </div>
 
         <%-- IDENTIFICACIÓN de Usuario --%>
@@ -86,7 +86,7 @@
             
         </div>
 
-        <%-- si NO se INICIO --%>
+        <%-- _______________si NO se INICIO________________ --%>
         <% } else {%> 
         <div class = "usuario">
             Bienvenido INVITADO <br>

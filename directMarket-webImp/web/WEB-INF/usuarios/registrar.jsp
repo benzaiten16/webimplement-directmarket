@@ -20,14 +20,16 @@
 
         <div id="registrar" class ="main">
             <div id="perfil_derecha">
-                <img src="media/images/defecto.gif" alt="imagen"/>
+                <br><br><br><br>
+                <img src="media/images/bienvenidoGato.png" alt="imagen"/>
+                <br><br><br>
             </div>
 
             <%-- Ingreso de Datos --%>
             <div id="perfil_izquierda">
                 <form action="guardar" method="POST">
                     <div class="contenedor">
-                        <h1>Bienvenid@ ! !</h1>
+                        <h1>Direct Market</h1>
                         <h2>Datos Usuario</h2>
                         <label class="rotulo">Nick:</label> <input type="text" name="nick"> 
                         <br>

@@ -6,43 +6,34 @@
 
 <!doctype html>
 <html>
-    <head>
-        <jsp:include page="/WEB-INF/template/head.jsp"/>
-        <title>Iniciar Cesión :: DirectMarket</title>
-    </head>
-    <body>
-        <jsp:include page="/WEB-INF/template/header.jsp"/>
 
-        <% Fabrica fabrica = Fabrica.getInstance();  %>
-        <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
+    <% Fabrica fabrica = Fabrica.getInstance();  %>
+    <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
 
-        <div id="perfil" class ="main">
-           <div id="perfil_derecha">
-                <img src="../../media/images/GatoRison.png" alt="Login"/>
-            </div>
-            <h2>Ingrese sus Datos</h2>
-            <div id="perfil_izquierda">
 
-                <div class="fila_input">
-                    <label for="error_login">Correo: </label>
-                    <input id="error_login" type="text" name="login"/>
-                </div>
+    <div id="perfil_derecha">
+        <%--SE REALIZA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>
+        <form action="iniciar-sesion" ACTION="POST">
 
-                <div class="fila_input">
-                    <label for="error_password">Contraseña:</label>
-                    <input id="error_password" type="password" name="password"/>
-                </div>
-
-                <div class="fila_input">
-                    <input class="con_margen" type="button"
-                           value="E n t r a r" onclick="submit()"/>
-                </div>
+            <div class="contenedor">
+                <h4>Iniciar Sesion</h4>
+                <label class="rotulo">NickName:</label>  <input id="inputCorreo" type="text" name="login"/>
+                <br>
+                <label class="rotulo">Contraseña:</label> <input id="InputPasswd" type="password" name="password"/>
+                <br>
 
             </div>
-        </div>
+            <div class="fila_input">
+                <input class="con_margen" type="button"
+                       value="E n t r a r" onclick="submit()"/>
+            </div>
+            <br>
+        </form>
+        <%--TERMINA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>
 
-        <jsp:include page="/WEB-INF/template/footer.jsp"/>
-    </body>
+    </div>
+
+
 </html>
 
 
