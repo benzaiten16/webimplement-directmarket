@@ -26,6 +26,7 @@
         <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
             List<Categoria> ListaCategoria;
             ListaCategoria = ICCA.findCategoriaEntities();%>
+            
 
 
 
@@ -55,7 +56,7 @@
                     <label class="rotulo">Seleccione la(s) Categoria(s):</label>
                     <div class="contenedor">
                         
-                        <select  id="dropdown" name="catego">
+                        <select  id="dropdown" name="catego" onchange="lolo(this);">
                             <%-- carga el select Box --%>
                             <option>Categorias</option>
                             <%
@@ -72,28 +73,30 @@
                             %>
                             
                         </select>
-                        <input type="button" value="+" onclick="add(this);">
+                        <input type="button" value="+" >
                         
                     </div>
-                            <% String lala = request.getParameter("dropdown") ; %>
-                            <% out.println( lala ); %>
+                           
                     <%-- Funcion add() --%>
                      <script type="text/javascript">
-                        function add(categ) {
+                         function lolo(lo){
+                             
+                             <% String lala = request.getParameter("dropdown") ; %>
+                            <% out.println( lala ); %>
                             <% lala = getInitParameter("catego") ; %>
                             <% out.println( lala ); %>
                            request.getParameterValues('dropdown');
-                           
-                            if (categ.value != "0") {
-
-
-                                out.println("Hoy es ");
-
-                            } 
-                        }
+                             
+                         }
+                        if (request.getParameter("+") != null) {
+                          myClass.function1();
+                         } 
                     </script>  
                         
                     <br>
+                    categoria1 <br> categoria2 <br> <i> (falta q cargue las categorias seleccionadas </i>
+                    
+                    <br><br><br>
                     <input type="submit" value="guardar">
                 </form>
 
@@ -105,5 +108,5 @@
 
         <jsp:include page="/WEB-INF/template/footer.jsp"/>
     </body>
-</html>
+</html>z
 
