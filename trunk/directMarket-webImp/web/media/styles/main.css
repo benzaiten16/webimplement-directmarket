@@ -608,6 +608,19 @@ select#dropdown
     border-radius: 5px;
 }
 
+select#cat{
+
+    width: 285px;
+    height: 25px;
+    color: #2F4F4F;
+    background-color: #DDDDDD;
+    padding-left: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
 #ok{
  padding: 90px;   
  background-color: white;

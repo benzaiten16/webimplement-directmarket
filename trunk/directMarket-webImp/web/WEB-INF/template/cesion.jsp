@@ -27,7 +27,7 @@
                 <input class="con_margen" type="button"
                        value="E n t r a r" onclick="submit()"/>
             </div>
-            <br>
+           
         </form>
         <%--TERMINA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>
 

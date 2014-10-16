@@ -17,12 +17,13 @@
         List<Categoria> ListaCategoria;
         ListaCategoria = ICC.findCategoriaEntities();%>
 
-<div id="listarCategorias" class ="main">
+<div id="listarCategorias" >
 
     <div id="perfil_izquierda">
 
         <div class="contenedor">
-        <h2>Categorias (con productos)</h2> 
+            <h2>Categorias <i>(con productos)</i></h2> <br>
+            
             <select  id="cat"  onchange="evento(this);">
                 <option>Seleccione categoria</option>
                 <%for(int i = 0; i < ListaCategoria.size(); i++) {
@@ -37,6 +38,7 @@
                 }
                 %>
              </select>
+             <br><br><br><br>
      
  
             <%--<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
