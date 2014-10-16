@@ -8,9 +8,8 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
-        <jsp:include page="/WEB-INF/template/cesion.jsp"/>
+         <jsp:include page="/WEB-INF/template/cesion.jsp"/>
              <div id="inicio" class ="main">
-            
             
                 <div id="perfil_izquierdar">
            
