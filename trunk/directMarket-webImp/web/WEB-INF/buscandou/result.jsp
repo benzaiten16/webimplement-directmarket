@@ -10,45 +10,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <jsp:include page="/WEB-INF/template/head.jsp"/>
+        <title>Resultados de Busqueda :: DirectMarket</title>
     </head>
     <body>
+        <jsp:include page="/WEB-INF/template/header.jsp"/>
+        <form action="search" method="get">
+            <%-- TRAIGO el nombre --%>
+            <% String nombre = (String) request.getSession().getAttribute("searchResult"); %>
 
 
-        <% Fabrica fabrica = Fabrica.getInstance();  %>
-        <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
-            List<Producto> ListaProducto;
-        %>
-
-        <%-- ListaProducto = ICPR.findProductoEntities(); --%>
-
-        <h1>Resultado(s) de Busqueda!</h1>
-
-        <div id="producto" class ="main">
-            <h1>Lista de Productos</h1>    
 
 
-            <select  id="dropdown"  onchange="evento(this);">
-                <option>Seleccione Producto</option>
-                <%
-                    String name = request.getParameter("search");
-                    for (int i = 0; i < ListaProducto.size(); i++) {
+            <% Fabrica fabrica = Fabrica.getInstance();  %>
+            <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
+                List<Producto> ListaProducto;
+                ListaProducto = ICPR.findProductoEntities();
+            %>
+
+
+
+
+            <h1>Resultado(s) de Busqueda!</h1>
+            <div id="producto" class ="main">
+
+                <br>
+                <h2>Lista de Productos</h2>    
+
+                <% for (int i = 0; i < ListaProducto.size(); i++) {
                         String nProducto = ListaProducto.get(i).getNombre();
-                        if (ICPR.findProducto2(name).equals(nProducto)) {
+                        if (ICPR.findProducto2(nombre).equals(nProducto)) {
 
                 %>
-                <option><%= nProducto%>  </option>
+                <%= nProducto%>  
                 <%
                         }
                     }
                 %>
 
 
-            </select>
-        </div>
+
+            </div>
 
 
-
+            <jsp:include page="/WEB-INF/template/footer.jsp"/>
+        </form>
     </body>
 </html>

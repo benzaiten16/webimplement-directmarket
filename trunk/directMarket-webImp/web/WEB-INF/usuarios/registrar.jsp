@@ -10,7 +10,9 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/template/head.jsp"/>
+        <script src="/js/prototype.js" type="text/javascript"></script>  
         <title>Registrar :: DirectMarket</title>
+        
     </head>
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
