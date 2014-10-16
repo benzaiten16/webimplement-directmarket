@@ -48,7 +48,7 @@
                         <br>
                         <label class="rotulo">Descripción:</label><textarea class=textarea cols="60" rows="8" placeholder="ingresar Una descripción..."></textarea>
                         <br>
-                        <label class="rotulo">Precio:</label> <input type="password" name="passR" placeholder="ingresar Precio...">
+                        <label class="rotulo">Precio:</label> <input type="text" name="precio" placeholder="ingresar Precio...">
                         <br>
                     </div>
                     <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
