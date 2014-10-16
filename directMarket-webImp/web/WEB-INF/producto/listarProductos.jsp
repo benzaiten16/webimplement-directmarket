@@ -1,53 +1,38 @@
 <%@page import="java.util.List"%>
-<%@page import="Logica_Clases.Categoria"%>
+<%@page import="Logica_Clases.Producto"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.IcontroladorCategoria"%>
-<%@page import="Logica_Clases.IcontroladorProveedor"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="Logica_Clases.Fabrica"%>
-<%@page import="Logica_Clases.IcontroladorCliente"%>
-<%@page import="java.util.StringTokenizer" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!doctype html>
-<html>
-    <head>
-        <jsp:include page="/WEB-INF/template/head.jsp"/>
-        <title>ListaProductos :: DirectMarket</title>
-    </head>
-    <body>
-        <jsp:include page="/WEB-INF/template/header.jsp"/>
 
-        <% Fabrica fabrica = Fabrica.getInstance();  %>
+        <% Fabrica fabrica = Fabrica.getInstance();%>
         <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
-        <% IcontroladorProducto ICP = fabrica.getControladorProducto();
-            List<Categoria> ListaCategoria;
-            ListaCategoria = ICC.findCategoriaEntities();%>
-
-        <div id="producto" class ="main">
-            <h1>Lista de Productos</h1>    
-
-
-            <select  id="dropdown"  onchange="evento(this);">
-                <option>Seleccione categoria</option>
-                <%
-                    for (int i = 0; i < ListaCategoria.size(); i++) {
-                        Boolean tiene = ListaCategoria.get(i).getTieneProductos();
-                        //Si tiene productos me interesa mostrarlo
-                        if (tiene) {
-                            String ncategoria = ListaCategoria.get(i).getNombre();
-                %>
-                <option><%= ncategoria%>  </option>
-                <%
-                        }
-                    }
-                %>
-
-
-            </select>
-        </div>
-
-        <jsp:include page="/WEB-INF/template/footer.jsp"/>
-    </body>
-</html>
+        <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
+        <% List<Producto> ListaProductos;%>
+        <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
+       <%--<%//ListaProductos=ICC.findCategoria("DOS").getListadoProducto();%>--%>
+        
+        <%--<h2>Listar productos (Productos)</h2> --%>
+       <%-- <h2><%//=request.getAttribute("catseleccionada").toString()%></h2>--%>
+        <%for(int i = 0; i < ListaProductos.size(); i++) {%>
+            <div id=principal class="contenedor">
+                    <%String nombre;%>
+                    <%nombre=ListaProductos.get(i).getNombre();%>
+                    <label><%=nombre%></label>
+                    <label class="rotulo">Numero de referencia:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
+                    <label class="rotulo">Nombre:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getNombre()%> </label><br/>
+                    <label class="rotulo">Descripcion:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getDescripcion()%> </label><br/>
+                    <label class="rotulo">Especificacion:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getEspecificacion()%> </label><br/>
+                    <label class="rotulo">Precio:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getPrecio()%> </label><br/>
+                    <label class="rotulo">Proveedor:</label>
+                    <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
+                     
+                     
+            </div>
+     <%}%>
