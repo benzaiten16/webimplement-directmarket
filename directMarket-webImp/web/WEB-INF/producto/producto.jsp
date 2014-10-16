@@ -73,8 +73,10 @@
                             %>
 
                         </select>
-                           
+                        
+                            
                         <%--<button type="button" value="cat" onclick="javascript:add()" > + </button> --%>
+                        
                         <button type="button" value="cat" onclick="add()" > + </button>
 
                     </div>
@@ -89,10 +91,15 @@
                     <%-- Funcion add() --%>
                     <script type="text/javascript">
                         function add() {
-
+                            
+                           var x = document.getElementById("dropdown");
+                           
+        
+                        <%-- 
+                        console.log($('#dropdown').val());
                             $('#dropdown').find(":selected").text();
-                            <h2> lslsl </h2>
-                        }
+                        --%>
+                        };
                     </script>  
 
                     <br>
@@ -110,5 +117,5 @@
 
         <jsp:include page="/WEB-INF/template/footer.jsp"/>
     </body>
-</html>z
+</html>
 
