@@ -269,6 +269,9 @@ div#usuario {
     -moz-border-radius: 5px;
 }
 
+.error_no{
+    display: none;
+}
 
 .fila_input
 {
@@ -608,6 +611,21 @@ select#dropdown
     border-radius: 5px;
 }
 
+
+input.invalid{
+    border: 2px solid red;
+}
+
+input.valid{
+    border: 2px solid green;
+}
+
+#registrar_submit{
+    padding-left: 100px;
+}
+#registrar div{
+    margin-top: 1em;
+}
 select#cat{
 
     width: 285px;
