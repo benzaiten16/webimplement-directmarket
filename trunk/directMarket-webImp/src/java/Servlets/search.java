@@ -38,15 +38,7 @@ public class search extends HttpServlet {
            
             String name = request.getParameter("txtSearch");
             HttpSession sesion= request.getSession(true);
-           
-           
-           
-           
-          
-            
-            
-            
-            
+                     
            sesion.setAttribute("searchResult", name);
           
             

@@ -40,7 +40,7 @@
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_mail" class="rotulo">Mail:</label> <input id="registrar_mail" type="text" name="mail"></input> (*) <span class="error_no">Email Valido</span> 
+                        <label for="registrar_mail" class="rotulo">Mail:</label> <input id="registrar_mail" type="text" name="mail"></input> (*) <span class="error_no">Email Invalido</span> 
                         <br>
                         </div>
                         <div>
@@ -48,7 +48,7 @@
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_passwordR" class="rotulo">Repetir Contraseña:</label> <input id="registrar_passwordR" type="password" name="passwordR"></input> (*) <span class="error_no">Confirmacion requerida o incorrect</span>
+                        <label for="registrar_passwordR" class="rotulo">Repetir Contraseña:</label> <input id="registrar_passwordR" type="password" name="passwordR"></input> (*) <span class="error_no">Confirmacion Incompleta</span>
                         <br>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_fechaNac" class="rotulo">Fecha de Nacimiento: (No Explorer)</label> <input id="registrar_fechaNac" type="date" name="fechaNac"></input> (*) <span class="error_no">Fecha Nacimiento</span>
+                            <label for="registrar_fechaNac" class="rotulo">Fecha de Nacimiento: <br><i>(No Explorer)</i></label> <input id="registrar_fechaNac" type="date" name="fechaNac"></input> (*) <span class="error_no">Fecha Nacimiento</span>
                         <br> 
                         </div>
                         <div>
@@ -123,7 +123,7 @@
                     <%--  ...................................   --%>
 
                     <div id="registrar_submit">            
-                    <button type="submit">Enviar</button>
+                        <button type="submit" class="enviar">Enviar</button>
                     </div>
                     
                 </form>
