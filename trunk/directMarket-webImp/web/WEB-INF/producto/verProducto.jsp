@@ -23,7 +23,11 @@
     <body>
 
         <% Fabrica fabrica = Fabrica.getInstance();%>
-        <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
+        <% IcontroladorProducto ICP = fabrica.getControladorProducto();
+            List<Producto> ListaProducto;
+            ListaProducto = ICP.findProductoEntities();
+
+        %>
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
 
         <%-- traigo el numRef... pero cargo todo lo demas con el titulo --%>
@@ -37,18 +41,18 @@
             <center> <h1>Direct Market</h1><br> </center>
             <h2><i>Producto Seleccionado: </i> <%=titulo%></h2><br>
             <div id="perfil_derecha">
-                
+
                 <%-- Si el Cliente está Logeado --%>
-                <% if ( (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
-            <form>
+                <% if ((request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
+                <form>
                     <h4>Agregar Producto a Carrito: </h4>
                     <label class="rotulo">Cantidad: </label>
                     <input id="cantidad" type="text" name="cantidad">
                     <button class="enviar" type="submit">Agregar</button>
                 </form>
-             <%}%>  
-                
-                
+                <%}%>  
+
+
             </div>
             <div id="perfil_izquierda">
 
@@ -67,6 +71,12 @@
                     <br>
                     <label class="rotulo">Proveedor: </label>
                     <label class="valor"><%= ICP.findProducto(numero).getproveedor().getNickname()%></label>
+                    <br>
+                    <label class="rotulo">Categoria(s): </label> -
+                    <%for (int j = 0; j < ListaProducto.get(j).getlistacategorias().size(); j++) {%>
+
+                            <label class="valor">   <%=ListaProducto.get(j).getlistacategorias().get(j).getNombre()%> -</label>
+                    <%}%>
                 </div>
 
             </div>      
