@@ -1,3 +1,4 @@
+<%@page import="Servlets.EstadoSesion"%>
 <%@page import="Logica_Clases.IcontroladorCategoria"%>
 <%@page import="java.util.List"%>
 <%@page import="Logica_Clases.Producto"%>
@@ -10,49 +11,73 @@
 <%@page import="Logica_Clases.IcontroladorCliente"%>
 <%@page import="java.util.StringTokenizer" %>
 
+<!doctype html>
 <html>
-<% Fabrica fabrica = Fabrica.getInstance();%>
-<% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
 
-<%-- traigo el numRef... pero cargo todo lo demas con el titulo --%>
-<% String pepito = request.getAttribute("numref").toString();%>
-<% Integer numero= Integer.parseInt(pepito); %>
-<% String titulo = ICP.findProducto(numero).getNombre();%>
     <head>
         <jsp:include page="/WEB-INF/template/head.jsp"/>
-        <title>Perfil :: DirectMarket</title>
-    </head>
-    
-    <body>
+        <title>Ver Producto :: DirectMarket</title>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
-    <div id="verProducto" class="main">
-    <h2><%=titulo%></h2><br>
-    <div id="perfil_izquierda">
+    </head>
 
-        <div id="principal" class="contenedor">
-            <label class="rotulo">Numero de Referencia: </label>
-            <label class="valor"><%= ICP.findProducto(numero).getNumRef()%></label>
-            <br>
-            <label class="rotulo">Descripción: </label>
-            <label class="valor"><%= ICP.findProducto(numero).getDescripcion()%></label>
-            <br>
-            <label class="rotulo">Especifiaciones: </label>
-            <textarea class=textarea cols="60" rows="8" ><%= ICP.findProducto(numero).getEspecificacion()%></textarea>
-            <br>
-            <label class="rotulo">Precio: </label>
-            <label class="valor"><%= ICP.findProducto(numero).getPrecio()%></label>
-            <br>
-            <label class="rotulo">Proveedor: </label>
-            <label class="valor"><%= ICP.findProducto(numero).getproveedor().getNickname()%></label>
+    <body>
+
+        <% Fabrica fabrica = Fabrica.getInstance();%>
+        <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
+        <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
+
+        <%-- traigo el numRef... pero cargo todo lo demas con el titulo --%>
+        <% String pepito = request.getAttribute("numref").toString();%>
+        <% Integer numero = Integer.parseInt(pepito); %>
+        <% String titulo = ICP.findProducto(numero).getNombre();%>
+
+
+
+        <div id="verProducto" class="main">
+            <center> <h1>Direct Market</h1><br> </center>
+            <h2><i>Producto Seleccionado: </i> <%=titulo%></h2><br>
+            <div id="perfil_derecha">
+                
+                <%-- Si el Cliente está Logeado --%>
+                <% if ( (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
+            <form>
+                    <h4>Agregar Producto a Carrito: </h4>
+                    <label class="rotulo">Cantidad: </label>
+                    <input id="cantidad" type="text" name="cantidad">
+                    <button class="enviar" type="submit">Agregar</button>
+                </form>
+             <%}%>  
+                
+                
+            </div>
+            <div id="perfil_izquierda">
+
+                <div id="principal" class="contenedor">
+                    <label class="rotulo">Numero de Referencia: </label>
+                    <label class="valor"><%= ICP.findProducto(numero).getNumRef()%></label>
+                    <br>
+                    <label class="rotulo">Descripción: </label>
+                    <label class="valor"><%= ICP.findProducto(numero).getDescripcion()%></label>
+                    <br>
+                    <label class="rotulo">Especifiaciones: </label>
+                    <textarea class=textarea cols="60" rows="8" ><%= ICP.findProducto(numero).getEspecificacion()%></textarea>
+                    <br>
+                    <label class="rotulo">Precio: </label>
+                    <label class="valor"><%= ICP.findProducto(numero).getPrecio()%></label>
+                    <br>
+                    <label class="rotulo">Proveedor: </label>
+                    <label class="valor"><%= ICP.findProducto(numero).getproveedor().getNickname()%></label>
+                </div>
+
+            </div>      
+            <br/>
+            <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
+            <br/><br/>
+            <h3>Comentarios</h3>
+
+
         </div>
 
-    </div>      
-    <br/><br/>
-
-    <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
-
-</div>
-        
         <jsp:include page="/WEB-INF/template/footer.jsp"/>
     </body>
 </html>

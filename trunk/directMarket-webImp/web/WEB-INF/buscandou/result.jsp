@@ -26,17 +26,15 @@
             <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
                 List<Producto> ListaProducto;
                 ListaProducto = ICPR.findProductoEntities();
-                for (int i = 0; i < ListaProducto.size(); i++) {
-                        String nProducto = ListaProducto.get(i).getNombre();
-                        if (nombre.equals(nProducto)) {
-                        ICPR.findProducto2(nombre);    
                 
-                
-                ListaProducto = ICPR.findProducto(request.getAttribute("prod")).getListadoProducto(); --
             %>
 
             
-
+            <%-- for (int i = 0; i < ListaProducto.size(); i++) {
+                        String nProducto = ListaProducto.get(i).getNombre();
+                        if (nombre.equals(nProducto)) {
+                        ICPR.findProducto2(nombre);    
+                --%>
 
             <h1>Resultado(s) de Busqueda!</h1>
             <div id="producto" class ="main">
@@ -44,19 +42,22 @@
                 <br>
                 <h2>Lista de Productos</h2>    
 
-                <% for (int i = 0; i < ListaProducto.size(); i++) {
+                <% Boolean encontro = false; 
+                for (int i = 0; i < ListaProducto.size(); i++) {
                         String nProducto = ListaProducto.get(i).getNombre();
                        
-                        if (ICPR.findProducto2(nombre).getNombre().equals(nProducto)) {
+                        if (ICPR.findProducto2(nombre).getNombre().indexOf (nProducto)  != -1) {
+                          encontro = true; 
                             
-
                 %>
+                <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b></label><br/></a>
                 
-                <a href="verproducto.jsp?prod= <%=ICPR.findProducto2(nombre).getNumRef()%>" >  <%= nProducto%> </a>
                  <br> 
                 <%
                         }
-                    }
+                        
+                        
+                    }//FIN FOR
                 %>
                 
 
