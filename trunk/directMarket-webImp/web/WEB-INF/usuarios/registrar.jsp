@@ -89,11 +89,11 @@
                         <h2>Datos Empresa</h2>
                         <div class="contenedor" >
                             <div>
-                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> <input id="registrar_nombreComp" type="text" name="nombreComp"></input> (*) <span class="error_no">Ingrese nombre Company</span>
+                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> <input id="registrar_nombreComp" type="text" name="nombreComp"></input><span class="error_no">Ingrese nombre Company</span>
                             <br>
                             </div>
                             <div>
-                            <label for="registrar_URLweb" class="rotulo">Web:</label> <input id="registrar_URLweb" type="text" name="URLweb"></input> (*) <span class="error_no">Ingrese URL Company</span>
+                            <label for="registrar_URLweb" class="rotulo">Web:</label> <input id="registrar_URLweb" type="text" name="URLweb"></input><span class="error_no">Ingrese URL Company</span>
                             </div>
                             <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                             <br><br>
