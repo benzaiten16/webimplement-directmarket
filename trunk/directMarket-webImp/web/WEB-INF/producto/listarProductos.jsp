@@ -17,7 +17,8 @@
                     <label class="rotulo">Numero de referencia:</label>
                     <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
                     <label class="rotulo">Nombre:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getNombre()%> </label><br/>
+                    <a href="verProducto?numref=<%=ListaProductos.get(i).getNumRef()%>">
+                    <label class="valor"><%=ListaProductos.get(i).getNombre()%> </label><br/></a>
                     <label class="rotulo">Descripcion:</label>
                     <label class="valor"><%=ListaProductos.get(i).getDescripcion()%> </label><br/>
                     <label class="rotulo">Especificacion:</label>
