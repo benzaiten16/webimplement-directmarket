@@ -40,6 +40,10 @@
         <servlet-name>RegistroUsuarios</servlet-name>
         <servlet-class>Servlets.RegistroUsuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>verProducto</servlet-name>
+        <servlet-class>Servlets.verProducto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <url-pattern>/iniciar-sesion</url-pattern>
@@ -90,6 +94,10 @@
     <servlet-mapping>
         <servlet-name>RegistroUsuarios</servlet-name>
         <url-pattern>/registro-usuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>verProducto</servlet-name>
+        <url-pattern>/verProducto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
