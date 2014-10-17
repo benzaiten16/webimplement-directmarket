@@ -38,15 +38,15 @@ public class RegistroUsuarios extends HttpServlet {
         //INFORMACION SOBRE EL USUARIO EN GRAL
         String nick = request.getParameter("nick");
         String mail = request.getParameter("mail");
-        String password = request.getParameter("pass");
+        String password = request.getParameter("password");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
-        String fnac = request.getParameter("nacimiento");
+        String fnac = request.getParameter("fechaNac");
         int TipoUsr = Integer.parseInt(request.getParameter("tipoUsuario"));
         
         //ESPECIALIZACION, EN CASO DE SER PROVEEDOR
-        String nomCompania = request.getParameter("nomComp");
-        String URLweb = request.getParameter("web");
+        String nomCompania = request.getParameter("nombreComp");
+        String URLweb = request.getParameter("URLweb");
         
         Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
