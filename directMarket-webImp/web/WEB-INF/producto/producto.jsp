@@ -53,8 +53,10 @@
                         <br>
                         <label class="rotulo">Especificaciones:</label><textarea class=textarea cols="60" rows="8" placeholder="ingresar especifiaciones..."></textarea>
                         <br>
-                        <label class="rotulo">Precio:</label> <input type="text" name="precio" placeholder="ingresar Precio...">
+                        <div>
+                        <label for="registrar_precio" class="rotulo">Precio:</label> <input id="registrar_precio" type="text" name="precio" placeholder="ingresar Precio..."></input> (*) <span class="error_no">Formato incorrecto</span>
                         <br>
+                        </div>
                     </div>
                     <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                     <br><br><br>
