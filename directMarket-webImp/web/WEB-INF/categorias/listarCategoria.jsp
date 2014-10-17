@@ -25,8 +25,6 @@
             <h2>Categorias <i>(con productos)</i></h2> <br>
             
             
-            <div id="selected">Selected Gate is:</div>
-    
             <select  id="cat"  onchange="evento();">
                 <option>Seleccione categoria</option>
                 <%for(int i = 0; i < ListaCategoria.size(); i++) {
@@ -62,7 +60,6 @@
                     function evento(){
                         var e = document.getElementById("cat");//toma el combobox
                         var selGate = e.options[e.selectedIndex].value;//toma el valor seleccionado
-                        document.getElementById("selected").innerHTML = "Selected Gate is:"+selGate;
                         var Ajax = new XMLHttpRequest();
                         var DIV_Destino = document.getElementById("prod");
                         Ajax.open("GET", "http://localhost:8080/productos?categoria="+selGate, true);// true = asincronico, no espera a que finalice
@@ -76,10 +73,8 @@
                     }
                 </script> 
             <div id="prod">
-               
+               <%-- ACA se carga el resultado con AJAX --%>
              
             </div>
-<%--esto se va a ir--%>             
-<%--<jsp:include page="/WEB-INF/producto/listarProductos.jsp"/>      --%>  
 </div>
 </div>

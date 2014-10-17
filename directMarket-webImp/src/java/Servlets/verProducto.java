@@ -6,7 +6,6 @@
 package Servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,13 +31,13 @@ public class verProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        PrintWriter out = response.getWriter();
-        
+             
         try {
-           //numero lo resivo como String pero antes era el numRef Integer
-            Integer numRef = Integer.parseInt(request.getParameter("numero") );
+           //numero lo recibo como String pero antes era el numRef Integer
+            //Integer numRef = Integer.parseInt(request.getParameter("numero") );
            
-            request.setAttribute("prod", numRef);
+            String numref= request.getParameter ("numref");
+            request.setAttribute("numref", numref);
             request.getRequestDispatcher("/WEB-INF/producto/verProducto.jsp").forward(request, response);
 
         } catch (Exception ex) {
@@ -47,21 +46,34 @@ public class verProducto extends HttpServlet {
         }
     }
 
-    
-    
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
+   @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-         processRequest(req, resp);
-       // super.doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
-    
-    
-    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }
