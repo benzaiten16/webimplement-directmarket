@@ -206,7 +206,7 @@ div#usuario {
     border-radius: 30px 30px 30px 30px;
     box-shadow: 0 0 8px #FFFFFF;
     padding: 30px;
- 
+
 }
 
 /* iniciar */
@@ -246,7 +246,7 @@ div#usuario {
     padding:25px;
     margin:25px;
     width: 30%;
-   
+
 }
 
 #perfil_izquierda
@@ -270,7 +270,12 @@ div#usuario {
 }
 
 .error_no{
+
+    color: #0066FF; 
+    font-family:arial; 
+    font-size: 2px; 
     display: none;
+
 }
 
 .fila_input
@@ -302,7 +307,7 @@ div#usuario {
 input[type=text] {padding:5px; border:2px solid #ccc; 
                   -webkit-border-radius: 5px;
                   border-radius: 5px;
-                  width: 280px;
+                  width: 190px;
 }
 input[type=text]:focus {border-color:#333; }
 
@@ -311,18 +316,34 @@ input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
                     -webkit-border-radius: 5px;
                     border-radius: 5px; 
                     width: 80px;
+
 }
+
+input[type=date] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+                  width: 190px;
+}
+
 
 
 /*INPUT pasword*/
-input[type=password] {padding:5px; border:2px solid #ccc; 
+input[type=password] {padding:5px; 
+                      border:2px solid #ccc; 
                       -webkit-border-radius: 5px;
                       border-radius: 5px;
-                      width: 280px;
+                      width: 190px;
 }
 input[type=password]:focus {border-color:#333; }
 
-
+.enviar{
+    padding:5px 15px; background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    width: 90px;
+}
 /*Boton*/
 .fila_input .con_margen
 {
@@ -475,7 +496,7 @@ div#SinGatossss{
 #pantera{
     position: absolute;
     top: 10%;
-    
+
     alignment-adjust: central;
 }
 
@@ -601,7 +622,7 @@ div #buscador{
 
 select#dropdown
 {
-    width: 285px;
+    width: 200px;
     height: 25px;
     color: #2F4F4F;
     background-color: #DDDDDD;
@@ -621,7 +642,7 @@ input.valid{
 }
 
 #registrar_submit{
-    padding-left: 100px;
+    padding-left: 200px;
 }
 #registrar div{
     margin-top: 1em;
@@ -640,8 +661,8 @@ select#cat{
 }
 
 #ok{
- padding: 90px;   
- background-color: white;
- top: 10%;
- text-align: center;
+    padding: 90px;   
+    background-color: white;
+    top: 10%;
+    text-align: center;
 }

@@ -26,9 +26,16 @@
             <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
                 List<Producto> ListaProducto;
                 ListaProducto = ICPR.findProductoEntities();
+                for (int i = 0; i < ListaProducto.size(); i++) {
+                        String nProducto = ListaProducto.get(i).getNombre();
+                        if (nombre.equals(nProducto)) {
+                        ICPR.findProducto2(nombre);    
+                
+                
+                ListaProducto = ICPR.findProducto(request.getAttribute("prod")).getListadoProducto(); --
             %>
 
-
+            
 
 
             <h1>Resultado(s) de Busqueda!</h1>
@@ -39,15 +46,19 @@
 
                 <% for (int i = 0; i < ListaProducto.size(); i++) {
                         String nProducto = ListaProducto.get(i).getNombre();
-                        if (ICPR.findProducto2(nombre).equals(nProducto)) {
+                       
+                        if (ICPR.findProducto2(nombre).getNombre().equals(nProducto)) {
+                            
 
                 %>
-                <%= nProducto%>  
+                
+                <a href="verproducto.jsp?prod= <%=ICPR.findProducto2(nombre).getNumRef()%>" >  <%= nProducto%> </a>
+                 <br> 
                 <%
                         }
                     }
                 %>
-
+                
 
 
             </div>
