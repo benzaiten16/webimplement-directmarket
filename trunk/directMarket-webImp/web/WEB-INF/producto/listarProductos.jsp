@@ -11,15 +11,9 @@
         <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
         <% List<Producto> ListaProductos;%>
         <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
-       <%--<%//ListaProductos=ICC.findCategoria("DOS").getListadoProducto();%>--%>
-        
-        <%--<h2>Listar productos (Productos)</h2> --%>
-       <%-- <h2><%//=request.getAttribute("catseleccionada").toString()%></h2>--%>
+        <h2>Listar productos (Productos)</h2>
         <%for(int i = 0; i < ListaProductos.size(); i++) {%>
             <div id=principal class="contenedor">
-                    <%String nombre;%>
-                    <%nombre=ListaProductos.get(i).getNombre();%>
-                    <label><%=nombre%></label>
                     <label class="rotulo">Numero de referencia:</label>
                     <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
                     <label class="rotulo">Nombre:</label>

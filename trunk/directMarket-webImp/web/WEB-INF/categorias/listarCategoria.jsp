@@ -72,9 +72,7 @@
                             }
                         }
                         Ajax.send();
-                        
-                        
-                        
+    
                     }
                 </script> 
             <div id="prod">
