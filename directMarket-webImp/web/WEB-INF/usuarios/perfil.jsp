@@ -67,7 +67,7 @@
                 </div>
                 <br/>
                  <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
-                 <br>
+                 <br><br/>
                    <div class="contenedor">
                      
                      <h2>Orden(es) de Compra</h2>

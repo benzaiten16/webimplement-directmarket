@@ -67,7 +67,7 @@
                 <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
                 
                  Bienvenido <a href="<%= request.getContextPath()%>/perfil"><%= ICC.findCliente(request.getAttribute("usuario").toString()).getNombre()%></a> 
-            |   <a href="<%= request.getContextPath()%>/ordenCompra"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
+                 |   <a href="<%= request.getContextPath()%>/ordenCompra"> <img id="trolley" src="../../media/images/trolley.png"  alt="Carrito de Compras"/></a>   |
             <a href="<%= request.getContextPath()%>/Logout">Cerrar Cesión</a> 
             <br>
             (<%= ICC.findCliente(request.getAttribute("usuario").toString()).getMail()%>)

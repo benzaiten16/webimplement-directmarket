@@ -666,3 +666,14 @@ select#cat{
     top: 10%;
     text-align: center;
 }
+
+/* puntero*/
+
+a:hover{
+     cursor:pointer;
+     color: mediumvioletred;
+     font-size: 105%;
+     /*color: #ad6cad;
+     font-size: 110%;
+     font-weight:bold;*/
+}

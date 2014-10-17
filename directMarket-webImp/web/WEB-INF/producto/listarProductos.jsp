@@ -6,30 +6,34 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
-        <% Fabrica fabrica = Fabrica.getInstance();%>
-        <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
-        <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
-        <% List<Producto> ListaProductos;%>
-        <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
-        <h2>Listar productos (Productos)</h2>
-        <%for(int i = 0; i < ListaProductos.size(); i++) {%>
-            <div id=principal class="contenedor">
-                    <label class="rotulo">Numero de referencia:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
-                    <label class="rotulo">Nombre:</label>
-                    <%-- VALEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE --%>
-                    <a href="verProducto?numref=<%=ListaProductos.get(i).getNumRef()%>">
-                    <label class="valor"><%=ListaProductos.get(i).getNombre()%> </label><br/></a>
-                    <label class="rotulo">Descripcion:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getDescripcion()%> </label><br/>
-                    <label class="rotulo">Especificacion:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getEspecificacion()%> </label><br/>
-                    <label class="rotulo">Precio:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getPrecio()%> </label><br/>
-                    <label class="rotulo">Proveedor:</label>
-                    <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
-                     
-                     
-            </div>
-     <%}%>
+    <% Fabrica fabrica = Fabrica.getInstance();%>
+    <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
+    <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
+    <% List<Producto> ListaProductos;%>
+    <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
+    <h2>Lista de Productos </h2>
+    <%for (int i = 0; i < ListaProductos.size(); i++) {%>
+<br>
+    <div id=principal class="contenedor">
+
+        <label class="rotulo">Nombre:</label>
+        <%-- VALEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE --%>
+        <label class="valor">  <a  href="verProducto?numref=<%=ListaProductos.get(i).getNumRef()%>"> <b> <%=ListaProductos.get(i).getNombre()%> </b></label><br/></a>
+        <label class="rotulo">Numero de referencia:</label>
+        <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
+        <br>
+        <label class="rotulo">Descripcion:</label>
+        <label class="valor"><%=ListaProductos.get(i).getDescripcion()%> </label><br/>
+        <label class="rotulo">Especificacion:</label> 
+        <textarea class=textarea cols="60" rows="8" placeholder="ingresar especifiaciones..."><%=ListaProductos.get(i).getEspecificacion()%></textarea>
+        <br>
+        <label class="rotulo">Precio:</label>
+        <label class="valor"><%=ListaProductos.get(i).getPrecio()%> </label><br/>
+        <br>
+        <label class="rotulo">Proveedor:</label>
+        <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
+
+        <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label><br><br>
+</div>
+<%}%>
 </html>
