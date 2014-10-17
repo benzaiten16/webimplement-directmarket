@@ -5,7 +5,7 @@
 <%@page import="Logica_Clases.Fabrica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
+<html>
         <% Fabrica fabrica = Fabrica.getInstance();%>
         <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
         <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
@@ -36,3 +36,4 @@
                      
             </div>
      <%}%>
+</html>
