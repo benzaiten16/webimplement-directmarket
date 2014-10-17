@@ -1,13 +1,51 @@
 $(document).ready(function(){
         //Controla minimo 2 caracteres para titulo producto
 	$('#registrar_titulo').on('input', function(){
-		var input= $(this);
-		var is_name=input.val();
-		if(is_name && is_name.length>1){input.removeClass("invalid").addClass("valid");}
-		else{input.removeClass("valid").addClass("invalid");}
+            var input= $(this);
+            var is_name=input.val();
+            if(is_name && is_name.length>1){
+                input.removeClass("invalid").addClass("valid");
+            }
+            else{
+                input.removeClass("valid").addClass("invalid");
+            }
 	});
-        //Controla solo numeros en numref
-        $("#registrar_numref").keydown(function(event){
+        //Solo permite ingresar numeros en numref
+        $("#registrar_numref").keydown(function(event) {
+            if(event.shiftKey){
+                event.preventDefault();
+            }
+            if (event.keyCode == 8)    {
+            }
+            else {
+                if (event.keyCode < 95) {
+                    if (event.keyCode < 48 || event.keyCode > 57) {
+                        event.preventDefault();
+                    }
+                } 
+                else {
+                    if (event.keyCode < 96 || event.keyCode > 105) {
+                        event.preventDefault();
+                    }
+                }
+            }
+        });
+        //Controla que numref no quede vacio    
+        $('#registrar_numref').on('input', function(){
+            var input= $(this);
+		var is_name=input.val();
+		if(is_name && is_name.length>0){input.removeClass("invalid").addClass("valid");}
+		else{input.removeClass("valid").addClass("invalid");}
+        });    
+        //Controla que precio no quede vacio    
+        $('#registrar_precio').on('input', function(){
+            var input= $(this);
+		var is_name=input.val();
+		if(is_name && is_name.length>0){input.removeClass("invalid").addClass("valid");}
+		else{input.removeClass("valid").addClass("invalid");}
+        }); 
+        //Solo permite ingresar numeros y punto en precio
+        $("#registrar_precio").keydown(function(event){
             var input= $(this);
             if(event.shiftKey){
                 event.preventDefault();
@@ -25,16 +63,7 @@ $(document).ready(function(){
                     event.preventDefault();
                 }
                 }
-            }});
-        //Controla que numref no quede vacio    
-        $('#registrar_numref').on('input', function(){
-            var input= $(this);
-		var is_name=input.val();
-		if(is_name && is_name.length>0){input.removeClass("invalid").addClass("valid");}
-		else{input.removeClass("valid").addClass("invalid");}
-        });    
-            
-        
+            }});        
 	$("#registrar_submit button").click(function(event){
             //selecciono todo el form sin ser el id dropdown
             var form_data=$("form#registrar").serializeArray();;
