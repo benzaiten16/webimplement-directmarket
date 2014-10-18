@@ -35,16 +35,23 @@
         <br>
         <label class="rotulo">Proveedor:</label>
         <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
+        
+        <%-- CHECKBOX INDICA SI VA PARA EL CARRITO O NO --%>
+        <br/>
+        <label class="check"> <b> Añadir Producto al Carro -> </b></label>
+        
+        <input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/>
+      
+        <br><br>
 
         <label class="divisor">- - - - - - - - - - - - - - -- - - - - - - - - - - - </label><br><br>
 
-        <%-- CHECKBOX INDICA SI VA PARA EL CARRITO O NO --%>
-        Añadir Producto al Carro<input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/>
+        
 
         </div>
     <%}%>
-    <%-- ENVIA ARTICULOS SELECCIONADOS CON CHECKBOX --%>
-    <input type="submit" value="Añadir a carrito" class="con_margen" />
+    <%-- ENVIA ARTICULOS SELECCIONADOS CON CHECKBOX --%><br>   
+    <input type="button" value="Añadir a Ccarrito" class="con_margen" onclick="submit();" />
     
     </form>
 </html>

@@ -44,14 +44,14 @@
             <div id="perfil_derecha">
 
                 <%-- Si el Cliente está Logeado --%>
-                <% if ((request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
+                <%-- if ((request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) { --%>
                 <form>
                     <h4>Agregar Producto a Carrito: </h4>
                     <label class="rotulo">Cantidad: </label>
                     <input id="cantidad" type="text" name="cantidad">
                     <button class="enviar" type="submit">Agregar</button>
                 </form>
-                <%}%>  
+                <%--}--%>  
 
 
             </div>
