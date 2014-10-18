@@ -38,6 +38,7 @@
 
 
         <div id="verProducto" class="main">
+            
             <center> <h1>Direct Market</h1><br> </center>
             <h2><i>Producto Seleccionado: </i> <%=titulo%></h2><br>
             <div id="perfil_derecha">

@@ -36,7 +36,7 @@
         <label class="rotulo">Proveedor:</label>
         <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
 
-        <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label><br><br>
+        <label class="divisor">- - - - - - - - - - - - - - -- - - - - - - - - - - - </label><br><br>
 
         <%-- CHECKBOX INDICA SI VA PARA EL CARRITO O NO --%>
         Añadir Producto al Carro<input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/>

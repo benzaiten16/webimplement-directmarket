@@ -20,17 +20,22 @@
         <% IcontroladorProveedor ICP = fabrica.getControladorProveedor();%>
 
         <div id="perfil" class ="main">
+
+
+
+            <%-- Comenzando a separar si es CLIENTE o PROVEEDOR --%>
+            <% if (session.getAttribute("estado_sesion") != null) {%>
+            <% if (ICC.findCliente(request.getAttribute("usuario").toString()) != null) {%>
+
+            <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
             <div id="perfil_derecha">
-                <img src="media/images/defecto.gif" alt="imagen"/>
+                <div class="contenedor">
+                    <jsp:include page="../categorias/listarCategoria.jsp"/>
+                </div>
             </div>
 
             <div id="perfil_izquierda">
 
-                <%-- Comenzando a separar si es CLIENTE o PROVEEDOR --%>
-
-                <% if (ICC.findCliente(request.getAttribute("usuario").toString()) != null) {%>
-
-                <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
 
                 <div class="contenedor">
                     <h1>Cliente</h1>
@@ -48,10 +53,10 @@
                         <label class="valor">Cliente</label>
                 </div>
                 <br/><br/>
-                
-                    <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
+
+                <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                 <div class="contenedor">
-                    
+
 
                     <br/><br/>
                     <h2>Información Personal</h2>
@@ -66,19 +71,19 @@
                     <br/>
                 </div>
                 <br/>
-                 <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
-                 <br><br/>
-                   <div class="contenedor">
-                     
-                     <h2>Orden(es) de Compra</h2>
-                 </div>
+                <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
+                <br><br/>
+                <div class="contenedor">
+
+                    <h2>Orden(es) de Compra</h2>
+                </div>
+
+            </div>
+            <% } else {%>
 
 
-                <% } else {%>
-
-
-                <%-- ___________________________SI ES UN PROVEEDOR_______________________________ --%>
-
+            <%-- ___________________________SI ES UN PROVEEDOR_______________________________ --%>
+            <div id="perfil_izquierda">
                 <h1>Proveedor</h1>
 
                 <div class="contenedor">
@@ -130,11 +135,11 @@
 
                     <br/>
 
-                </div>
-                     <h2>Listado de Productos</h2>
+                </div>  <br/>  <br/>
+                <h2>Listado de Productos</h2>
                 <% }%> <%-- Fin de if Cliente/Proveedor --%>
 
-
+                <%}%>
 
 
             </div>

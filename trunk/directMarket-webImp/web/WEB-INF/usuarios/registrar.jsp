@@ -36,19 +36,19 @@
                         <h1>Direct Market</h1>
                         <h2>Datos Usuario</h2>
                         <div>
-                        <label for="registrar_nick" class="rotulo">Nick:</label> <input id="registrar_nick"  type="text" name="nick"></input> (*) <span class="error_no">Nick invalido y/o en uso</span>
+                        <label for="registrar_nick" class="rotulo">Nick:</label> <input id="registrar_nick"  type="text" name="nick"/> (*) <span class="error_no">Nick invalido y/o en uso</span>
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_mail" class="rotulo">Mail:</label> <input id="registrar_mail" type="text" name="mail"></input> (*) <span class="error_no">Email Invalido</span> 
+                        <label for="registrar_mail" class="rotulo">Mail:</label> <input id="registrar_mail" type="text" name="mail"/> (*) <span class="error_no">Email Invalido</span> 
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_password" class="rotulo">Contraseña:</label> <input id="registrar_password" type="password" name="password"></input> (*) <span class="error_no">Password mayor a 6 dig</span> 
+                        <label for="registrar_password" class="rotulo">Contraseña:</label> <input id="registrar_password" type="password" name="password"/>(*) <span class="error_no">Password mayor a 6 dig</span> 
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_passwordR" class="rotulo">Repetir Contraseña:</label> <input id="registrar_passwordR" type="password" name="passwordR"></input> (*) <span class="error_no">Confirmacion Incompleta</span>
+                        <label for="registrar_passwordR" class="rotulo">Repetir Contraseña:</label> <input id="registrar_passwordR" type="password" name="passwordR"/>(*) <span class="error_no">Confirmacion Incompleta</span>
                         <br>
                         </div>
                     </div>
@@ -58,15 +58,15 @@
                     <div class="contenedor">
                         <h2>Datos Personales</h2>
                         <div>
-                        <label for="registrar_nombre" class="rotulo">Nombre:</label> <input id="registrar_nombre" type="text" name="nombre"></input> (*) <span class="error_no">Ingrese Nombre</span>
+                        <label for="registrar_nombre" class="rotulo">Nombre:</label> <input id="registrar_nombre" type="text" name="nombre"/> (*) <span class="error_no">Ingrese Nombre</span>
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_apellido" class="rotulo">Apellido:</label> <input id="registrar_apellido" type="text" name="apellido"></input> (*) <span class="error_no">Ingrese Apellido</span>
+                        <label for="registrar_apellido" class="rotulo">Apellido:</label> <input id="registrar_apellido" type="text" name="apellido"/> (*) <span class="error_no">Ingrese Apellido</span>
                         <br>
                         </div>
                         <div>
-                            <label for="registrar_fechaNac" class="rotulo">Fecha de Nacimiento: <br><i>(No Explorer)</i></label> <input id="registrar_fechaNac" type="date" name="fechaNac"></input> (*) <span class="error_no">Fecha Nacimiento</span>
+                            <label for="registrar_fechaNac" class="rotulo">Fecha de Nacimiento: <br><i>(No Explorer)</i></label> <input id="registrar_fechaNac" type="date" name="fechaNac"/> (*) <span class="error_no">Fecha Nacimiento</span>
                         <br> 
                         </div>
                         <div>
@@ -89,11 +89,11 @@
                         <h2>Datos Empresa</h2>
                         <div class="contenedor" >
                             <div>
-                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> <input id="registrar_nombreComp" type="text" name="nombreComp"></input><span class="error_no">Ingrese nombre Company</span>
+                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> <input id="registrar_nombreComp" type="text" name="nombreComp"/><span class="error_no">Ingrese nombre Company</span>
                             <br>
                             </div>
                             <div>
-                            <label for="registrar_URLweb" class="rotulo">Web:</label> <input id="registrar_URLweb" type="text" name="URLweb"></input><span class="error_no">Ingrese URL Company</span>
+                            <label for="registrar_URLweb" class="rotulo">Web:</label> <input id="registrar_URLweb" type="text" name="URLweb"/><span class="error_no">Ingrese URL Company</span>
                             </div>
                             <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                             <br><br>

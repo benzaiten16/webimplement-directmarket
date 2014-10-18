@@ -33,7 +33,7 @@
 
     </script> 
 
-    <div id="perfil_izquierda">
+    
 
         <div class="contenedor">
             <h2>Categorias <i>(con productos)</i></h2> <br>
@@ -64,7 +64,7 @@
         <div id="prod">
 
         </div> 
-    </div>
+    
 
 
     <script type='text/javascript'>
