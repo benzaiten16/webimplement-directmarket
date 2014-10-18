@@ -48,7 +48,7 @@
         <% IcontroladorProveedor ICP = fabrica.getControladorProveedor(); %>
 
         <% String usr = "";%>
-
+               
         <%
             try {
                 ICC.findCliente(request.getAttribute("usuario").toString());
@@ -91,9 +91,9 @@
         <div class = "usuario">
             Bienvenido INVITADO <br>
             <a href="<%= request.getContextPath()%>/registrar"> Registrarse</a> |
-            <% if ( (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) {%>
+            
             <a href="<%= request.getContextPath()%>/home"> Go Home</a>
-             <%}%>   
+             
         </div>
         <% }%>      
 
