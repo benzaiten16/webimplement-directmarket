@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <listener>
+        <description>ServletContextAttributeListener</description>
+        <listener-class>Listeners.ListenerVectorCodSel</listener-class>
+    </listener>
     <servlet>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <servlet-class>Servlets.Login</servlet-class>
@@ -43,6 +47,14 @@
     <servlet>
         <servlet-name>verProducto</servlet-name>
         <servlet-class>Servlets.verProducto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductosSeleccionados</servlet-name>
+        <servlet-class>Servlets.ProductosSeleccionados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarProductoCarrito</servlet-name>
+        <servlet-class>Servlets.EliminarProductoCarrito</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
@@ -98,6 +110,14 @@
     <servlet-mapping>
         <servlet-name>verProducto</servlet-name>
         <url-pattern>/verProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductosSeleccionados</servlet-name>
+        <url-pattern>/Productos-Seleccionados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarProductoCarrito</servlet-name>
+        <url-pattern>/EliminarProductoCarrito</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
