@@ -12,9 +12,12 @@
     <% List<Producto> ListaProductos;%>
     <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
     <h2>Lista de Productos </h2>
-    <%for (int i = 0; i < ListaProductos.size(); i++) {%>
-<br>
-    <div id=principal class="contenedor">
+    
+    <form  action="Productos-Seleccionados" method="POST">
+        
+      <%for (int i = 0; i < ListaProductos.size(); i++) {%>
+        <br>
+        <div id=principal class="contenedor">
 
         <label class="rotulo">Nombre:</label>
         <%-- VALEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE --%>
@@ -34,6 +37,14 @@
         <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
 
         <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label><br><br>
-</div>
-<%}%>
+
+        <%-- CHECKBOX INDICA SI VA PARA EL CARRITO O NO --%>
+        Añadir Producto al Carro<input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/>
+
+        </div>
+    <%}%>
+    <%-- ENVIA ARTICULOS SELECCIONADOS CON CHECKBOX --%>
+    <input type="submit" value="Añadir a carrito" class="con_margen" />
+    
+    </form>
 </html>
