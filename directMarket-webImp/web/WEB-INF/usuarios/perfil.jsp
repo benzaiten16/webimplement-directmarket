@@ -131,6 +131,7 @@
                     <br/>
 
                 </div>
+                     <h2>Listado de Productos</h2>
                 <% }%> <%-- Fin de if Cliente/Proveedor --%>
 
 
