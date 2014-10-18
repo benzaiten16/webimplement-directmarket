@@ -56,6 +56,9 @@ h1 {
     font-size: 35px;
 
 }
+h6 {
+    font-size: 15px;
+}
 
 /* Cabezal */
 
@@ -327,7 +330,6 @@ input[type=date] {padding:5px; border:2px solid #ccc;
 }
 
 
-
 /*INPUT pasword*/
 input[type=password] {padding:5px; 
                       border:2px solid #ccc; 
@@ -350,6 +352,7 @@ input[type=password]:focus {border-color:#333; }
 {
     margin-top: 20px;
     margin-left: 100px;
+    width: auto;
 
 }
 
@@ -398,6 +401,12 @@ input[type=password]:focus {border-color:#333; }
     border: 2px solid #C4C4C4;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+}
+
+.check{
+    
+     font-size: 18px;
+     color:#666666;     
 }
 
 .rotulo
