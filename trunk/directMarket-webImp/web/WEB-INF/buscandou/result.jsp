@@ -35,39 +35,11 @@
                 <center><h1>¡ Resultado(s) de Busqueda !</h1> </center>
 
                 <div id="perfil_derecha"> 
-                    <div>    <br><label class="valor"> Ordenar : </label>                      
-                        <select  id="dropdown"  onchange="evento(this);" name="tipoUsuario">
-                            <option value="1" selected>Alfabeticamente</option>
-                            <option value="2">Precio</option>
-                            <option value="3">Cantidad de Compras de cada Producto</option>
-                        </select>
-                    </div>
-
-                    <%-- la función del div --%>
-
-                    <script type="text/javascript">
-                        function evento(sel) {
-                            if (sel.value == "1") {
-
-                                divT = document.getElementById("ver");
-                                divT.style.display = "none";
-
-                            } else {
-
-
-
-                                divT = document.getElementById("ver");
-                                divT.style.display = "";
-                            }
-                        }
-                    </script>
-
-                    <%--  ...................................   --%>
-
-                </div> <%-- FIN de perfil-derecha --%>
+                    <h1>Direct Market</h1>
+                </div>
                 <div id="perfil_izquierda"> 
                     <h2>Lista de Productos</h2>    
-                    
+                    <br>
 
                     <%for (int i = 0; i < ListaProducto.size(); i++) {
                         
@@ -87,7 +59,7 @@
                                 <%for (int j = 0; j < ListaProducto.get(j).getlistacategorias().size(); j++) {%>
 
                                 <%if ((ListaProducto.get(j).getlistacategorias().get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>
-                                    <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b> </a> </label><br/>
+                                    <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b> </a> </label><br/><br>
                                     <% encontro = true; %>
                                 <%}%>
 

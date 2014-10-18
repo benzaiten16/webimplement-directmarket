@@ -40,9 +40,7 @@ public class search extends HttpServlet {
             HttpSession sesion= request.getSession(true);
                      
            sesion.setAttribute("searchResult", name);
-          
-            
-            
+      
             request.getRequestDispatcher("/WEB-INF/buscandou/result.jsp").forward(request, response); 
 
         } catch (Exception ex) {
