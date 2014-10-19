@@ -14,7 +14,7 @@
 
 
 <!-- referencia al CSS maestro -->
-<link rel="stylesheet" type="text/css" href="../WEB-INF/media/styles/main.css">
+<link rel="stylesheet" type="text/css" href="media/styles/main.css">
 
 <!-- para el icono de la página -->
 <link href="../WEB-INF/media/images/faviconn.ico" rel="icon" type="image/x-icon" />
