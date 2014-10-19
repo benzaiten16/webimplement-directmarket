@@ -30,6 +30,7 @@
             <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
             <div id="perfil_derecha">
                 <div class="contenedor">
+                    
                     <jsp:include page="../categorias/listarCategoria.jsp"/>
                 </div>
             </div>

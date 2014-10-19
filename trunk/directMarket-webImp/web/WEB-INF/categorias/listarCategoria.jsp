@@ -55,6 +55,11 @@
 
             </select>
             <br><br><br><br>
+            
+            <%-- Los botones 
+            
+            <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" />--%>
+            
 
 
 

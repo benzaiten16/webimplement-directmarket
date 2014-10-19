@@ -24,9 +24,6 @@ public class homePage extends HttpServlet {
 	 */
 	public static void initSession(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("paginas_navegadas") == null) {
-			session.setAttribute("paginas_navegadas", 0);
-		}
 		if (session.getAttribute("estado_sesion") == null) {
 			session.setAttribute("estado_sesion", EstadoSesion.NO_LOGIN);
 		}
