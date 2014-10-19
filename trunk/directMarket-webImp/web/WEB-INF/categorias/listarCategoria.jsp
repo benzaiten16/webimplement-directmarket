@@ -57,7 +57,7 @@
             <br><br><br><br>
             
             <%-- Los botones 
-             <a href="<%= request.getContextPath()%>/producto"> <img id="trolley" src="../../media/images/box_icon.png"  alt="Venta Producto"/></a>
+             
             
             
             <input type="image" src="../../media/images/box-md.png"  class="con_margen" onclick="submit();" />
