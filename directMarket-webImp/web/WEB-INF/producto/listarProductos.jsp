@@ -44,14 +44,15 @@
       
         <br><br>
 
-        <label class="divisor">- - - - - - - - - - - - - - -- - - - - - - - - - - - </label><br><br>
+        <label class="divisor">- - - - - - - - - - - - - -- - - - - - </label><br><br>
 
         
 
         </div>
     <%}%>
     <%-- ENVIA ARTICULOS SELECCIONADOS CON CHECKBOX --%><br>   
-    <input type="button" value="Añadir a Ccarrito" class="con_margen" onclick="submit();" />
+    
+    <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" />
     
     </form>
 </html>

@@ -70,6 +70,8 @@
                         <a href="/EliminarProductoCarrito?pos=<%=i%>">[Eliminar]</a>
                     </td>
                 </tr>   </table>
+                    
+                    
 
             <%-- CIERRA EL IF EQUEALS --%>
             <%}%>   
@@ -77,6 +79,8 @@
             <%}%>
             <%-- CIERRA EL FOR EXTERIOR --%>
             <%}%>
+            
+            <input class="con_margen" type="button"  value="Soy lalalalalalla" onclick="submit()"/>
         </div>
         <jsp:include page="/WEB-INF/template/footer.jsp"/>
     </body>
