@@ -6,8 +6,8 @@
 package Servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Vector;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +45,8 @@ public class ProductosSeleccionados extends HttpServlet {
         for (int i=0; i<CodigosSeleccionados.length; i++){
             V.addElement(CodigosSeleccionados[i]);
         }
-       response.sendRedirect("Privado/VerCarrito.jsp");
+    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Privado/VerCarrito.jsp");
+        dispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
