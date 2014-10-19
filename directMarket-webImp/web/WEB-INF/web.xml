@@ -56,6 +56,10 @@
         <servlet-name>EliminarProductoCarrito</servlet-name>
         <servlet-class>Servlets.EliminarProductoCarrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcesaCarrito</servlet-name>
+        <servlet-class>Servlets.ProcesaCarrito</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <url-pattern>/iniciar-sesion</url-pattern>
@@ -116,8 +120,16 @@
         <url-pattern>/Productos-Seleccionados</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ProductosSeleccionados</servlet-name>
+        <url-pattern>/Ver-Carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>EliminarProductoCarrito</servlet-name>
         <url-pattern>/EliminarProductoCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesaCarrito</servlet-name>
+        <url-pattern>/Procesa-Carrito</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

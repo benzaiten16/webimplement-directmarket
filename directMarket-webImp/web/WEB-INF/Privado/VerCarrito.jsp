@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../WEB-INF/media/styles/main.css">
+        <link rel="stylesheet" type="text/css" href="/WEB-INF/media/styles/main.css">
 
         <jsp:include page="/WEB-INF/template/head.jsp"/>
         <title>Ver Carrito</title>
@@ -29,6 +29,7 @@
             <% Vector V = (Vector) session.getAttribute("codigos"); %> 
             <% ListaProductos = ICPROD.findProductoEntities(); %>
             <div class="datagrid">
+        <form action="Procesa-Carrito" method="POST">
             <table border="0" cellspacing="2" cellpadding="5" align="Center">    
                 <thead>
                     <tr bgcolor="red">
@@ -43,16 +44,12 @@
                     </tr>  
                 </thead> <tbody>
                
-            <%
+            <% if(V != null){
                 for (int i = 0; i < V.size(); i++) {
                     for (int j = 0; j < ListaProductos.size(); j++) {
                         if (String.valueOf(V.elementAt(i)).equalsIgnoreCase(String.valueOf(ListaProductos.get(j).getNumRef()))) {
 
             %>    
-
-
-
-            
 
                 <tr bgcolor="#FFFF99">
                     <td><input style="width: 100px"  size ="10" type="text" name="numRef" value="<%= ListaProductos.get(j).getNumRef()%>" readonly="readonly"/>
@@ -80,13 +77,18 @@
             <%}%>
             <%-- CIERRA EL FOR EXTERIOR --%>
             <%}%>
-            
-            
-            
-            </tbody></table></div>        
-
-            
-        </div>
-        <jsp:include page="/WEB-INF/template/footer.jsp"/>
+            <%-- CIERRA EL IF DE V DIST NULL --%>
+           
+     <%}%>
+      </tbody></table></div>        
+     <div align="center">
+         <br>
+            <input class="con_margen" type="button" value="Confirmar Compra" onclick="submit()"/>    
+     </div>
+     </form>      
+        
+     </div>
+    <jsp:include page="/WEB-INF/template/footer.jsp"/>
+    
     </body>
 </html>
