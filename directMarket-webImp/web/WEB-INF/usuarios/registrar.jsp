@@ -44,7 +44,7 @@
                         <br>
                         </div>
                         <div>
-                        <label for="registrar_password" class="rotulo">Contraseña:</label> <input id="registrar_password" type="password" name="password"/>(*) <span class="error_no">Password mayor a 6 dig</span> 
+                        <label for="registrar_password" class="rotulo">Contraseña:</label> <input id="registrar_password" type="password" name="password"/>(*) <span class="error_no">Password mayor a 2 dig</span> 
                         <br>
                         </div>
                         <div>
