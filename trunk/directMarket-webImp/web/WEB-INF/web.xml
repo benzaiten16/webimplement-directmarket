@@ -49,6 +49,11 @@
         <servlet-class>Servlets.verProducto</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Registroproducto</servlet-name>
+        <servlet-class>Servlets.Registroproducto</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>ProductosSeleccionados</servlet-name>
         <servlet-class>Servlets.ProductosSeleccionados</servlet-class>
     </servlet>
@@ -56,9 +61,15 @@
         <servlet-name>EliminarProductoCarrito</servlet-name>
         <servlet-class>Servlets.EliminarProductoCarrito</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>ProcesaCarrito</servlet-name>
         <servlet-class>Servlets.ProcesaCarrito</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Productosproveedor</servlet-name>
+        <servlet-class>Servlets.Productosproveedor</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
@@ -116,6 +127,10 @@
         <url-pattern>/verProducto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Registroproducto</servlet-name>
+        <url-pattern>/registroproducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ProductosSeleccionados</servlet-name>
         <url-pattern>/Productos-Seleccionados</url-pattern>
     </servlet-mapping>
@@ -131,9 +146,11 @@
         <servlet-name>ProcesaCarrito</servlet-name>
         <url-pattern>/Procesa-Carrito</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Productosproveedor</servlet-name>
+        <url-pattern>/productosproveedor</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
-</web-app>
+    </web-app>

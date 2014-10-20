@@ -3,15 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class producto extends HttpServlet {
+/**
+ *
+ * @author Roxio
+ */
+public class Productosproveedor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -22,7 +28,7 @@ public class producto extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
@@ -30,11 +36,12 @@ public class producto extends HttpServlet {
             request.setAttribute("usuario", usr);
             //Si no está logeado puedo cargar el Registrar
             request.getSession().setAttribute("estado_sesion", EstadoSesion.LOGIN_CORRECTO);
-            request.getRequestDispatcher("/WEB-INF/producto/producto.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/producto/productosproveedor.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
-            request.getRequestDispatcher("/Registrarproducto").forward(request, response);
+            request.getSession().setAttribute("estado_sesion", EstadoSesion.NO_LOGIN);
+            request.getRequestDispatcher("/home").forward(request, response);
         }
     }
 

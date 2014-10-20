@@ -36,7 +36,7 @@
 
             <%-- Ingreso de Datos --%>
             <div id="perfil_izquierda">
-                <form id="registrar" action="registro-producto" method="POST">
+                <form id="registrarform" action="registroproducto" method="POST">
                     <div class="contenedor" id="dproducto">
                         <h1>Direct Market</h1>
                         <h2>Datos Producto</h2>
@@ -46,21 +46,20 @@
                         </div>
                         <br>
                         <div>
-                        <label for="registrar_numref" class="rotulo">Numero Referencia:</label> <input id="registrar_numref" placeholder="ingresar Numero de Referencia..." type="text" name="numRefProducto" ></input> (*) <span class="error_no">Numero invalido</span> 
+                        <label for="registrar_numref" class="rotulo">Numero Referencia:</label> <input id="registrar_numref" placeholder="ingresar Numero de Referencia..." type="text" name="numref" ></input> (*) <span class="error_no">Numero invalido</span> 
                         <br>
                         </div>
-                        <label class="rotulo">Descripción:</label> <input type="text" name="DescripcionProducto" placeholder="ingresar breve descripción"> 
+                        <label class="rotulo">Descripción:</label> <input type="text" id="DescripcionProducto" name="DescripcionProducto" placeholder="ingresar breve descripción"> 
                         <br>
-                        <label class="rotulo">Especificaciones:</label><textarea class=textarea cols="60" rows="8" placeholder="ingresar especifiaciones..."></textarea>
+                        <label class="rotulo">Especificaciones:</label><textarea class=textarea cols="60" rows="8" name="especificaciones" id="especificaciones" placeholder="ingresar especifiaciones..."></textarea>
                         <br>
                         <div>
                         <label for="registrar_precio" class="rotulo">Precio:</label> <input id="registrar_precio" type="text" name="precio" placeholder="ingresar Precio..."></input> (*) <span class="error_no">Formato incorrecto</span>
                         <br>
                         </div>
-                    </div>
-                    <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
-                    <br><br><br>
-                    <label class="rotulo">Seleccione la(s) Categoria(s):</label>
+                        <br>
+                        <div>
+                            <label class="rotulo">Seleccione la(s) Categoria(s):</label>
                     <div class="contenedor">
                          <select  id="cate" name="catego">
                             <%-- carga el select Box --%>
@@ -81,22 +80,25 @@
                         </select>
                     <script type='text/javascript'>
                         function agregarcat(){
-                            var tbl = document.getElementById("tblcategoria");
-                            var lastRow = tbl.rows.length;
-                            var row = tbl.insertRow(lastRow);
-                            var valor = row.insertCell(0);
+                            //var tbl = document.getElementById("tblcategoria");
+                            var elementoa = document.getElementById("ccc");
+                            var textoactual=elementoa.innerHTML;
                             var elemento = document.getElementById("cate");//toma el combobox
+                            if (elemento.selectedIndex!==0){ 
                             var catseleccionada = elemento.options[elemento.selectedIndex].value;//toma el valor seleccionado
-                            valor.innerHTML = catseleccionada;
-                        }
+                            //USO espacio de separador
+                            elementoa.innerHTML= textoactual + catseleccionada + " ";
+                        }}
                     </script>
                     <button type="button" value="cat" onclick="agregarcat()" > + </button>
+                    <br>
                     </div>
-                        <br><br>
-                        <table id="tblcategoria">
-                            <th>Categoria(s) Seleccionadas:</th>
-                        </table>
-                        <br><br>
+                            <textarea class=textarea cols="40" rows="5" name="cat" id="ccc" readonly></textarea>
+                        <br>
+                        </div>
+                    </div>
+                     <br><br><br>
+                    
                     <div id="registrar_submit">
                         <button type="submit">Guardar</button>
                     </div>     

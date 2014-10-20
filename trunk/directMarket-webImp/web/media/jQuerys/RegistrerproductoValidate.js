@@ -11,24 +11,8 @@ $(document).ready(function(){
             }
 	});
         //Solo permite ingresar numeros en numref
-        $("#registrar_numref").keydown(function(event) {
-            if(event.shiftKey){
-                event.preventDefault();
-            }
-            if (event.keyCode == 8)    {
-            }
-            else {
-                if (event.keyCode < 95) {
-                    if (event.keyCode < 48 || event.keyCode > 57) {
-                        event.preventDefault();
-                    }
-                } 
-                else {
-                    if (event.keyCode < 96 || event.keyCode > 105) {
-                        event.preventDefault();
-                    }
-                }
-            }
+        $("#registrar_numref").keyup(function () {
+        this.value = this.value.replace(/[^0-9]/g,''); 
         });
         //Controla que numref no quede vacio    
         $('#registrar_numref').on('input', function(){
@@ -46,7 +30,6 @@ $(document).ready(function(){
         }); 
         //Solo permite ingresar numeros y punto en precio
         $("#registrar_precio").keydown(function(event){
-            var input= $(this);
             if(event.shiftKey){
                 event.preventDefault();
             }
@@ -65,8 +48,8 @@ $(document).ready(function(){
                 }
             }});        
 	$("#registrar_submit button").click(function(event){
-            //selecciono todo el form sin ser el id dropdown
-            var form_data=$("form#registrar").serializeArray();;
+            //selecciono todo el form
+            var form_data=$("form#registrarform :not('#DescripcionProducto,#especificaciones,#ccc,#cate')").serializeArray();;
         console.log(form_data);
             var error_free=true;
             for (var input in form_data){
@@ -91,7 +74,8 @@ $(document).ready(function(){
                 event.preventDefault();
             }
             else{
-                alert('No errors: Form will be submitted');
+               // alert('SE INGRESA PRODUCTO..');
+                
             }
         });
 	
