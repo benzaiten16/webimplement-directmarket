@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$('#registrar_nick').on('input', function(){
 		var input= $(this);
 		var is_name=input.val();
-		if(is_name && is_name.length>6){input.removeClass("invalid").addClass("valid");}
+		if(is_name && is_name.length>2){input.removeClass("invalid").addClass("valid");}
 		else{input.removeClass("valid").addClass("invalid");}
 	});
 	
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$('#registrar_password').on('input', function(){
 		var input= $(this);
 		var is_password=input.val();
-		if(is_password && is_password.length>6){input.removeClass("invalid").addClass("valid");}
+		if(is_password && is_password.length>2){input.removeClass("invalid").addClass("valid");}
 		else{input.removeClass("valid").addClass("invalid");}
 	});
 	
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	$('#registrar_nombre').on('input', function(){
 		var input= $(this);
 		var is_name=input.val();
-		if(is_name && is_name.length>=5){input.removeClass("invalid").addClass("valid");}
+		if(is_name && is_name.length>2){input.removeClass("invalid").addClass("valid");}
 		else{input.removeClass("valid").addClass("invalid");}
 	});
 	

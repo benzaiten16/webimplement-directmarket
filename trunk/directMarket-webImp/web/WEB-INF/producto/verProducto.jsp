@@ -74,9 +74,9 @@
                     <label class="valor"><%= ICP.findProducto(numero).getproveedor().getNickname()%></label>
                     <br>
                     <label class="rotulo">Categoria(s): </label> -
-                    <%for (int j = 0; j < ListaProducto.get(j).getlistacategorias().size(); j++) {%>
+                    <%for (int j = 0; j < ICP.findProducto(numero).getlistacategorias().size(); j++) {%>
 
-                            <label class="valor">   <%=ListaProducto.get(j).getlistacategorias().get(j).getNombre()%> -</label>
+                            <label class="valor">   <%=ICP.findProducto(numero).getlistacategorias().get(j).getNombre()%> -</label>
                     <%}%>
                 </div>
 
