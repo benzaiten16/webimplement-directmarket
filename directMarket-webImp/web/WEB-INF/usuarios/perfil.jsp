@@ -137,8 +137,11 @@
                     <br/>
 
                 </div>  <br/>  <br/>
-                <h2>Listado de Productos</h2>
-                <% }%> <%-- Fin de if Cliente/Proveedor --%>
+                <a href="<%= request.getContextPath()%>/productosproveedor">
+                    <h2>Ver listado de Productos</h2> </a>
+                <label class="rotulo">
+                </label> 
+                    <% }%> <%-- Fin de if Cliente/Proveedor --%>
 
                 <%}%>
 
