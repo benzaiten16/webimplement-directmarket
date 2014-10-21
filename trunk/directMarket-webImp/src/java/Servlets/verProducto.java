@@ -35,7 +35,8 @@ public class verProducto extends HttpServlet {
         try {
            //numero lo recibo como String pero antes era el numRef Integer
             //Integer numRef = Integer.parseInt(request.getParameter("numero") );
-           
+           String usr = Login.getUsuarioLogueado(request);
+            request.setAttribute("usuario", usr);
             String numref= request.getParameter ("numref");
             request.setAttribute("numref", numref);
             request.getRequestDispatcher("/WEB-INF/producto/verProducto.jsp").forward(request, response);

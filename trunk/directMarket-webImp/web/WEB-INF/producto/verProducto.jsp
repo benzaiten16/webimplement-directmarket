@@ -29,32 +29,41 @@
 
         %>
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
-
+        <% IcontroladorProveedor ICPROVE = fabrica.getControladorProveedor();%>
         <%-- traigo el numRef... pero cargo todo lo demas con el titulo --%>
         <% String pepito = request.getAttribute("numref").toString();%>
         <% Integer numero = Integer.parseInt(pepito); %>
         <% String titulo = ICP.findProducto(numero).getNombre();%>
 
-
-
+        
         <div id="verProducto" class="main">
-            
+         
             <center> <h1>Direct Market</h1><br> </center>
             <h2><i>Producto Seleccionado: </i> <%=titulo%></h2><br>
             <div id="perfil_derecha">
+        
+        <% String usr = "";%>
+        <%
+            try {
+                ICPROVE.findProveedor(request.getAttribute("usuario").toString());
+            } catch (Exception ex) {
+                usr = "Invitado";
+            }
+        %>
 
-                <%-- Si el Cliente está Logeado --%>
-                <%-- if ((request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)) || (request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.LOGIN_INCORRECTO))) { --%>
-                <form>
+        <%
+          
+               if (usr.equals("Invitado")){
+         %>
+                <form form  action="Productos-Seleccionados" method="POST">
                     <h4>Agregar Producto a Carrito: </h4>
-                    <label class="rotulo">Cantidad: </label>
-                    <input id="cantidad" type="text" name="cantidad">
-                    <button class="enviar" type="submit">Agregar</button>
-                </form>
-                <%--}--%>  
-
-
+                    <input type="checkbox" name="ProductosSeleccionados" value="<%= numero %>"/><img id="trolley" src="../../media/images/carrito.png" width='50' height='50' title='Añadir' alt="Carrito de Compras"/>
+                    <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" />
+                </form>    
+               <%}%>
+   
             </div>
+                    
             <div id="perfil_izquierda">
 
                 <div id="principal" class="contenedor">
