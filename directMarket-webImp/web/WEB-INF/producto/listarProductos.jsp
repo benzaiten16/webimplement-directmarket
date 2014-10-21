@@ -40,7 +40,7 @@
         <br/>
         <label class="check"> <b> Añadir Producto al Carro -> </b></label>
         
-        <input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/>
+        <input type="checkbox" name="ProductosSeleccionados" value="<%= ListaProductos.get(i).getNumRef()%>"/><img id="trolley" src="../../media/images/carrito.png" width='50' height='50' title='Añadir' alt="Carrito de Compras"/>
       
         <br><br>
 
@@ -52,7 +52,7 @@
     <%}%>
     <%-- ENVIA ARTICULOS SELECCIONADOS CON CHECKBOX --%><br>   
     
-    <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" />
+    <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" /><img id="trolley" src="../../media/images/CarritoComprasOk.png" width='50' height='50' title='Añadir al carrito' alt="Carrito de Compras"/>
     
     </form>
 </html>

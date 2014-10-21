@@ -33,13 +33,22 @@ public class EliminarProductoCarrito extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        Vector V = (Vector)sesion.getAttribute("codigos");
-        String pos= request.getParameter("pos");
-        V.removeElementAt(Integer.parseInt(pos));
         
-    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Privado/VerCarrito.jsp");
-    dispatcher.forward(request, response);
-        
+        try{
+            String usr = Login.getUsuarioLogueado(request);
+            request.setAttribute("usuario", usr);
+            Vector V = (Vector)sesion.getAttribute("codigos");
+            String pos= request.getParameter("pos");
+            V.removeElementAt(Integer.parseInt(pos));
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/Privado/VerCarrito.jsp");
+            dispatcher.forward(request, response);
+         }
+       catch(Exception ex){
+			// no existe el usuario, se trata como deslogueado
+			request.getSession().setAttribute("estado_sesion", EstadoSesion.NO_LOGIN);
+			request.getRequestDispatcher("/home").forward(request, response);
+		} 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

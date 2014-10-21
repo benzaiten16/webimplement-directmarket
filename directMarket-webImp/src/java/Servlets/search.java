@@ -36,6 +36,9 @@ public class search extends HttpServlet {
         
         try {
            
+            String usr = Login.getUsuarioLogueado(request);
+            request.setAttribute("usuario", usr);
+            
             String name = request.getParameter("txtSearch");
             HttpSession sesion= request.getSession(true);
                      

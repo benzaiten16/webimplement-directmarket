@@ -44,12 +44,14 @@ public class Registroproducto extends HttpServlet {
         HttpSession objSesion = request.getSession();
         //OBTENER USUARIO- DEBE SER PROVEEDOR
         String usr=null;
-        try {usr = Login.getUsuarioLogueado(request);
-                } 
-        catch ( UsuarioNoEncontrado UsuarioNoEncontrado ) {
+        try {
+             usr = Login.getUsuarioLogueado(request);
+             request.setAttribute("usuario", usr);
+         }catch(Exception ex) {
                 response.sendRedirect("http://localhost:8080/home");
-                }
-        if (usr== null){
+             }
+        
+        if (usr==null){
         response.sendRedirect("http://localhost:8080/home");
                 }
         else {
