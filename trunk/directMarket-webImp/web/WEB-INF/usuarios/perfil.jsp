@@ -29,10 +29,17 @@
 
             <%-- ___________________________SI ES UN CLIENTE_______________________________ --%>
             <div id="perfil_derecha">
+                
+                <% if (ICC.findCliente(request.getAttribute("usuario").toString()).getFoto() != null) { %>
+                <label><%= ICC.findCliente(request.getAttribute("usuario").toString()).getFoto()%></label>
+                <%}%>
+                
                 <div class="contenedor">
                     
                     <jsp:include page="../categorias/listarCategoria.jsp"/>
                 </div>
+                
+                 
             </div>
 
             <div id="perfil_izquierda">

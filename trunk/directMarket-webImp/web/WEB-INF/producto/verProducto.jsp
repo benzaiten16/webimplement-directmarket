@@ -55,7 +55,7 @@
           
                if (usr.equals("Invitado")){
          %>
-                <form form  action="Productos-Seleccionados" method="POST">
+                <form  action="Productos-Seleccionados" method="POST">
                     <h4>Agregar Producto a Carrito: </h4>
                     <input type="checkbox" name="ProductosSeleccionados" value="<%= numero %>"/><img id="trolley" src="../../media/images/carrito.png" width='50' height='50' title='Añadir' alt="Carrito de Compras"/>
                     <input type="button" value="Añadir a Carrito" class="con_margen" onclick="submit();" />
