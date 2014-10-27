@@ -505,9 +505,7 @@ div#SinGatossss{
 }
 
 #pantera{
-    position: absolute;
-    top: 10%;
-
+    bottom: 0px;
     alignment-adjust: central;
 }
 

@@ -6,15 +6,18 @@
 <%@page import="Logica_Clases.Fabrica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
-<!-- referencia al CSS maestro -->
+<!DOCTYPE html>
 <html>
     <head>
         <jsp:include page="/WEB-INF/template/head.jsp"/>
         <title>Ver Producto :: DirectMarket</title>
-        <jsp:include page="/WEB-INF/template/header.jsp"/>
+        
     </head>
 
     <body>
+        
+        <jsp:include page="/WEB-INF/template/header.jsp"/>
+        
         <div id="Productos" class="main">
             <%
                 Fabrica fabrica = Fabrica.getInstance();
@@ -25,6 +28,7 @@
             List<Producto> ListaProductos;
             ListaProductos= ICPR.findProductoEntities();
             %>
+            <center><h1>Direct Market </h1></center>
             <h2>Lista de Productos: </h2>
             
             <%for (int i = 0; i < ListaProductos.size(); i++) { %>
@@ -38,11 +42,15 @@
                 <br>
                 <label class="rotulo">Descripcion:</label>
                 <label class="valor"><%=ListaProductos.get(i).getDescripcion()%> </label><br/>
+                <br>
                 <label class="rotulo">Especificacion:</label> 
                 <textarea class=textarea cols="60" rows="8" placeholder="ingresar especifiaciones..."><%=ListaProductos.get(i).getEspecificacion()%></textarea>
                 <br>
                 <label class="rotulo">Precio:</label>
                 <label class="valor"><%=ListaProductos.get(i).getPrecio()%> </label>
+                <br>
+                <br>
+                <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                 <br>
                 <br>
                 <br>
