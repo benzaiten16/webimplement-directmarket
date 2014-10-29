@@ -60,7 +60,7 @@ public class Registroproducto extends HttpServlet {
         String titulo = request.getParameter("titulo");
         String descripcion = request.getParameter("DescripcionProducto");
         String especificaciones = request.getParameter("especificaciones");
-        int precio = Integer.parseInt(request.getParameter("precio"));
+        float precio = Float.parseFloat(request.getParameter("precio"));
         //Leo dato de la sesion usr
         String nick = usr;        
         Fabrica fabrica = Fabrica.getInstance();
