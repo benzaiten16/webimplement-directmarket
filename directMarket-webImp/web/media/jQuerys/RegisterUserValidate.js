@@ -1,11 +1,33 @@
 $(document).ready(function(){
+        
+  	  $("#registrar_nick").blur(function(){
+                 var username = $(this).val();	
+                var dataString = 'nick='+username;
+        console.log(dataString);
+            $.get('/existeUsuario' , dataString , function(data) {
+                    console.log(data);
+                    if(data==1){
+                        console.log("Entra a igual a 1");
+                       $("#registrar_nick").removeClass("valid").addClass("invalid");
+                       $('#ajax').html("El usuario ya existe");
+                    }
+                    else{
+                        console.log("Entra a igual a 0")
+                       $("#registrar_nick").removeClass("invalid").addClass("valid");
+                            $('#ajax').html("Usuario disponible");
+                    }
+                    },"html");                          
+            });
+    
+    
+    /*
 	$('#registrar_nick').on('input', function(){
 		var input= $(this);
 		var is_name=input.val();
 		if(is_name && is_name.length>2){input.removeClass("invalid").addClass("valid");}
 		else{input.removeClass("valid").addClass("invalid");}
 	});
-	
+	*/
 	$('#registrar_mail').on('input', function(){
 		var input= $(this);
 		var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

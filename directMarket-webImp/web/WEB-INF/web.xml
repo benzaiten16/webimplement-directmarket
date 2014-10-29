@@ -21,6 +21,10 @@
         <servlet-class>Servlets.registrar</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>existeUsuario</servlet-name>
+        <servlet-class>Servlets.existeUsuario</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>listarProductos</servlet-name>
         <servlet-class>Servlets.listarProductos</servlet-class>
     </servlet>
@@ -78,6 +82,10 @@
     <servlet-mapping>
         <servlet-name>homepage</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>existeUsuario</servlet-name>
+        <url-pattern>/existeUsuario</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
