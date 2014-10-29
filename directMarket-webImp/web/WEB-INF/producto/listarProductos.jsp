@@ -20,7 +20,6 @@
         <div id=principal class="contenedor">
 
         <label class="rotulo">Nombre:</label>
-        <%-- VALEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE --%>
         <label class="valor">  <a  href="verProducto?numref=<%=ListaProductos.get(i).getNumRef()%>"> <b> <%=ListaProductos.get(i).getNombre()%> </b></label><br/></a>
         <label class="rotulo">Numero de referencia:</label>
         <label class="valor"><%=ListaProductos.get(i).getNumRef()%> </label><br/>
