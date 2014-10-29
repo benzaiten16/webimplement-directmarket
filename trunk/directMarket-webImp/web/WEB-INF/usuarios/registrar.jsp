@@ -39,6 +39,9 @@
                         <label for="registrar_nick" class="rotulo">Nick:</label> <input id="registrar_nick"  type="text" name="nick"/> (*) <span class="error_no">Nick invalido y/o en uso</span>
                         <br>
                         </div>
+                        <div id="ajax">
+                            <%-- <img class="error_no" src="media/images/no_disponible.png" alt="not available"/> --%>
+                        </div>
                         <div>
                         <label for="registrar_mail" class="rotulo">Mail:</label> <input id="registrar_mail" type="text" name="mail"/> (*) <span class="error_no">Email Invalido</span> 
                         <br>

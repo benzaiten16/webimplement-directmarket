@@ -769,3 +769,8 @@ a:hover{
  .textbox{
      
  }
+ 
+ #ajax{
+    border-style: solid;
+    border-width: 3px;
+}
