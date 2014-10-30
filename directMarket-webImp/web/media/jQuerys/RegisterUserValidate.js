@@ -3,20 +3,28 @@ $(document).ready(function(){
   	  $("#registrar_nick").blur(function(){
                  var username = $(this).val();	
                 var dataString = 'nick='+username;
-        console.log(dataString);
-            $.get('/existeUsuario' , dataString , function(data) {
-                    console.log(data);
-                    if(data==1){
-                        console.log("Entra a igual a 1");
-                       $("#registrar_nick").removeClass("valid").addClass("invalid");
-                       $('#ajax').html("El usuario ya existe");
-                    }
-                    else{
-                        console.log("Entra a igual a 0")
-                       $("#registrar_nick").removeClass("invalid").addClass("valid");
-                            $('#ajax').html("Usuario disponible");
-                    }
-                    },"html");                          
+            console.log(dataString);
+                if(username && username.length>2){
+                    $.get('/existeUsuario' , dataString , function(data) {
+                        console.log(data);
+                        if(data==1){
+                            console.log("Entra a igual a 1");
+                           $("#registrar_nick").removeClass("valid").addClass("invalid");
+                           $('#ajax').html("El usuario ya existe");
+                        }
+                            else{
+                                console.log("Entra a igual a 0");
+                               $("#registrar_nick").removeClass("invalid").addClass("valid");
+                                    $('#ajax').html("Usuario disponible");
+                            }
+                    },"html");
+             }
+              else{
+                  console.log("Cumple condiciones OK");
+                  $("#registrar_nick").removeClass("valid").addClass("invalid");
+                  $('#ajax').html("Nick Invalido (3 caracteres minimo)");
+              }
+	
             });
     
     
