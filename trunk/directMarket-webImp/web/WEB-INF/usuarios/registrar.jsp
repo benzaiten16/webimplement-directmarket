@@ -1,10 +1,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="Logica_Clases.Fabrica"%>
-<%@page import="Logica_Clases.IcontroladorCliente"%>
-
 <%@page import="java.util.Calendar"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--<%@page import="Logica_Clases.Fabrica"%>
+<%@page import="Logica_Clases.IcontroladorCliente"%>--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+
+<%--NUEVOS IMPORTS--%>
+
+<%--NUEVOS IMPORTS--%>
+
 
 <!doctype html>
 <html>
@@ -16,10 +24,6 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
-
-        <% Fabrica fabrica = Fabrica.getInstance();  %>
-        <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
-        
 
     
         <div id="registrar" class ="main">

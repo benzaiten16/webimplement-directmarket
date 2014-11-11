@@ -6,11 +6,6 @@
 
 package Servlets;
 
-import Logica_Clases.Fabrica;
-import Logica_Clases.IcontroladorCategoria;
-import Logica_Clases.IcontroladorProducto;
-import Logica_Clases.IcontroladorProveedor;
-import Logica_Clases.Proveedor;
 import Servlets.exceptions.UsuarioNoEncontrado;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,6 +15,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+/*
+import Logica_Clases.Fabrica;
+import Logica_Clases.IcontroladorCategoria;
+import Logica_Clases.IcontroladorProducto;
+import Logica_Clases.IcontroladorProveedor;
+import Logica_Clases.Proveedor;
+*/
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+
+//NUEVOS IMPORTS
+import ServicesProveedor.WsIProveedor;
+import ServicesProveedor.WsIProveedorService;
+import ServicesCategoria.WsICategoria;
+import ServicesCategoria.WsICategoriaService;
+import ServicesProducto.Producto;
+import ServicesProducto.WsIProducto;
+import ServicesProducto.WsIProductoService;
+import ServicesProveedor.Proveedor;
+//NUEVOS IMPORTS
+
 
 /**
  *
@@ -62,14 +79,37 @@ public class Registroproducto extends HttpServlet {
         String especificaciones = request.getParameter("especificaciones");
         float precio = Float.parseFloat(request.getParameter("precio"));
         //Leo dato de la sesion usr
-        String nick = usr;        
+        String nick = usr;
+        
+        WsICategoriaService CategoriaServices = new WsICategoriaService();
+        WsICategoria ICC = CategoriaServices.getWsICategoriaPort();
+        
+        WsIProveedorService ProveedorServices = new WsIProveedorService();
+        WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+
+        WsIProductoService ProductoServices = new WsIProductoService();
+        WsIProducto ICPR = ProductoServices.getWsIProductoPort();
+        
+        
+        /*
         Fabrica fabrica = Fabrica.getInstance();
         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
         IcontroladorProducto ICPR =fabrica.getControladorProducto();
         IcontroladorCategoria ICC=fabrica.getControladorCategoria();
-	Proveedor prov = ICP.findProveedor(nick);
+	*/
+        
+        //PLANTEO MOMENTANEO.
+        Proveedor prov = ICP.findProveedor(nick);
+        ServicesProducto.Proveedor prov2 = new ServicesProducto.Proveedor();
+        prov2.setApellido(prov.getApellido());
+        prov2.setApellido(prov.getApellido());
+        prov2.setApellido(prov.getApellido());
+        prov2.setApellido(prov.getApellido());
+        prov2.setApellido(prov.getApellido());
+        
+        
         try{
-                ICPR.createProducto(numref, titulo, descripcion, especificaciones, precio, prov);
+                ICPR.createProducto(numref, titulo, descripcion, especificaciones, precio, prov2 );
                 //ASOCIO PRODUCTOS A CATEGORIAS Y VICEVERSA
                 String Categoria = request.getParameter("cat");
                 StringTokenizer tokens=new StringTokenizer(Categoria, " ");

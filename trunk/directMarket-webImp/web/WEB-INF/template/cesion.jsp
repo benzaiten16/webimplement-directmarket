@@ -1,14 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="Logica_Clases.Fabrica"%>
-<%@page import="Logica_Clases.IcontroladorCliente"%>
+<%--<%@page import="Logica_Clases.Fabrica"%>--%>
+<%--<%@page import="Logica_Clases.IcontroladorCliente"%>--%>
 
 
-
+<%--
     <% Fabrica fabrica = Fabrica.getInstance();  %>
     <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
-
+--%>
 
     
         <%--SE REALIZA IMPLEMENTACION DE FORMULARIO PARA INICIO SESION COMUN --%>

@@ -11,9 +11,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+/*
 import Logica_Clases.Fabrica;
 import Logica_Clases.IcontroladorCliente;
 import Logica_Clases.IcontroladorProveedor;
+*/
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+
+//NUEVOS IMPORTS
+import ServicesProveedor.WsIProveedor;
+import ServicesProveedor.WsIProveedorService;
+import services.WsICliente;
+import services.WsIClienteService;
+//NUEVOS IMPORTS
 
 /**
  *
@@ -37,10 +49,18 @@ public class existeUsuario extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String nickName = request.getParameter("nick");
+        
+        WsIClienteService clienteServices = new WsIClienteService();
+        WsICliente ICC = clienteServices.getWsIClientePort();
+       
+        WsIProveedorService ProveedorServices = new WsIProveedorService();
+        WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+
+        /*
         Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
-        
+        */
         try {
                 
             if( (ICC.findCliente(nickName) != null) || ( ICP.findProveedor(nickName) != null ) ){

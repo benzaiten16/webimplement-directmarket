@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8280/iproducto?wsdl" uri="src/conf/xml-resources/web-service-references/iproducto/wsdl/localhost_8280/iproducto.wsdl"/>
+    <system systemId="http://localhost:8280/iproducto?xsd=1" uri="src/conf/xml-resources/web-service-references/iproducto/wsdl/localhost_8280/iproducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/iproveedor?wsdl" uri="src/conf/xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.wsdl"/>
+    <system systemId="http://localhost:8280/iproveedor?xsd=1" uri="src/conf/xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/icliente?wsdl" uri="src/conf/xml-resources/web-service-references/icliente/wsdl/localhost_8280/icliente.wsdl"/>
+    <system systemId="http://localhost:8280/icliente?xsd=1" uri="src/conf/xml-resources/web-service-references/icliente/wsdl/localhost_8280/icliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/icategoria?wsdl" uri="src/conf/xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.wsdl"/>
+    <system systemId="http://localhost:8280/icategoria?xsd=1" uri="src/conf/xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.xsd_1.xsd"/>
+</catalog>
