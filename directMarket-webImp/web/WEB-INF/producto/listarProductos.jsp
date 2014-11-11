@@ -1,16 +1,49 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
 <%@page import="Logica_Clases.Producto"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.IcontroladorCategoria"%>
 <%@page import="Logica_Clases.Fabrica"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+<%@page import="ServicesProducto.Producto"%>
+
+<%@page import="ServicesCategoria.WsICategoria"%>
+<%@page import="ServicesCategoria.WsICategoriaService"%>
+<%--NUEVOS IMPORTS--%>
+
+
 
 <html>
+    
+    <%--
     <% Fabrica fabrica = Fabrica.getInstance();%>
     <% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
     <% IcontroladorProducto ICP = fabrica.getControladorProducto();%>
     <% List<Producto> ListaProductos;%>
     <% ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoProducto();%>
+    --%>
+    
+    <%
+        WsIProductoService ProductoServices = new WsIProductoService();
+        WsIProducto ICP = ProductoServices.getWsIProductoPort();
+
+        WsICategoriaService CategoriaServices = new WsICategoriaService();
+        WsICategoria ICC = CategoriaServices.getWsICategoriaPort();
+        
+        List<Producto> ListaProductos;
+        ListaProductos = ICC.findCategoria(request.getAttribute("catseleccionada").toString()).getListadoproducto();
+    %>
+    
+    
+    
     <h2>Lista de Productos </h2>
     
     <form  action="Productos-Seleccionados" method="POST">
@@ -33,7 +66,7 @@
         <label class="valor"><%=ListaProductos.get(i).getPrecio()%> </label><br/>
         <br>
         <label class="rotulo">Proveedor:</label>
-        <label class="valor"><%=ListaProductos.get(i).getproveedor().getNickname()%> </label><br/>
+        <label class="valor"><%=ListaProductos.get(i).getProveedor().getNickname()%> </label><br/>
         
         <%-- CHECKBOX INDICA SI VA PARA EL CARRITO O NO --%>
         <br/>

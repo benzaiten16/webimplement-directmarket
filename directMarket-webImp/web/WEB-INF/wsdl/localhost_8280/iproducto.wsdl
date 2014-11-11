@@ -16,6 +16,12 @@
 <message name="createProducto2Response">
 <part name="parameters" element="tns:createProducto2Response"></part>
 </message>
+<message name="findProductoEntities">
+<part name="parameters" element="tns:findProductoEntities"></part>
+</message>
+<message name="findProductoEntitiesResponse">
+<part name="parameters" element="tns:findProductoEntitiesResponse"></part>
+</message>
 <message name="findProducto">
 <part name="parameters" element="tns:findProducto"></part>
 </message>
@@ -40,12 +46,6 @@
 <message name="asignarCateResponse">
 <part name="parameters" element="tns:asignarCateResponse"></part>
 </message>
-<message name="findProductoEntities">
-<part name="parameters" element="tns:findProductoEntities"></part>
-</message>
-<message name="findProductoEntitiesResponse">
-<part name="parameters" element="tns:findProductoEntitiesResponse"></part>
-</message>
 <portType name="Ws_IProducto">
 <operation name="createProducto">
 <input wsam:Action="http://Logica_Clases/Ws_IProducto/createProductoRequest" message="tns:createProducto"></input>
@@ -54,6 +54,10 @@
 <operation name="createProducto2">
 <input wsam:Action="http://Logica_Clases/Ws_IProducto/createProducto2Request" message="tns:createProducto2"></input>
 <output wsam:Action="http://Logica_Clases/Ws_IProducto/createProducto2Response" message="tns:createProducto2Response"></output>
+</operation>
+<operation name="findProductoEntities">
+<input wsam:Action="http://Logica_Clases/Ws_IProducto/findProductoEntitiesRequest" message="tns:findProductoEntities"></input>
+<output wsam:Action="http://Logica_Clases/Ws_IProducto/findProductoEntitiesResponse" message="tns:findProductoEntitiesResponse"></output>
 </operation>
 <operation name="findProducto">
 <input wsam:Action="http://Logica_Clases/Ws_IProducto/findProductoRequest" message="tns:findProducto"></input>
@@ -70,10 +74,6 @@
 <operation name="asignarCate">
 <input wsam:Action="http://Logica_Clases/Ws_IProducto/asignarCateRequest" message="tns:asignarCate"></input>
 <output wsam:Action="http://Logica_Clases/Ws_IProducto/asignarCateResponse" message="tns:asignarCateResponse"></output>
-</operation>
-<operation name="findProductoEntities">
-<input wsam:Action="http://Logica_Clases/Ws_IProducto/findProductoEntitiesRequest" message="tns:findProductoEntities"></input>
-<output wsam:Action="http://Logica_Clases/Ws_IProducto/findProductoEntitiesResponse" message="tns:findProductoEntitiesResponse"></output>
 </operation>
 </portType>
 <binding name="Ws_IProductoPortBinding" type="tns:Ws_IProducto">
@@ -96,6 +96,15 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+<operation name="findProductoEntities">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
 <operation name="findProducto">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -124,15 +133,6 @@
 </output>
 </operation>
 <operation name="asignarCate">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
-<operation name="findProductoEntities">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

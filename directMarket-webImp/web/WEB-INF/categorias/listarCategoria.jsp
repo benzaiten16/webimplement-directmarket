@@ -1,9 +1,22 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="java.util.List"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
 <%@page import="Logica_Clases.Categoria"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.IcontroladorCategoria"%>
 <%@page import="Logica_Clases.Fabrica"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesCategoria.Categoria"%>
+<%@page import="ServicesCategoria.WsICategoria"%>
+<%@page import="ServicesCategoria.WsICategoriaService"%>
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+<%--NUEVOS IMPORTS--%>
 
 <!-- referencia al CSS maestro -->
 <link rel="stylesheet" type="text/css" href="media/styles/main.css">
@@ -11,11 +24,28 @@
 <!-- para el icono de la página -->
 <link href="media/images/favicon.ico" rel="icon" type="image/x-icon" />
 <link href="media/images/favicon.ico" rel="shortcut icon" />
-<% Fabrica fabrica = Fabrica.getInstance();  %>
-<% IcontroladorCategoria ICC = fabrica.getControladorCategoria();%>
-<% IcontroladorProducto ICP = fabrica.getControladorProducto();
+
+<%--
+<% Fabrica fabrica = Fabrica.getInstance();  
+ IcontroladorCategoria ICC = fabrica.getControladorCategoria();
+ IcontroladorProducto ICP = fabrica.getControladorProducto();
     List<Categoria> ListaCategoria;
-    ListaCategoria = ICC.findCategoriaEntities();%>
+    ListaCategoria = ICC.findCategoriaEntities();
+%>
+--%>
+
+<%
+WsICategoriaService CategoriaServices = new WsICategoriaService();
+WsICategoria ICC = CategoriaServices.getWsICategoriaPort();
+
+WsIProductoService ProductoServices = new WsIProductoService();
+WsIProducto ICP = ProductoServices.getWsIProductoPort();
+
+List<Categoria> ListaCategoria;
+ListaCategoria = ICC.findCategoriaEntities();
+        
+%>
+
 
 <div id="listarCategorias" >
 
@@ -42,7 +72,10 @@
             <select  id="cat"  onchange="evento();">
                 <option>Seleccione categoria</option>
                 <%for (int i = 0; i < ListaCategoria.size(); i++) {
-                        Boolean tiene = ListaCategoria.get(i).getTieneProductos();
+                         
+                        //SE CAMBIA EL getTieneProductos por el isTieneProductos
+                        
+                        Boolean tiene = ListaCategoria.get(i).isTieneproductos();
                         //Si tiene productos me interesa mostrarlo
                         if (tiene) {
                             String ncategoria = ListaCategoria.get(i).getNombre();
@@ -57,23 +90,14 @@
             <br><br><br><br>
             
             <%-- Los botones 
-             
-            
-            
             <input type="image" src="../../media/images/box-md.png"  class="con_margen" onclick="submit();" />
             --%>
-
-
-
-
-        </div>
+    </div>
 
         <div id="prod">
 
         </div> 
     
-
-
     <script type='text/javascript'>
         function evento() {
             var e = document.getElementById("cat");//toma el combobox

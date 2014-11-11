@@ -1,14 +1,35 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.StringTokenizer" %>
 <%@page import="java.util.List"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
+<%@page import="Logica_Clases.Fabrica"%>
+<%@page import="Logica_Clases.IcontroladorCliente"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.Categoria"%>
 <%@page import="Logica_Clases.IcontroladorCategoria"%>
 <%@page import="Logica_Clases.IcontroladorProveedor"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="Logica_Clases.Fabrica"%>
-<%@page import="Logica_Clases.IcontroladorCliente"%>
-<%@page import="java.util.StringTokenizer" %>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesProveedor.WsIProveedor"%>
+<%@page import="ServicesProveedor.WsIProveedorService"%>
+
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+
+<%@page import="services.WsICliente"%>
+<%@page import="services.WsIClienteService"%>
+
+<%@page import="ServicesCategoria.Categoria"%>
+<%@page import="ServicesCategoria.WsICategoria"%>
+<%@page import="ServicesCategoria.WsICategoriaService"%>
+<%--NUEVOS IMPORTS--%>
+
 
 <!doctype html>
 <html>
@@ -20,6 +41,7 @@
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
 
+        <%--
         <% Fabrica fabrica = Fabrica.getInstance();  %>
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
         <% IcontroladorProveedor ICP = fabrica.getControladorProveedor();%>
@@ -27,7 +49,28 @@
         <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
            List<Categoria> ListaCategoria;
            ListaCategoria = ICCA.findCategoriaEntities();%>
+        --%>
+        
+        <%              
+        WsIProveedorService ProveedorServices = new WsIProveedorService();
+        WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+            
+        WsIProductoService ProductoServices = new WsIProductoService();
+        WsIProducto ICPR = ProductoServices.getWsIProductoPort();
 
+        WsICategoriaService CategoriaServices = new WsICategoriaService();
+        WsICategoria ICCA = CategoriaServices.getWsICategoriaPort();
+
+        WsIClienteService clienteServices = new WsIClienteService();
+        WsICliente ICC = clienteServices.getWsIClientePort();
+
+        List<Categoria> ListaCategoria;
+        ListaCategoria = ICCA.findCategoriaEntities();
+        
+        %>
+        
+        
+        
         <div id="registrar" class ="main">
             <div id="perfil_derecha">
                 <br><br><br><br><br><br>  
@@ -66,7 +109,10 @@
                             <option>Categorias</option>
                             <%
                                 for (int i = 0; i < ListaCategoria.size(); i++) {
-                                    Boolean tiene = ListaCategoria.get(i).getTieneProductos();
+                                    
+                                    //SE CAMIA EL getTieneProductos por el isTieneroductos
+                                    
+                                    Boolean tiene = ListaCategoria.get(i).isTieneproductos();
                                     //Si tiene productos me interesa mostrarlo
                                     if (tiene) {
                                         String ncategoria = ListaCategoria.get(i).getNombre();

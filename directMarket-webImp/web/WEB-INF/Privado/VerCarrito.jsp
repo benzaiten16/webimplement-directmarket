@@ -1,11 +1,25 @@
-<%@page import="java.util.List"%>
-<%@page import="java.util.Vector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Vector"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
 <%@page import="Logica_Clases.Fabrica"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.IcontroladorProveedor"%>
 <%@page import="Logica_Clases.Producto"%>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesProducto.Producto"%>
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+<%@page import="ServicesProveedor.WsIProveedor"%>
+<%@page import="ServicesProveedor.WsIProveedorService"%>
+<%--NUEVOS IMPORTS--%>
 
 
 <!DOCTYPE html>
@@ -21,13 +35,25 @@
 
         <div id="producto" class ="main">
             <center><h1>Listado de Productos en el Carrito</h1></center>
-
+            
+            <%--
             <% Fabrica fabrica = Fabrica.getInstance();  %>
             <% IcontroladorProducto ICPROD = fabrica.getControladorProducto(); %>
             <% IcontroladorProveedor ICPROV = fabrica.getControladorProveedor(); %>
+            --%>
+            <%
+            WsIProveedorService ProveedorServices = new WsIProveedorService();
+            WsIProveedor ICPROV = ProveedorServices.getWsIProveedorPort();
+            
+            WsIProductoService ProductoServices = new WsIProductoService();
+            WsIProducto ICPROD = ProductoServices.getWsIProductoPort();    
+            
+            %>
+            
             <% List<Producto> ListaProductos = null;%>
             <% Vector V = (Vector) session.getAttribute("codigos"); %> 
             <% ListaProductos = ICPROD.findProductoEntities(); %>
+            
             <div class="datagrid">
         <form action="Procesa-Carrito" method="POST">
             <table border="0" cellspacing="2" cellpadding="5" align="Center">    
@@ -62,7 +88,7 @@
                     </td>   
                     <td><input style="width: 100px" size ="5" type="text" name="precio" value="<%= ListaProductos.get(j).getPrecio()%>" readonly="readonly"/>
                     </td>       
-                    <td><input style="width: 100px" size ="20" type="text" name="proveedor" value="<%= ListaProductos.get(j).getproveedor().getNickname()%>" readonly="readonly"/>
+                    <td><input style="width: 100px" size ="20" type="text" name="proveedor" value="<%= ListaProductos.get(j).getProveedor().getNickname()%>" readonly="readonly"/>
                     </td>       
                     <td bgcolor="009999"><input style="width: 50px" size ="3" type="text" name="Cantidad" value="1"/>
                     </td>       
