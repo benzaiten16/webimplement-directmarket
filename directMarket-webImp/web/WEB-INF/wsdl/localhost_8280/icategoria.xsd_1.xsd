@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://Logica_Clases/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Logica_Clases/">
+
+<xs:element name="RemoveProductoCategoria" type="tns:RemoveProductoCategoria"></xs:element>
+
+<xs:element name="RemoveProductoCategoriaResponse" type="tns:RemoveProductoCategoriaResponse"></xs:element>
+
+<xs:element name="addCatHijaToCatPadre" type="tns:addCatHijaToCatPadre"></xs:element>
+
+<xs:element name="addCatHijaToCatPadreResponse" type="tns:addCatHijaToCatPadreResponse"></xs:element>
+
+<xs:element name="addProductoCategoria" type="tns:addProductoCategoria"></xs:element>
+
+<xs:element name="addProductoCategoriaResponse" type="tns:addProductoCategoriaResponse"></xs:element>
+
+<xs:element name="createCategoria" type="tns:createCategoria"></xs:element>
+
+<xs:element name="createCategoriaResponse" type="tns:createCategoriaResponse"></xs:element>
+
+<xs:element name="createCategoriacpadre" type="tns:createCategoriacpadre"></xs:element>
+
+<xs:element name="createCategoriacpadreResponse" type="tns:createCategoriacpadreResponse"></xs:element>
+
+<xs:element name="editCategoria" type="tns:editCategoria"></xs:element>
+
+<xs:element name="editCategoriaResponse" type="tns:editCategoriaResponse"></xs:element>
+
+<xs:element name="findCategoria" type="tns:findCategoria"></xs:element>
+
+<xs:element name="findCategoriaEntities" type="tns:findCategoriaEntities"></xs:element>
+
+<xs:element name="findCategoriaEntitiesResponse" type="tns:findCategoriaEntitiesResponse"></xs:element>
+
+<xs:element name="findCategoriaResponse" type="tns:findCategoriaResponse"></xs:element>
+
+<xs:element name="getTieneProd" type="tns:getTieneProd"></xs:element>
+
+<xs:element name="getTieneProdResponse" type="tns:getTieneProdResponse"></xs:element>
+
+<xs:complexType name="findCategoriaEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoriaEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoria">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tieneProductos" type="xs:boolean" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoriaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:categoria" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCategoriacpadre">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCategoriacpadreResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RemoveProductoCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RemoveProductoCategoriaResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCategoriaResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCatHijaToCatPadre">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCatHijaToCatPadreResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editCategoriaResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductoCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductoCategoriaResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTieneProd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTieneProdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

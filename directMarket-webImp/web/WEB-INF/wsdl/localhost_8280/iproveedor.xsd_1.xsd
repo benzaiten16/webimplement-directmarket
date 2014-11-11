@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://Logica_Clases/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Logica_Clases/">
+
+<xs:element name="Exception" type="tns:Exception"></xs:element>
+
+<xs:element name="NonexistentEntityException" type="tns:NonexistentEntityException"></xs:element>
+
+<xs:element name="PreexistingEntityException" type="tns:PreexistingEntityException"></xs:element>
+
+<xs:element name="RemoveProductoProveedor" type="tns:RemoveProductoProveedor"></xs:element>
+
+<xs:element name="RemoveProductoProveedorResponse" type="tns:RemoveProductoProveedorResponse"></xs:element>
+
+<xs:element name="addProductoProveedor" type="tns:addProductoProveedor"></xs:element>
+
+<xs:element name="addProductoProveedorResponse" type="tns:addProductoProveedorResponse"></xs:element>
+
+<xs:element name="createProveedor" type="tns:createProveedor"></xs:element>
+
+<xs:element name="createProveedor2" type="tns:createProveedor2"></xs:element>
+
+<xs:element name="createProveedor2Response" type="tns:createProveedor2Response"></xs:element>
+
+<xs:element name="createProveedorResponse" type="tns:createProveedorResponse"></xs:element>
+
+<xs:element name="findProveedor" type="tns:findProveedor"></xs:element>
+
+<xs:element name="findProveedorEntities" type="tns:findProveedorEntities"></xs:element>
+
+<xs:element name="findProveedorEntitiesResponse" type="tns:findProveedorEntitiesResponse"></xs:element>
+
+<xs:element name="findProveedorResponse" type="tns:findProveedorResponse"></xs:element>
+
+<xs:complexType name="createProveedor2">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:base64Binary" nillable="true" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createProveedor2Response">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PreexistingEntityException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createProveedor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createProveedorResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductoProveedor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductoProveedorResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NonexistentEntityException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RemoveProductoProveedor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RemoveProductoProveedorResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProveedor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:proveedor" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proveedor">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence>
+<xs:element name="Compania" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Web" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="listaproductos" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="usuario" abstract="true">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechNacim" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="mail" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nickname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="NumRef" type="xs:int"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Especificacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="precio" type="xs:float"></xs:element>
+<xs:element name="listacategorias" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="Foto0" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto1" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto2" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="proveedor" type="tns:proveedor" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoria">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tieneProductos" type="xs:boolean" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProveedorEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProveedorEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:proveedor" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

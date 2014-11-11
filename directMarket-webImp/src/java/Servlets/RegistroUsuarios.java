@@ -5,9 +5,6 @@
  */
 package Servlets;
 
-import Logica_Clases.Fabrica;
-import Logica_Clases.IcontroladorCliente;
-import Logica_Clases.IcontroladorProveedor;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +12,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+/*
+import Logica_Clases.Fabrica;
+import Logica_Clases.IcontroladorCliente;
+import Logica_Clases.IcontroladorProveedor;
+*/
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+
+//NUEVOS IMPORTS
+import services.WsICliente;
+import services.WsIClienteService;
+import ServicesProveedor.WsIProveedor;
+import ServicesProveedor.WsIProveedorService;
+//NUEVOS IMPORTS
 
 /**
  *
@@ -48,10 +60,17 @@ public class RegistroUsuarios extends HttpServlet {
         String nomCompania = request.getParameter("nombreComp");
         String URLweb = request.getParameter("URLweb");
         
-        Fabrica fabrica = Fabrica.getInstance();
+        WsIClienteService clienteServices = new WsIClienteService();
+        WsICliente ICC = clienteServices.getWsIClientePort();
+       
+        WsIProveedorService ProveedorServices = new WsIProveedorService();
+        WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+
+        
+        /*Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
-	
+	*/
         try{
             if(TipoUsr == 1){
                 ICC.createCliente(nick, nombre, apellido, fnac, password, mail);

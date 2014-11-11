@@ -5,9 +5,6 @@
  */
 package Servlets;
 
-import Logica_Clases.Fabrica;
-import Logica_Clases.IcontroladorCliente;
-import Logica_Clases.IcontroladorProveedor;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import Servlets.exceptions.UsuarioNoEncontrado;
+
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+/*
+import Logica_Clases.Fabrica;
+import Logica_Clases.IcontroladorCliente;
+import Logica_Clases.IcontroladorProveedor;
+*/
+//IMPORTS VIEJOS DEL PROYECTO ANTERIOR
+
+//NUEVOS IMPORTS
+import services.WsICliente;
+import services.WsIClienteService;
+import ServicesProveedor.WsIProveedor;
+import ServicesProveedor.WsIProveedorService;
+//NUEVOS IMPORTS
+
 
 /**
  *
@@ -40,10 +53,18 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
         EstadoSesion nuevoEstado = null;
         
-        Fabrica fabrica = Fabrica.getInstance();
+        WsIClienteService clienteServices = new WsIClienteService();
+        WsICliente ICC = clienteServices.getWsIClientePort();
+       
+        WsIProveedorService ProveedorServices = new WsIProveedorService();
+        WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+            
+        /*Fabrica fabrica = Fabrica.getInstance();
         IcontroladorCliente ICC = fabrica.getControladorCliente();
         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
-		try {
+	*/
+        
+        	try {
                 // chequea contraseña
 		    //Si no es cliente, entonces es proveedor distinto de null
                    //if(!request.getSession().getAttribute("estado_sesion").equals(EstadoSesion.NO_LOGIN)){
@@ -97,10 +118,18 @@ public class Login extends HttpServlet {
 	static public String getUsuarioLogueado(HttpServletRequest request)
 			throws UsuarioNoEncontrado
 	{
-         Fabrica fabrica = Fabrica.getInstance();
-         IcontroladorCliente ICC = fabrica.getControladorCliente();
-         IcontroladorProveedor ICP = fabrica.getControladorProveedor();
-        try{
+         WsIClienteService clienteServices = new WsIClienteService();
+         WsICliente ICC = clienteServices.getWsIClientePort();
+       
+         WsIProveedorService ProveedorServices = new WsIProveedorService();
+         WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+        
+         /*Fabrica fabrica = Fabrica.getInstance();
+        IcontroladorCliente ICC = fabrica.getControladorCliente();
+        IcontroladorProveedor ICP = fabrica.getControladorProveedor();
+	*/
+        
+         try{
            if( (ICC.findCliente(request.getSession().getAttribute("usuario_logueado").toString()) != null )|| (ICP.findProveedor(request.getSession().getAttribute("usuario_logueado").toString()) != null)){
                return request.getSession().getAttribute("usuario_logueado").toString();
            }
