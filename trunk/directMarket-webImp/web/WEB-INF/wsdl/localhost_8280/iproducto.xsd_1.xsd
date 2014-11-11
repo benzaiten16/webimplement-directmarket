@@ -80,8 +80,11 @@
 
 <xs:complexType name="categoria">
 <xs:sequence>
-<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="tieneProductos" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tieneproductos" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="padre" type="tns:categoria" minOccurs="0"></xs:element>
+<xs:element name="listadoproducto" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="listadocategoria" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
 </xs:sequence>
 </xs:complexType>
 
@@ -122,16 +125,6 @@
 <xs:sequence></xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findProductoEntities">
-<xs:sequence></xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findProductoEntitiesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="asignarCate">
 <xs:sequence>
 <xs:element name="arg0" type="xs:int"></xs:element>
@@ -152,6 +145,16 @@
 <xs:complexType name="findProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:producto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProductoEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProductoEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
 </xs:sequence>
 </xs:complexType>
 

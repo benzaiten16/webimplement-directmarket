@@ -36,23 +36,6 @@
 
 <xs:element name="getTieneProdResponse" type="tns:getTieneProdResponse"></xs:element>
 
-<xs:complexType name="findCategoriaEntities">
-<xs:sequence></xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findCategoriaEntitiesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="categoria">
-<xs:sequence>
-<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="tieneProductos" type="xs:boolean" minOccurs="0"></xs:element>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="findCategoria">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
@@ -62,6 +45,65 @@
 <xs:complexType name="findCategoriaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:categoria" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoria">
+<xs:sequence>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tieneproductos" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="padre" type="tns:categoria" minOccurs="0"></xs:element>
+<xs:element name="listadoproducto" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="listadocategoria" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="NumRef" type="xs:int"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Especificacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="precio" type="xs:float"></xs:element>
+<xs:element name="listacategorias" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="Foto0" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto1" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto2" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="proveedor" type="tns:proveedor" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proveedor">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence>
+<xs:element name="Compania" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Web" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="listaproductos" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="usuario" abstract="true">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechNacim" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="mail" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nickname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoriaEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoriaEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
 </xs:sequence>
 </xs:complexType>
 

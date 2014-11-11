@@ -1,10 +1,26 @@
-<%@page import="Logica_Clases.IcontroladorProducto"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="java.util.List"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
+<%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.Producto"%>
 <%@page import="Logica_Clases.Proveedor"%>
 <%@page import="Logica_Clases.IcontroladorProveedor"%>
 <%@page import="Logica_Clases.Fabrica"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesProveedor.WsIProveedor"%>
+<%@page import="ServicesProveedor.WsIProveedorService"%>
+<%@page import="ServicesProveedor.Proveedor"%>
+
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+<%@page import="ServicesProducto.Producto"%>
+<%--NUEVOS IMPORTS--%>
+
 
 <!DOCTYPE html>
 <html>
@@ -19,6 +35,9 @@
         <jsp:include page="/WEB-INF/template/header.jsp"/>
         
         <div id="Productos" class="main">
+            
+            
+            <%--
             <%
                 Fabrica fabrica = Fabrica.getInstance();
             String prov =request.getAttribute("usuario").toString();
@@ -28,11 +47,28 @@
             List<Producto> ListaProductos;
             ListaProductos= ICPR.findProductoEntities();
             %>
+            --%>
+            
+            <%
+             String prov =request.getAttribute("usuario").toString();
+             
+            WsIProveedorService ProveedorServices = new WsIProveedorService();
+            WsIProveedor ICP = ProveedorServices.getWsIProveedorPort();
+            
+            WsIProductoService ProductoServices = new WsIProductoService();
+            WsIProducto ICPR = ProductoServices.getWsIProductoPort();
+            
+            List<Producto> ListaProductos;
+            ListaProductos= ICPR.findProductoEntities();
+            
+            %>
+            
+            
             <center><h1>Direct Market </h1></center>
             <h2>Lista de Productos: </h2>
             
             <%for (int i = 0; i < ListaProductos.size(); i++) { %>
-                <%String provisto=ListaProductos.get(i).getproveedor().getNickname();
+                <%String provisto=ListaProductos.get(i).getProveedor().getNickname();
                 if (provisto.equals(prov)) {%>
                 <label class="rotulo">Titulo</label>
                 <label class="valor"><%=ListaProductos.get(i).getNombre()%></label>

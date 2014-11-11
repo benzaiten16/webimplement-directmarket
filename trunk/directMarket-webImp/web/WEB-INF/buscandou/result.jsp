@@ -1,10 +1,20 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
+
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
+<%--
 <%@page import="Logica_Clases.Producto"%>
 <%@page import="Logica_Clases.IcontroladorProducto"%>
 <%@page import="Logica_Clases.Fabrica"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+--%>
+<%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
 
 
+<%--NUEVOS IMPORTS--%>
+<%@page import="ServicesProducto.Producto"%>
+<%@page import="ServicesProducto.WsIProducto"%>
+<%@page import="ServicesProducto.WsIProductoService"%>
+<%--NUEVOS IMPORTS--%>
 
 
 <!DOCTYPE html>
@@ -21,14 +31,24 @@
             <% Boolean encontro = false; %>
 
 
-
+            <%--
             <% Fabrica fabrica = Fabrica.getInstance();  %>
             <% IcontroladorProducto ICPR = fabrica.getControladorProducto();
                 List<Producto> ListaProducto;
                 ListaProducto = ICPR.findProductoEntities();
 
             %>
+            --%>
+            <%
 
+            WsIProductoService ProductoServices = new WsIProductoService();
+            WsIProducto ICPR = ProductoServices.getWsIProductoPort();    
+             
+            List<Producto> ListaProducto;
+            ListaProducto = ICPR.findProductoEntities();
+
+            %>
+            
 
 
             <div id="producto" class ="main">
@@ -49,16 +69,16 @@
                             // Si coincide con una parte del Nombre del Producto --
                             if ((nProducto.toLowerCase().indexOf(nombre.toLowerCase()) != -1) || // ... O ...
                                     // Si coincide con una parte del Nombre del Proveedor --
-                                    (ListaProducto.get(i).getproveedor().getNombre().toLowerCase().indexOf(nombre.toLowerCase()) != -1)) {
+                                    (ListaProducto.get(i).getProveedor().getNombre().toLowerCase().indexOf(nombre.toLowerCase()) != -1)) {
                                 encontro = true;
                     %>
                             <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b></a></label>
                             <br>
                             <%} else {%> 
                                 <%-- Entro a chequear todas las categorias a la q pertenece --%>
-                                <%for (int j = 0; j < ListaProducto.get(j).getlistacategorias().size(); j++) {%>
+                                <%for (int j = 0; j < ListaProducto.get(j).getListacategorias().size(); j++) {%>
 
-                                <%if ((ListaProducto.get(j).getlistacategorias().get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>
+                                <%if ((ListaProducto.get(j).getListacategorias().get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>
                                     <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b> </a> </label><br/><br>
                                     <% encontro = true; %>
                                 <%}%>
