@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://Logica_Clases/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Logica_Clases/">
+
+<xs:element name="addLineaToOrdenCompra" type="tns:addLineaToOrdenCompra"></xs:element>
+
+<xs:element name="addLineaToOrdenCompraResponse" type="tns:addLineaToOrdenCompraResponse"></xs:element>
+
+<xs:element name="createOrdenCompra" type="tns:createOrdenCompra"></xs:element>
+
+<xs:element name="createOrdenCompra2" type="tns:createOrdenCompra2"></xs:element>
+
+<xs:element name="createOrdenCompra2Response" type="tns:createOrdenCompra2Response"></xs:element>
+
+<xs:element name="createOrdenCompraResponse" type="tns:createOrdenCompraResponse"></xs:element>
+
+<xs:element name="editOrdenCompra2" type="tns:editOrdenCompra2"></xs:element>
+
+<xs:element name="editOrdenCompra2Response" type="tns:editOrdenCompra2Response"></xs:element>
+
+<xs:element name="eliminarOrdenCompra" type="tns:eliminarOrdenCompra"></xs:element>
+
+<xs:element name="eliminarOrdenCompraResponse" type="tns:eliminarOrdenCompraResponse"></xs:element>
+
+<xs:element name="findOrdenCompra" type="tns:findOrdenCompra"></xs:element>
+
+<xs:element name="findOrdenCompraEntities" type="tns:findOrdenCompraEntities"></xs:element>
+
+<xs:element name="findOrdenCompraEntitiesResponse" type="tns:findOrdenCompraEntitiesResponse"></xs:element>
+
+<xs:element name="findOrdenCompraResponse" type="tns:findOrdenCompraResponse"></xs:element>
+
+<xs:complexType name="findOrdenCompraEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findOrdenCompraEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ordenCompra" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ordenCompra">
+<xs:sequence>
+<xs:element name="bajaLogica" type="xs:boolean"></xs:element>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"></xs:element>
+<xs:element name="fechaOrden" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numero" type="xs:int"></xs:element>
+<xs:element name="precioTotal" type="xs:float"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence>
+<xs:element name="ordenesdecompra" type="tns:ordenCompra" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="usuario" abstract="true">
+<xs:sequence>
+<xs:element name="Nickname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="FechNacim" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Mail" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createOrdenCompra">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:float"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createOrdenCompraResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrdenCompra">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrdenCompraResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createOrdenCompra2">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:float"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createOrdenCompra2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addLineaToOrdenCompra">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addLineaToOrdenCompraResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editOrdenCompra2">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:float"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editOrdenCompra2Response">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findOrdenCompra">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findOrdenCompraResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ordenCompra" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

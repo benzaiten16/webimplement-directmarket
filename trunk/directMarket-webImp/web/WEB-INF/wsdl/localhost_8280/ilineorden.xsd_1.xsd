@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://Logica_Clases/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Logica_Clases/">
+
+<xs:element name="IntcreateLineaOrden" type="tns:IntcreateLineaOrden"></xs:element>
+
+<xs:element name="IntcreateLineaOrdenResponse" type="tns:IntcreateLineaOrdenResponse"></xs:element>
+
+<xs:element name="createLineaOrden" type="tns:createLineaOrden"></xs:element>
+
+<xs:element name="createLineaOrdenResponse" type="tns:createLineaOrdenResponse"></xs:element>
+
+<xs:element name="findLineaOrden" type="tns:findLineaOrden"></xs:element>
+
+<xs:element name="findLineaOrdenEntities" type="tns:findLineaOrdenEntities"></xs:element>
+
+<xs:element name="findLineaOrdenEntitiesResponse" type="tns:findLineaOrdenEntitiesResponse"></xs:element>
+
+<xs:element name="findLineaOrdenResponse" type="tns:findLineaOrdenResponse"></xs:element>
+
+<xs:complexType name="IntcreateLineaOrden">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:float"></xs:element>
+<xs:element name="arg2" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IntcreateLineaOrdenResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findLineaOrden">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findLineaOrdenResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:lineaOrden" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lineaOrden">
+<xs:sequence>
+<xs:element name="id" type="xs:int"></xs:element>
+<xs:element name="p" type="tns:producto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="NumRef" type="xs:int"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Especificacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="precio" type="xs:float"></xs:element>
+<xs:element name="listacategorias" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="Foto0" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto1" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="Foto2" type="xs:base64Binary" minOccurs="0"></xs:element>
+<xs:element name="proveedor" type="tns:proveedor" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="categoria">
+<xs:sequence>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tieneproductos" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="padre" type="tns:categoria" minOccurs="0"></xs:element>
+<xs:element name="listadoproducto" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="listadocategoria" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proveedor">
+<xs:complexContent>
+<xs:extension base="tns:usuario">
+<xs:sequence>
+<xs:element name="Compania" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Web" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="listaproductos" type="tns:producto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="usuario" abstract="true">
+<xs:sequence>
+<xs:element name="Nickname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="FechNacim" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Mail" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findLineaOrdenEntities">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findLineaOrdenEntitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:lineaOrden" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createLineaOrden">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+<xs:element name="arg1" type="xs:float"></xs:element>
+<xs:element name="arg2" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createLineaOrdenResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+</xs:schema>

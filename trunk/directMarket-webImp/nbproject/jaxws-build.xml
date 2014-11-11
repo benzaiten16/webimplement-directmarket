@@ -26,6 +26,22 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
+    <target name="wsimport-client-icategoria" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/icategoria"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/icategoria" destdir="${build.generated.dir}/jax-wsCache/icategoria" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/icategoria?wsdl" xnocompile="true" xendorsed="true" package="ServicesCategoria">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/icategoria"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/icategoria">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-icategoria" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesCategoria"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/icategoria"/>
+    </target>
     <target name="wsimport-client-icliente" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/icliente"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/icliente" destdir="${build.generated.dir}/jax-wsCache/icliente" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/icliente/wsdl/localhost_8280/icliente.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/icliente?wsdl" xnocompile="true" xendorsed="true" package="services">
@@ -42,37 +58,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
         <delete dir="${build.generated.dir}/jax-wsCache/icliente"/>
     </target>
-    <target name="wsimport-client-iproveedor" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/iproveedor" destdir="${build.generated.dir}/jax-wsCache/iproveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/iproveedor?wsdl" xnocompile="true" xendorsed="true" package="ServicesProveedor">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
+    <target name="wsimport-client-ilineorden" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ilineorden"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ilineorden" destdir="${build.generated.dir}/jax-wsCache/ilineorden" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ilineorden/wsdl/localhost_8280/ilineorden.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/ilineorden?wsdl" xnocompile="true" xendorsed="true" package="ServicesLineaOrden">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ilineorden/wsdl/localhost_8280/ilineorden.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ilineorden"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/iproveedor">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ilineorden">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-iproveedor" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesProveedor"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
+    <target name="wsimport-client-clean-ilineorden" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesLineaOrden"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ilineorden"/>
     </target>
-    <target name="wsimport-client-icategoria" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/icategoria"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/icategoria" destdir="${build.generated.dir}/jax-wsCache/icategoria" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/icategoria?wsdl" xnocompile="true" xendorsed="true" package="ServicesCategoria">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/icategoria/wsdl/localhost_8280/icategoria.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/icategoria"/>
+    <target name="wsimport-client-iordencompra" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/iordencompra"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/iordencompra" destdir="${build.generated.dir}/jax-wsCache/iordencompra" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/iordencompra/wsdl/localhost_8280/iordencompra.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/iordencompra?wsdl" xnocompile="true" xendorsed="true" package="ServicesOrdenCompra">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/iordencompra/wsdl/localhost_8280/iordencompra.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/iordencompra"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/icategoria">
+            <fileset dir="${build.generated.dir}/jax-wsCache/iordencompra">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-icategoria" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesCategoria"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/icategoria"/>
+    <target name="wsimport-client-clean-iordencompra" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesOrdenCompra"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/iordencompra"/>
     </target>
     <target name="wsimport-client-iproducto" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/iproducto"/>
@@ -90,5 +106,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ServicesProducto"/>
         <delete dir="${build.generated.dir}/jax-wsCache/iproducto"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-icliente, wsimport-client-iproveedor, wsimport-client-icategoria, wsimport-client-iproducto"/>
+    <target name="wsimport-client-iproveedor" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/iproveedor" destdir="${build.generated.dir}/jax-wsCache/iproveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8280/iproveedor?wsdl" xnocompile="true" xendorsed="true" package="ServicesProveedor">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/iproveedor/wsdl/localhost_8280/iproveedor.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/iproveedor">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-iproveedor" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ServicesProveedor"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/iproveedor"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-icategoria, wsimport-client-icliente, wsimport-client-ilineorden, wsimport-client-iordencompra, wsimport-client-iproducto, wsimport-client-iproveedor"/>
 </project>
