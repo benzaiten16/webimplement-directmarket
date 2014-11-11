@@ -53,13 +53,13 @@
 
 <xs:complexType name="usuario" abstract="true">
 <xs:sequence>
-<xs:element name="apellido" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="fechNacim" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
-<xs:element name="mail" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="nickname" type="xs:string" minOccurs="0"></xs:element>
-<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Nickname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Apellido" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="FechNacim" type="xs:string" minOccurs="0"></xs:element>
 <xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="Mail" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="foto" type="xs:base64Binary" minOccurs="0"></xs:element>
 </xs:sequence>
 </xs:complexType>
 
