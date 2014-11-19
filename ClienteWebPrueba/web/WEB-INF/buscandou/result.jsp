@@ -12,8 +12,7 @@
 
 <%--NUEVOS IMPORTS--%>
 <%@page import="webService.Producto"%>
-<%@page import="webService.WsIproducto"%>
-<%@page import="webService.WsIproductoService"%>
+<%@page import="Servlets.ICproducto"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -38,7 +37,7 @@
                 ListaProducto = ICPR.findProductoEntities();
 
             %>
-            --%>
+            
             <%
 
             WsIproductoService ProductoServices = new WsIproductoService();
@@ -48,8 +47,14 @@
             ListaProducto = ICPR.findProductoEntities();
 
             %>
+            --%>
+            <%
+            ICproducto ICPR = new ICproducto();
             
+            List<Producto> ListaProducto;
+            ListaProducto = ICPR.findProductoEntities();
 
+            %>
 
             <div id="producto" class ="main">
                 <center><h1>¡ Resultado(s) de Busqueda !</h1> </center>
@@ -76,14 +81,18 @@
                             <br>
                             <%} else {%> 
                                 <%-- Entro a chequear todas las categorias a la q pertenece --%>
-                                <%for (int j = 0; j < ListaProducto.get(j).getListacategorias().size(); j++) {%>
+                                <%for (int j = 0; j < ICPR.getListadoCategoriasXprod(ListaProducto.get(j).getNumRef()).size(); j++) {%>
+                                
+                                <%--<%for (int j = 0; j < ListaProducto.get(j).getListacategorias().size(); j++) {%>--%>
 
-                                <%if ((ListaProducto.get(j).getListacategorias().get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>
+                                <%--<%if ((ListaProducto.get(j).getListacategorias().get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>--%>
+                                
+                                <%if ((ICPR.getListadoCategoriasXprod(ListaProducto.get(j).getNumRef()).get(j).getNombre().toLowerCase()).indexOf(nombre.toLowerCase()) != -1) {%>
                                     <label class="valor">  <a  href="verProducto?numref=<%=ListaProducto.get(i).getNumRef()%>"> <b> <%=ListaProducto.get(i).getNombre()%> </b> </a> </label><br/><br>
                                     <% encontro = true; %>
                                 <%}%>
 
-                                <%}  %>  <%-- Fin fro ListaCategoria --%>
+                                <%}  %>  <%-- Fin for ListaCategoria --%>
                             <%}%> <%-- Fin else --%>
 
                     <%}//FIN FOR %>

@@ -16,18 +16,11 @@
 <%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
 
 <%--NUEVOS IMPORTS--%>
-<%@page import="webService.WsIproveedor"%>
-<%@page import="webService.WsIproveedorService"%>
-
-<%@page import="webService.WsIproducto"%>
-<%@page import="webService.WsIproductoService"%>
-
-<%@page import="webService.WsIcliente"%>
-<%@page import="webService.WsIclienteService"%>
-
+<%@page import="Servlets.ICproveedor"%>
+<%@page import="Servlets.ICproducto"%>
+<%@page import="Servlets.ICcliente"%>
 <%@page import="webService.Categoria"%>
-<%@page import="webService.WsIcategoria"%>
-<%@page import="webService.WsIcategoriaService"%>
+<%@page import="Servlets.ICcategoria"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -50,7 +43,7 @@
            List<Categoria> ListaCategoria;
            ListaCategoria = ICCA.findCategoriaEntities();%>
         --%>
-        
+        <%--
         <%              
         WsIproveedorService ProveedorServices = new WsIproveedorService();
         WsIproveedor ICP = ProveedorServices.getWsIproveedorPort();
@@ -68,8 +61,23 @@
         ListaCategoria = ICCA.findCategoriaEntities();
         
         %>
+        --%>
         
+        <%
         
+        ICproveedor ICP = new ICproveedor();
+        
+        ICproducto ICPR = new ICproducto();
+        
+        ICcategoria ICCA = new ICcategoria();
+        
+        ICcliente ICC = new ICcliente();
+            
+            
+        List<Categoria> ListaCategoria;
+        ListaCategoria = ICCA.findCategoriaEntities();
+            
+        %>
         
         <div id="registrar" class ="main">
             <div id="perfil_derecha">

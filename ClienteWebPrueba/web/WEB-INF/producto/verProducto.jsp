@@ -17,24 +17,11 @@
 <%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
 
 <%--NUEVOS IMPORTS--%>
-<%@page import="webService.WsIcategoria"%>
-<%@page import="webService.WsIcategoriaService"%>
-<%@page import="webService.Categoria"%>
-
-
-<%@page import="webService.WsIcliente"%>
-<%@page import="webService.WsIclienteService"%>
-
-
-<%@page import="webService.WsIproveedor"%>
-<%@page import="webService.WsIproveedorService"%>
-<%@page import="webService.Proveedor"%>
-
-<%@page import="webService.WsIproducto"%>
-<%@page import="webService.WsIproductoService"%>
+<%@page import="Servlets.ICcategoria"%>
+<%@page import="Servlets.ICcliente"%>
+<%@page import="Servlets.ICproveedor"%>
+<%@page import="Servlets.ICproducto"%>
 <%@page import="webService.Producto"%>
-
-
 <%--NUEVOS IMPORTS--%>
 
 
@@ -50,7 +37,7 @@
     </head>
 
     <body>
-
+        <%--
         <%
             WsIclienteService clienteServices = new WsIclienteService();
             WsIcliente ICC = clienteServices.getWsIclientePort();
@@ -62,7 +49,16 @@
             WsIproducto ICPROD = ProductoServices.getWsIproductoPort();
             
         %>
-
+        --%>
+        <%
+        ICcliente ICC = new ICcliente();
+        
+        ICproveedor ICP = new ICproveedor();
+        
+        ICproducto ICPROD = new ICproducto();
+        
+        %>
+        
         <%  List<Producto> ListaProducto;
             ListaProducto = ICPROD.findProductoEntities();
         %>
@@ -120,9 +116,9 @@
                     <label class="valor"><%= ICPROD.findProducto(numero).getProveedor().getNickname()%></label>
                     <br>
                     <label class="rotulo">Categoria(s): </label> -
-                    <%for (int j = 0; j < ICPROD.findProducto(numero).getListacategorias().size(); j++) {%>
+                    <%for (int j = 0; j < ICPROD.getListadoCategoriasXprod(ICPROD.findProducto(numero).getNumRef()).size(); j++) {%>
 
-                            <label class="valor">   <%=ICPROD.findProducto(numero).getListacategorias().get(j).getNombre()%> -</label>
+                            <label class="valor">   <%=ICPROD.getListadoCategoriasXprod(ICPROD.findProducto(numero).getNumRef()).get(j).getNombre()%> -</label>
                     <%}%>
                 </div>
 

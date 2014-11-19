@@ -6,9 +6,7 @@
 
 package Servlets;
 
-import Servlets.exceptions.UsuarioNoEncontrado;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.StringTokenizer;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,13 +25,6 @@ import Logica_Clases.Proveedor;
 //IMPORTS VIEJOS DEL PROYECTO ANTERIOR
 
 //NUEVOS IMPORTS
-import webService.WsIproveedor;
-import webService.WsIproveedorService;
-import webService.WsIcategoria;
-import webService.WsIcategoriaService;
-import webService.Producto;
-import webService.WsIproducto;
-import webService.WsIproductoService;
 import webService.Proveedor;
 //NUEVOS IMPORTS
 
@@ -81,6 +72,13 @@ public class Registroproducto extends HttpServlet {
         //Leo dato de la sesion usr
         String nick = usr;
         
+        ICcategoria ICC = new ICcategoria();
+        
+        ICproveedor ICP = new ICproveedor();
+        
+        ICproducto ICPR = new ICproducto();
+        
+        /*
         WsIcategoriaService CategoriaServices = new WsIcategoriaService();
         WsIcategoria ICC = CategoriaServices.getWsIcategoriaPort();
         
@@ -89,7 +87,7 @@ public class Registroproducto extends HttpServlet {
 
         WsIproductoService ProductoServices = new WsIproductoService();
         WsIproducto ICPR = ProductoServices.getWsIproductoPort();
-        
+        */
         
         /*
         Fabrica fabrica = Fabrica.getInstance();
@@ -105,6 +103,7 @@ public class Registroproducto extends HttpServlet {
                 ICPR.createProducto(numref, titulo, descripcion, especificaciones, precio, prov);
                 //ASOCIO PRODUCTOS A CATEGORIAS Y VICEVERSA
                 String Categoria = request.getParameter("cat");
+                //System.out.println("Lo que viene en cat: "+ Categoria);
                 StringTokenizer tokens=new StringTokenizer(Categoria, " ");
                 while(tokens.hasMoreTokens()){
                     String cate=tokens.nextToken();

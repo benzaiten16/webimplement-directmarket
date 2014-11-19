@@ -12,12 +12,9 @@
 <%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
 
 <%--NUEVOS IMPORTS--%>
-<%@page import="webService.WsIproveedor"%>
-<%@page import="webService.WsIproveedorService"%>
+<%@page import="Servlets.ICproveedor"%>
 <%@page import="webService.Proveedor"%>
-
-<%@page import="webService.WsIproducto"%>
-<%@page import="webService.WsIproductoService"%>
+<%@page import="Servlets.ICproducto"%>
 <%@page import="webService.Producto"%>
 <%--NUEVOS IMPORTS--%>
 
@@ -48,7 +45,7 @@
             ListaProductos= ICPR.findProductoEntities();
             %>
             --%>
-            
+            <%--
             <%
              String prov =request.getAttribute("usuario").toString();
              
@@ -62,7 +59,19 @@
             ListaProductos= ICPR.findProductoEntities();
             
             %>
+            --%>
             
+            <%
+            String prov =request.getAttribute("usuario").toString();
+            
+            ICproveedor ICP = new ICproveedor();
+            
+            ICproducto ICPR = new ICproducto();
+            
+            List<Producto> ListaProductos;
+            ListaProductos= ICPR.findProductoEntities();
+            
+            %>
             
             <center><h1>Direct Market </h1></center>
             <h2>Lista de Productos: </h2>

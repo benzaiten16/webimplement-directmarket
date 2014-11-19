@@ -15,10 +15,8 @@
 
 <%--NUEVOS IMPORTS--%>
 <%@page import="webService.Producto"%>
-<%@page import="webService.WsIproducto"%>
-<%@page import="webService.WsIproductoService"%>
-<%@page import="webService.WsIproveedor"%>
-<%@page import="webService.WsIproveedorService"%>
+<%@page import="Servlets.ICproducto"%>
+<%@page import="Servlets.ICproveedor"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -40,13 +38,19 @@
             <% Fabrica fabrica = Fabrica.getInstance();  %>
             <% IcontroladorProducto ICPROD = fabrica.getControladorProducto(); %>
             <% IcontroladorProveedor ICPROV = fabrica.getControladorProveedor(); %>
-            --%>
             <%
             WsIproveedorService ProveedorServices = new WsIproveedorService();
             WsIproveedor ICPROV = ProveedorServices.getWsIproveedorPort();
             
             WsIproductoService ProductoServices = new WsIproductoService();
             WsIproducto ICPROD = ProductoServices.getWsIproductoPort();    
+            
+            %>
+            --%>
+            <%
+            ICproveedor ICPROV = new ICproveedor();
+            
+            ICproducto ICPROD = new ICproducto();
             
             %>
             
