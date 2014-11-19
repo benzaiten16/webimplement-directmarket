@@ -12,10 +12,8 @@
 <%--IMPORTS VIEJOS DEL PROYECTO ANTERIOR--%>
 
 <%--NUEVOS IMPORTS--%>
-<%@page import="webService.WsIcliente"%>
-<%@page import="webService.WsIclienteService"%>
-<%@page import="webService.WsIproveedor"%>
-<%@page import="webService.WsIproveedorService"%>
+<%@page import="Servlets.ICcliente"%>
+<%@page import="Servlets.ICproveedor"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -33,7 +31,7 @@
         <% IcontroladorCliente ICC = fabrica.getControladorCliente();%>
         <% IcontroladorProveedor ICP = fabrica.getControladorProveedor();%>
         --%>
-        
+        <%--
         <%
             WsIclienteService clienteServices = new WsIclienteService();
             WsIcliente ICC = clienteServices.getWsIclientePort();
@@ -42,7 +40,14 @@
             WsIproveedor ICP = ProveedorServices.getWsIproveedorPort();
             
         %>
-   
+        --%>
+        <%
+        ICcliente ICC = new ICcliente();
+        
+        ICproveedor ICP = new ICproveedor();
+        
+        %>
+        
         <div id="categoria" class ="main">
             <%-- bla bla bla --%>
         </div>

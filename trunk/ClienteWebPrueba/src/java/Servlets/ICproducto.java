@@ -48,6 +48,12 @@ public class ICproducto {
         webService.WsIproducto port = service.getWsIproductoPort();
         return port.findProductoEntities();
     }
+
+    public  java.util.List<webService.Categoria> getListadoCategoriasXprod(int arg0) {
+        webService.WsIproductoService service = new webService.WsIproductoService();
+        webService.WsIproducto port = service.getWsIproductoPort();
+        return port.getListadoCategoriasXprod(arg0);
+    }
     
     
 }
