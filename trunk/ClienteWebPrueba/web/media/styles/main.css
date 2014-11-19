@@ -1,0 +1,776 @@
+@font-face {
+    font-family: 'FacebookLetterFacesRegular';
+    src: url('../fonts/facebolf-webfont.eot');
+    src: url('../fonts/FACEBOLF.OTF'),
+        url('../fonts/facebolf-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/facebolf-webfont.woff') format('woff'),
+        url('../fonts/facebolf-webfont.ttf') format('truetype'),
+        url('../fonts/facebolf-webfont.svg#FacebookLetterFacesRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Esta la sustituyo por SinGatosRegular*/
+@font-face {
+    font-family: 'GameOverRegular';
+    src: url('../fonts/game_over-webfont.eot');
+    src: url('../fonts/game_over-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/game_over-webfont.woff') format('woff'),
+        url('../fonts/game_over-webfont.ttf') format('truetype'),
+        url('../fonts/game_over-webfont.svg#GameOverRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Original";
+    src: url('../fonts/Xiomara-Script.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SinGatosRegular';
+    src: url('../fonts/Simpsonfont.ttf') format('truetype');
+    src: url('../fonts/akbar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rizos';
+    src: url('../fonts/MixStitch.ttf'); 
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+body{
+    background-color: #999999;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-family: Original;
+    font-size: 35px;
+
+}
+h6 {
+    font-size: 15px;
+}
+
+/* Cabezal */
+
+/* imagen TOP*/
+div#headerr {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 220px;
+
+    width: 100%;
+    background-color: #999999;
+
+}
+
+div#headerr-izquierda{
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 155px;
+
+
+    width: 20%;
+    float: left;
+
+    min-width: 175px;
+
+}
+
+image#logo{
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 10px;
+    display: initial;
+
+
+}
+
+div#headerr-derecha{
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 155px;
+
+    width: 50%;
+
+    float: left;
+}
+
+div#headerr-barra{
+    font-family: "rizos";
+    color: #EEE;
+    margin-top: 120px;
+
+    font-size: 150%;
+
+    text-align: center;
+
+
+    height: 105px;
+
+
+    width: 100%;
+
+    clear: left;
+
+}
+
+/*FIN imagen TOP*/
+
+#header .logo a:hover {
+    text-decoration: none;
+}
+
+#header .subtitulo
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 360px;
+    margin-top: 62px;
+}
+
+div#usuario {
+    background-color: blue;
+    top: 20px;
+    bottom: 18px;
+    float: right;
+    font-size: 16px;
+    margin-right: 36px;
+    position: relative;
+}
+
+#header a
+{
+    color: #FFFFFF;
+    text-decoration:  none;
+}
+
+#header a:hover
+{
+    text-decoration: underline;
+    text-shadow: 0px 0px 2px white;
+}
+
+/* footer */
+
+#footer
+{
+    background-image: url( ../images/footer.png);
+    background-repeat: repeat-x;
+    background-color: #999999;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    height: 80px;
+    padding-top: 16px;
+
+}
+
+#footer_copyright
+{
+    float:left;
+}
+
+#footer_derecha{
+    float:right;
+}
+
+#footer div
+{
+    margin: 3px 10px;
+
+}
+
+/* general */
+
+#body-container
+{
+    background: url("../images/fondo.jpg") repeat scroll 0 0 transparent;
+    padding-top: 60px;
+    background-repeat: repeat;
+    padding-bottom: 60px;
+
+}
+
+.main
+{
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.93);
+    border: 1px solid #CCCCCC;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0 0 8px #FFFFFF;
+    padding: 30px;
+
+}
+
+/* iniciar */
+
+.contenedor_principal
+{
+    clear: both;
+    padding: 10px;
+}
+
+.contenedor_principal .izquierda
+{
+    float:left;
+    border-right: 2px solid #DDDDDD;
+    padding: 25px;
+    margin: 25px;
+}
+
+.contenedor_principal .derecha
+{
+    padding: 25px;
+    margin: 25px;
+}
+
+.contenedor_principal .derecha input
+{
+    margin-top: 5px;
+}
+
+/* Perfil */
+
+#perfil_derecha
+{
+    float:right;
+    border-left: 2px solid #DDDDDD;
+    border-left-style: dotted;
+    padding:25px;
+    margin:25px;
+    width: 30%;
+    background-color: white;
+
+}
+
+#perfil_izquierda
+{
+    padding: 25px;
+    margin: 25px;
+    width: 60%;
+
+}
+
+/* Pagina de error */
+
+.error
+{
+    background-color:#fdf2fd;
+    border: 2px solid #DB7093;
+    padding: 6px;
+    margin-bottom: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.error_no{
+
+    color: #0066FF; 
+    font-family:arial; 
+    font-size: 2px; 
+    display: none;
+
+}
+
+.fila_input
+{
+    margin-top: 5px;
+
+}
+
+.fila_input label
+{
+    width: 100px;
+    font-size: 12px;
+    font-weight: bold;
+
+
+}
+
+.fila_input label
+{
+    display: block;
+    float: left;
+    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+
+/*INPUT text*/
+input[type=text] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+                  width: 190px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+                    cursor:pointer;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px; 
+                    width: 80px;
+
+}
+
+input[type=date] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+                  width: 190px;
+}
+
+
+/*INPUT pasword*/
+input[type=password] {padding:5px; 
+                      border:2px solid #ccc; 
+                      -webkit-border-radius: 5px;
+                      border-radius: 5px;
+                      width: 190px;
+}
+input[type=password]:focus {border-color:#333; }
+
+.enviar{
+    padding:5px 15px; background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    width: 90px;
+}
+/*Boton*/
+.fila_input .con_margen
+{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: auto;
+
+}
+
+.con_margen{
+    border:1px solid #999999; -webkit-border-radius: 11px; -moz-border-radius: 11px;border-radius: 11px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 20px 10px 20px; text-decoration:none; display:inline-block;text-shadow: 1px 1px 0 rgba(255,255,255,0.3);font-weight:bold; color: #4D4D4D;
+    background-color: #FFFFFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CFCFCF));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -ms-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -o-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: linear-gradient(to bottom, #FFFFFF, #CFCFCF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#CFCFCF);
+}
+
+.con_margen:hover{
+    border:1px solid #7A7A7A;
+    background-color: #F2F2F2; background-image: -webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(#C4C4C4));
+    background-image: -webkit-linear-gradient(top, #F2F2F2, #C4C4C4);
+    background-image: -moz-linear-gradient(top, #F2F2F2, #C4C4C4);
+    background-image: -ms-linear-gradient(top, #F2F2F2, #C4C4C4);
+    background-image: -o-linear-gradient(top, #F2F2F2, #C4C4C4);
+    background-image: linear-gradient(to bottom, #F2F2F2, #C4C4C4);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F2F2F2, endColorstr=#C4C4C4);
+}
+/*Fin del boton*/
+
+.formulario_centrar
+{
+    width: 700px;
+}
+
+.divisor
+{   
+    font-family: "rizos";
+    float: left;
+    font-size: 12px;
+    color:#808080;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60%
+}
+
+.textarea{
+
+    width:285px;
+    height:100px;
+    border: 2px solid #C4C4C4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.check{
+    
+     font-size: 18px;
+     color:#666666;     
+}
+
+.rotulo
+{
+    display: block;
+    float: left;
+    width: 140px;
+    font-size: 12px;
+    color:#808080;
+}
+
+.valor
+{
+    font-size: 12px;
+}
+
+/** página de error **/
+
+#error_page
+{
+    color: white;
+}
+
+#error_page .main pre
+{
+    color: #000000;
+}
+
+#error_page .main
+{
+    margin-bottom: 30px;
+}
+
+#error_page p
+{
+    text-align: center;
+}
+
+
+/** Listar **/
+
+#listar {
+}
+
+#listar .usuario {
+    border-bottom: 1px solid #CCCCCC;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    width: 50%;
+}
+
+#listar .usuario:last-child {
+    border-bottom: none;
+}
+
+#listar .usuario img
+{
+    height: 42px;
+}
+
+#listar .usuario .email {
+    display: block;
+    font-size: 0.8em;
+}
+#listar .usuario .derecha {
+    display: inline-block;
+}
+
+
+#error_page .gameover
+{
+    font-family: "SinGatosRegular";
+
+    font-size: 250%;
+    margin-left: 25px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*ERROR 404*/
+div#SinGatossss{
+    position: absolute;
+    margin: 0 auto;
+    top: auto;
+    left: 10%;
+
+    alignment-adjust: central;
+}
+
+#image{
+    position: absolute;
+    top: 60px;
+    left: 250px;
+    alignment-adjust: central;
+}
+
+#pantera{
+    bottom: 0px;
+    alignment-adjust: central;
+}
+
+/*ERROR 500*/
+
+#imageGato{
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    alignment-adjust: central;
+
+}
+
+
+.tachado{color:#DDDDDD; text-decoration:line-through;}
+
+/*   BUSCADOR   */
+
+div #buscador{
+
+    margin-left: 30px;
+    height: 155px;
+
+
+    width: 30%;
+    float: left;
+
+    min-width: 175px;
+}
+
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {clear:both; }
+.cf { zoom:1; }
+
+/* el formulario en si mismo */
+.formulariodemo {
+    background-color: #2F4F4F;
+    float: left;
+
+    border-radius: 10px;
+    box-shadow: 0 0 2px #606971 inset;
+    margin: 0 auto;
+    padding: 8px;
+    width: 450px;
+
+}
+
+.formulariodemoGuillermo {
+    background-color: #EEE;
+    float: right;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #606971 inset;
+    margin: auto;
+    padding: 8px;
+    width: 250px;
+}
+
+/* la caja donde se ingresa el texto a buscar */
+.formulariodemo input {
+    background-color: #EEE;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    float: left;
+    font-family: Tahoma;font-size:15px;font-weight: bold;
+    height: 15px;
+    padding: 10px 5px;
+    width: 330px;
+}
+.formulariodemo input:focus {
+    outline: 0;
+    background: #FFF;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+/* el estilo de del atributo placeholder debe ser declarado para cada navegador de modo separado */
+.formulariodemo input:-moz-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input::-webkit-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+.formulariodemo input:-ms-input-placeholder { color: #999; font-weight: normal; font-style: italic; }
+
+/* aquí iría el estilo de del atributo required si es que se desea definirlo */
+.formulariodemo input:required { box-shadow: none; }
+
+/* el botón de envio */
+.formulariodemo button {
+    background-color: #9099A1;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    color: #FFF;
+    cursor: pointer;
+    float: right;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: bold;
+    height: 35px;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    width: 110px;
+}
+.formulariodemo button:hover{ background: #FA8072; } 
+.formulariodemo button:active, .formulariodemo button:focus{ background: #DB7093; }
+.formulariodemo button:before { /* el detalle del triángulo izquierdo */
+    content: "";
+    border-color: transparent #9099A1 transparent;
+    border-style: solid solid solid none;
+    border-width: 8px 8px 8px 0;
+    left: -6px;
+    position: absolute;
+    top: 12px;
+}
+.formulariodemo button:hover:before { border-right-color: #FA8072; }
+.formulariodemo button:focus:before { border-right-color: #C42F2F; }    
+
+
+/*fin Buscador*/
+
+/*Select box*/
+
+select#dropdown
+{
+    width: 200px;
+    height: 25px;
+    color: #2F4F4F;
+    background-color: #DDDDDD;
+    padding-left: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+input.invalid{
+    border: 2px solid red;
+}
+
+input.valid{
+    border: 2px solid green;
+}
+
+#registrar_submit{
+    padding-left: 200px;
+}
+#registrar div{
+    margin-top: 1em;
+}
+select#cat{
+
+    width: 285px;
+    height: 25px;
+    color: #2F4F4F;
+    background-color: #DDDDDD;
+    padding-left: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+#ok{
+    padding: 90px;   
+    background-color: white;
+    top: 10%;
+    text-align: center;
+}
+
+/* puntero*/
+
+a:hover{
+    cursor:pointer;
+    color: mediumvioletred;
+    font-size: 105%;
+    /*color: #ad6cad;
+    font-size: 110%;
+    font-weight:bold;*/
+}
+
+/**/
+
+.enviarCategorias {
+
+   border:1px solid #26759E;-webkit-box-shadow: #FEFFFF 0px 1px 3px inset;-moz-box-shadow: #FEFFFF 0px 1px 3px inset; box-shadow: #FEFFFF 0px 1px 3px inset; -webkit-border-radius: 7px; -moz-border-radius: 7px;border-radius: 7px;font-size:21px;font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 0px 1px 0 rgba(255,255,255,0.5);font-weight:bold; color: #05142E;
+ background-color: #d2d2f9; background-image: -webkit-gradient(linear, left top, left bottom, from(#d2d2f9), to(#a6a6f2));
+ background-image: -webkit-linear-gradient(top, #d2d2f9, #a6a6f2);
+ background-image: -moz-linear-gradient(top, #d2d2f9, #a6a6f2);
+ background-image: -ms-linear-gradient(top, #d2d2f9, #a6a6f2);
+ background-image: -o-linear-gradient(top, #d2d2f9, #a6a6f2);
+ background-image: linear-gradient(to bottom, #d2d2f9, #a6a6f2);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d2d2f9, endColorstr=#a6a6f2);
+
+}
+.enviarCategorias:hover, .ph-btn-red:focus, .ph-btn-red:active {
+   border:1px solid #26759E;
+ background-color: #a5a5f3; background-image: -webkit-gradient(linear, left top, left bottom, from(#a5a5f3), to(#7a7aeb));
+ background-image: -webkit-linear-gradient(top, #a5a5f3, #7a7aeb);
+ background-image: -moz-linear-gradient(top, #a5a5f3, #7a7aeb);
+ background-image: -ms-linear-gradient(top, #a5a5f3, #7a7aeb);
+ background-image: -o-linear-gradient(top, #a5a5f3, #7a7aeb);
+ background-image: linear-gradient(to bottom, #a5a5f3, #7a7aeb);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5a5f3, endColorstr=#7a7aeb);
+}
+
+
+ /*TABLAA*/
+ .datagrid table { 
+     border-collapse: collapse; 
+     text-align: left; 
+     width: 100%; 
+       -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+     
+ } 
+ 
+ .datagrid {
+     font: normal 12px/150% Arial, Helvetica, sans-serif; 
+     background: #fff; overflow: hidden; 
+     border: 1px solid #991821; 
+     
+     -webkit-border-radius: 5px; 
+     -moz-border-radius: 5px; border-radius: 3px; 
+ }
+ .datagrid table td, .datagrid table th { 
+     padding: 3px 10px; 
+ }
+ 
+ .datagrid table thead th {
+     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #991821), color-stop(1, #80141C) );
+     background:-moz-linear-gradient( center top, #991821 5%, #80141C 100% );
+     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#991821', endColorstr='#80141C');
+     background-color:#991821; color:#FFFFFF; 
+     font-size: 13px; 
+     font-weight: bold; 
+     border-left: 1px solid #B01C26; 
+    
+ } 
+ 
+ .datagrid table thead th:first-child { 
+     border: none; 
+ }
+ .datagrid table tbody td { 
+     color: #80141C; 
+     border-left: 1px solid #F7CDCD;
+     font-size: 12px;
+     border-bottom: 1px solid #E1EEF4;
+     font-weight: normal; 
+     
+ }
+ 
+ 
+ 
+ .datagrid table tbody td:first-child {
+     border-left: none; 
+ }
+ 
+ .datagrid table tbody tr:last-child td { 
+     border-bottom: none; 
+ }
+ 
+ .textbox{
+     
+ }
+ 
+ #ajax{
+    border-style: solid;
+    border-width: 3px;
+}

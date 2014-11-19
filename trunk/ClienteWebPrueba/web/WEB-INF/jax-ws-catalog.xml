@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8280/icliente?wsdl" uri="wsdl/localhost_8280/icliente.wsdl"/>
+    <system systemId="http://localhost:8280/icliente?xsd=1" uri="wsdl/localhost_8280/icliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/iproveedor?wsdl" uri="wsdl/localhost_8280/iproveedor.wsdl"/>
+    <system systemId="http://localhost:8280/iproveedor?xsd=1" uri="wsdl/localhost_8280/iproveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/icategoria?wsdl" uri="wsdl/localhost_8280/icategoria.wsdl"/>
+    <system systemId="http://localhost:8280/icategoria?xsd=1" uri="wsdl/localhost_8280/icategoria.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/iproducto?wsdl" uri="wsdl/localhost_8280/iproducto.wsdl"/>
+    <system systemId="http://localhost:8280/iproducto?xsd=1" uri="wsdl/localhost_8280/iproducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/ilineorden?wsdl" uri="wsdl/localhost_8280/ilineorden.wsdl"/>
+    <system systemId="http://localhost:8280/ilineorden?xsd=1" uri="wsdl/localhost_8280/ilineorden.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/iordencompra?wsdl" uri="wsdl/localhost_8280/iordencompra.wsdl"/>
+    <system systemId="http://localhost:8280/iordencompra?xsd=1" uri="wsdl/localhost_8280/iordencompra.xsd_1.xsd"/>
+    <system systemId="http://localhost:8280/icliente" uri="wsdl/localhost_8280/icliente.xml"/>
+    <system systemId="http://localhost:8280/icliente?WSDL" uri="wsdl/localhost_8280/icliente.wsdl"/>
+    <system systemId="http://localhost:8280/icategoria?WSDL" uri="wsdl/localhost_8280/icategoria.wsdl"/>
+    <system systemId="http://localhost:8280/iproducto?WSDL" uri="wsdl/localhost_8280/iproducto.wsdl"/>
+</catalog>
