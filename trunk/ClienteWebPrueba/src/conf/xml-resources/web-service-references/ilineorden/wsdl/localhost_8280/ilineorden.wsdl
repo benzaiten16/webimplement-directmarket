@@ -4,18 +4,6 @@
 <xsd:import namespace="http://LogicaClasesNew/" schemaLocation="http://localhost:8280/ilineorden?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-<message name="createLineaOrden">
-<part name="parameters" element="tns:createLineaOrden"></part>
-</message>
-<message name="createLineaOrdenResponse">
-<part name="parameters" element="tns:createLineaOrdenResponse"></part>
-</message>
-<message name="IntcreateLineaOrden">
-<part name="parameters" element="tns:IntcreateLineaOrden"></part>
-</message>
-<message name="IntcreateLineaOrdenResponse">
-<part name="parameters" element="tns:IntcreateLineaOrdenResponse"></part>
-</message>
 <message name="findLineaOrdenEntities">
 <part name="parameters" element="tns:findLineaOrdenEntities"></part>
 </message>
@@ -28,15 +16,19 @@
 <message name="findLineaOrdenResponse">
 <part name="parameters" element="tns:findLineaOrdenResponse"></part>
 </message>
+<message name="createLineaOrden">
+<part name="parameters" element="tns:createLineaOrden"></part>
+</message>
+<message name="createLineaOrdenResponse">
+<part name="parameters" element="tns:createLineaOrdenResponse"></part>
+</message>
+<message name="IntcreateLineaOrden">
+<part name="parameters" element="tns:IntcreateLineaOrden"></part>
+</message>
+<message name="IntcreateLineaOrdenResponse">
+<part name="parameters" element="tns:IntcreateLineaOrdenResponse"></part>
+</message>
 <portType name="WsIlineaOrden">
-<operation name="createLineaOrden">
-<input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/createLineaOrdenRequest" message="tns:createLineaOrden"></input>
-<output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/createLineaOrdenResponse" message="tns:createLineaOrdenResponse"></output>
-</operation>
-<operation name="IntcreateLineaOrden">
-<input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/IntcreateLineaOrdenRequest" message="tns:IntcreateLineaOrden"></input>
-<output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/IntcreateLineaOrdenResponse" message="tns:IntcreateLineaOrdenResponse"></output>
-</operation>
 <operation name="findLineaOrdenEntities">
 <input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/findLineaOrdenEntitiesRequest" message="tns:findLineaOrdenEntities"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/findLineaOrdenEntitiesResponse" message="tns:findLineaOrdenEntitiesResponse"></output>
@@ -45,27 +37,17 @@
 <input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/findLineaOrdenRequest" message="tns:findLineaOrden"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/findLineaOrdenResponse" message="tns:findLineaOrdenResponse"></output>
 </operation>
+<operation name="createLineaOrden">
+<input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/createLineaOrdenRequest" message="tns:createLineaOrden"></input>
+<output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/createLineaOrdenResponse" message="tns:createLineaOrdenResponse"></output>
+</operation>
+<operation name="IntcreateLineaOrden">
+<input wsam:Action="http://LogicaClasesNew/WsIlineaOrden/IntcreateLineaOrdenRequest" message="tns:IntcreateLineaOrden"></input>
+<output wsam:Action="http://LogicaClasesNew/WsIlineaOrden/IntcreateLineaOrdenResponse" message="tns:IntcreateLineaOrdenResponse"></output>
+</operation>
 </portType>
 <binding name="WsIlineaOrdenPortBinding" type="tns:WsIlineaOrden">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="createLineaOrden">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
-<operation name="IntcreateLineaOrden">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
 <operation name="findLineaOrdenEntities">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -76,6 +58,24 @@
 </output>
 </operation>
 <operation name="findLineaOrden">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="createLineaOrden">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="IntcreateLineaOrden">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
