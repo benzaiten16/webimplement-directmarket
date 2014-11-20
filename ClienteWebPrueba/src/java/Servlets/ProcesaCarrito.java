@@ -33,10 +33,10 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
 try {
-    //String usr = Login.getUsuarioLogueado(request);
-    String usr="GUIPECEA";
-    System.out.println(request.getSession().getAttribute("usuario_logueado").toString()+" <---ES EL USUARIO");
-    //request.setAttribute("usuario_logueado", usr);
+    String usr = Login.getUsuarioLogueado(request);
+    //String usr="GUIPECEA";
+    //System.out.println(request.getSession().getAttribute("usuario_logueado").toString()+" <---ES EL USUARIO");
+    request.setAttribute("usuario_logueado", usr);
     //request.getRequestDispatcher("/WEB-INF/errorPages/PaginaEnConstruccion.jsp").forward(request, response);
         
     //OBTENGO ARRAYS DE AQUELLOS SELECCIONADOS
