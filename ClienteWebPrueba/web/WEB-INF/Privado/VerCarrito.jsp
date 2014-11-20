@@ -17,6 +17,7 @@
 <%@page import="webService.Producto"%>
 <%@page import="Servlets.ICproducto"%>
 <%@page import="Servlets.ICproveedor"%>
+<%@page import="Servlets.Login"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -56,6 +57,10 @@
             
             <% List<Producto> ListaProductos = null;%>
             <% Vector V = (Vector) session.getAttribute("codigos"); %> 
+            <% 
+                String usr = Login.getUsuarioLogueado(request);
+                request.setAttribute("usuario", usr); 
+            %>
             <% ListaProductos = ICPROD.findProductoEntities(); %>
             
             <div class="datagrid">

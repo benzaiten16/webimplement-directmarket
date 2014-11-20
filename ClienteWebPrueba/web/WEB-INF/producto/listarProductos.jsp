@@ -15,6 +15,7 @@
 <%@page import="webService.Categoria"%>
 <%@page import="Servlets.ICcategoria"%>
 <%@page import="Servlets.ICproducto"%>
+<%@page import="Servlets.Login"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -47,6 +48,11 @@
         List<Producto> ListaProductos;
         Categoria Cat= ICC.findCategoria(request.getAttribute("catseleccionada").toString());
         ListaProductos= ICC.getListadoProductosXcat(Cat.getNombre());
+         
+        String usr = Login.getUsuarioLogueado(request);
+        request.setAttribute("usuario", usr); 
+            
+            
     %>
     <h2>Lista de Productos </h2>
     
