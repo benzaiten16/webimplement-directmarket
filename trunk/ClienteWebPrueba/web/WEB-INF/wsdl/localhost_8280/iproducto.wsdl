@@ -4,18 +4,6 @@
 <xsd:import namespace="http://LogicaClasesNew/" schemaLocation="http://localhost:8280/iproducto?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-<message name="createProducto">
-<part name="parameters" element="tns:createProducto"></part>
-</message>
-<message name="createProductoResponse">
-<part name="parameters" element="tns:createProductoResponse"></part>
-</message>
-<message name="findProductoEntities">
-<part name="parameters" element="tns:findProductoEntities"></part>
-</message>
-<message name="findProductoEntitiesResponse">
-<part name="parameters" element="tns:findProductoEntitiesResponse"></part>
-</message>
 <message name="findProducto">
 <part name="parameters" element="tns:findProducto"></part>
 </message>
@@ -40,6 +28,18 @@
 <message name="asignarCateResponse">
 <part name="parameters" element="tns:asignarCateResponse"></part>
 </message>
+<message name="createProducto">
+<part name="parameters" element="tns:createProducto"></part>
+</message>
+<message name="createProductoResponse">
+<part name="parameters" element="tns:createProductoResponse"></part>
+</message>
+<message name="findProductoEntities">
+<part name="parameters" element="tns:findProductoEntities"></part>
+</message>
+<message name="findProductoEntitiesResponse">
+<part name="parameters" element="tns:findProductoEntitiesResponse"></part>
+</message>
 <message name="getListadoCategoriasXprod">
 <part name="parameters" element="tns:getListadoCategoriasXprod"></part>
 </message>
@@ -47,14 +47,6 @@
 <part name="parameters" element="tns:getListadoCategoriasXprodResponse"></part>
 </message>
 <portType name="WsIproducto">
-<operation name="createProducto">
-<input wsam:Action="http://LogicaClasesNew/WsIproducto/createProductoRequest" message="tns:createProducto"></input>
-<output wsam:Action="http://LogicaClasesNew/WsIproducto/createProductoResponse" message="tns:createProductoResponse"></output>
-</operation>
-<operation name="findProductoEntities">
-<input wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoEntitiesRequest" message="tns:findProductoEntities"></input>
-<output wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoEntitiesResponse" message="tns:findProductoEntitiesResponse"></output>
-</operation>
 <operation name="findProducto">
 <input wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoRequest" message="tns:findProducto"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoResponse" message="tns:findProductoResponse"></output>
@@ -71,6 +63,14 @@
 <input wsam:Action="http://LogicaClasesNew/WsIproducto/asignarCateRequest" message="tns:asignarCate"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproducto/asignarCateResponse" message="tns:asignarCateResponse"></output>
 </operation>
+<operation name="createProducto">
+<input wsam:Action="http://LogicaClasesNew/WsIproducto/createProductoRequest" message="tns:createProducto"></input>
+<output wsam:Action="http://LogicaClasesNew/WsIproducto/createProductoResponse" message="tns:createProductoResponse"></output>
+</operation>
+<operation name="findProductoEntities">
+<input wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoEntitiesRequest" message="tns:findProductoEntities"></input>
+<output wsam:Action="http://LogicaClasesNew/WsIproducto/findProductoEntitiesResponse" message="tns:findProductoEntitiesResponse"></output>
+</operation>
 <operation name="getListadoCategoriasXprod">
 <input wsam:Action="http://LogicaClasesNew/WsIproducto/getListadoCategoriasXprodRequest" message="tns:getListadoCategoriasXprod"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproducto/getListadoCategoriasXprodResponse" message="tns:getListadoCategoriasXprodResponse"></output>
@@ -78,24 +78,6 @@
 </portType>
 <binding name="WsIproductoPortBinding" type="tns:WsIproducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="createProducto">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
-<operation name="findProductoEntities">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
 <operation name="findProducto">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -124,6 +106,24 @@
 </output>
 </operation>
 <operation name="asignarCate">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="createProducto">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="findProductoEntities">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

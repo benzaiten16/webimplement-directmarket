@@ -88,15 +88,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findCategoria">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
-</xs:sequence>
+<xs:complexType name="findCategoriaEntities">
+<xs:sequence></xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findCategoriaResponse">
+<xs:complexType name="findCategoriaEntitiesResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:categoria" minOccurs="0"></xs:element>
+<xs:element name="return" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
 </xs:sequence>
 </xs:complexType>
 
@@ -108,13 +106,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findCategoriaEntities">
-<xs:sequence></xs:sequence>
+<xs:complexType name="findCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findCategoriaEntitiesResponse">
+<xs:complexType name="findCategoriaResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="return" type="tns:categoria" minOccurs="0"></xs:element>
 </xs:sequence>
 </xs:complexType>
 

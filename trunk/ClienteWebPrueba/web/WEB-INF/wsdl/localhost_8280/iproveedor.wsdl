@@ -4,6 +4,12 @@
 <xsd:import namespace="http://LogicaClasesNew/" schemaLocation="http://localhost:8280/iproveedor?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
+<message name="findProveedor">
+<part name="parameters" element="tns:findProveedor"></part>
+</message>
+<message name="findProveedorResponse">
+<part name="parameters" element="tns:findProveedorResponse"></part>
+</message>
 <message name="createProveedor">
 <part name="parameters" element="tns:createProveedor"></part>
 </message>
@@ -37,12 +43,6 @@
 <message name="RemoveProductoProveedorResponse">
 <part name="parameters" element="tns:RemoveProductoProveedorResponse"></part>
 </message>
-<message name="findProveedor">
-<part name="parameters" element="tns:findProveedor"></part>
-</message>
-<message name="findProveedorResponse">
-<part name="parameters" element="tns:findProveedorResponse"></part>
-</message>
 <message name="getListadoProductosXprove">
 <part name="parameters" element="tns:getListadoProductosXprove"></part>
 </message>
@@ -50,6 +50,10 @@
 <part name="parameters" element="tns:getListadoProductosXproveResponse"></part>
 </message>
 <portType name="WsIproveedor">
+<operation name="findProveedor">
+<input wsam:Action="http://LogicaClasesNew/WsIproveedor/findProveedorRequest" message="tns:findProveedor"></input>
+<output wsam:Action="http://LogicaClasesNew/WsIproveedor/findProveedorResponse" message="tns:findProveedorResponse"></output>
+</operation>
 <operation name="createProveedor">
 <input wsam:Action="http://LogicaClasesNew/WsIproveedor/createProveedorRequest" message="tns:createProveedor"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproveedor/createProveedorResponse" message="tns:createProveedorResponse"></output>
@@ -70,10 +74,6 @@
 <input wsam:Action="http://LogicaClasesNew/WsIproveedor/RemoveProductoProveedorRequest" message="tns:RemoveProductoProveedor"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproveedor/RemoveProductoProveedorResponse" message="tns:RemoveProductoProveedorResponse"></output>
 </operation>
-<operation name="findProveedor">
-<input wsam:Action="http://LogicaClasesNew/WsIproveedor/findProveedorRequest" message="tns:findProveedor"></input>
-<output wsam:Action="http://LogicaClasesNew/WsIproveedor/findProveedorResponse" message="tns:findProveedorResponse"></output>
-</operation>
 <operation name="getListadoProductosXprove">
 <input wsam:Action="http://LogicaClasesNew/WsIproveedor/getListadoProductosXproveRequest" message="tns:getListadoProductosXprove"></input>
 <output wsam:Action="http://LogicaClasesNew/WsIproveedor/getListadoProductosXproveResponse" message="tns:getListadoProductosXproveResponse"></output>
@@ -81,6 +81,15 @@
 </portType>
 <binding name="WsIproveedorPortBinding" type="tns:WsIproveedor">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+<operation name="findProveedor">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
 <operation name="createProveedor">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -121,15 +130,6 @@
 </output>
 </operation>
 <operation name="RemoveProductoProveedor">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
-<operation name="findProveedor">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
