@@ -69,16 +69,40 @@
 
         <div><br>
             ¿Ya recibistes tú pedido? 
-            <select  id="dropdown2"  name="estado">
+            <select  id="dropdown2"  name="estado" onchange="evento(this);">
                 <option value="1" selected> N O </option>
                 <option value="2"> S I </option>
             </select>
         </div> 
-        
-        
-        <div id="estado_submit">
-            <br><center> <button type="submit" class="enviar"> Aceptar </button> </center>
-        </div> 
+
+        <div id='ver' style=' display: none ;'>
+            <div id="estado_submit">
+                <br><center> <button type="submit" class="enviar"> Aceptar </button> </center>
+            </div> 
+        </div>
+
+        <%-- la función del div --%>
+
+        <script type="text/javascript">
+            function evento(sel) {
+                if (sel.value == "1") {
+
+                    divT = document.getElementById("ver");
+                    divT.style.display = "none";
+
+                } else {
+
+
+
+                    divT = document.getElementById("ver");
+                    divT.style.display = "";
+                }
+            }
+        </script>
+
+        <%--  ...................................   --%>
+
+
 
 
         <% } %>
