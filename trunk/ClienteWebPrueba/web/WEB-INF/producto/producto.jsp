@@ -91,7 +91,7 @@
                     <div class="contenedor" id="dproducto">
                         <h1>Direct Market</h1>
                         <h2>Datos Producto</h2>
-                        <div>
+                                                <div>
                         <label for="registrar_titulo" class="rotulo">Titulo:</label> <input id="registrar_titulo" placeholder="Ingrese titulo" type="text" name="titulo"></input> (*) <span class="error_no">Titulo invalido</span>
                         <br>
                         </div>
