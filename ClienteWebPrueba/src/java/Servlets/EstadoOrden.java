@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import webService.Estado;
 import webService.OrdenCompra;
 import webService.WsIordenCompra;
@@ -36,14 +37,13 @@ public class EstadoOrden extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/html;charset=UTF-8");
-
+        String numerr = (String) request.getSession().getAttribute("numero");
+        
+        HttpSession objSesion = request.getSession();
+        
         //INFORMACION SOBRE EL ESTADO
         int tipoEst = Integer.parseInt(request.getParameter("estado"));
-        int numOrden = Integer.parseInt(request.getParameter("numero"));
-        
-        System.out.println("-------> "+ numOrden +" <-------");
-        
+        int num = Integer.parseInt(numerr);
         
         //FECHA ACTUAL
         Date ahora = new Date();
@@ -52,24 +52,21 @@ public class EstadoOrden extends HttpServlet {
 
         //ORDEN
         ICordenCompra ICORDC = new ICordenCompra();
+        OrdenCompra or = ICORDC.findOrdenCompra(num);
         
         
-              
+//        WsIordenCompra clienteServices = (WsIordenCompra) new WsIordenCompraService();
+//        WsIordenCompra ICC = (WsIordenCompra) clienteServices.getListadoLineasXord(num);
         
         try (PrintWriter out = response.getWriter()) {
-            
-            OrdenCompra or = ICORDC.findOrdenCompra(numOrden);
-            
-            if (tipoEst == 2){ //Si cambió el estado
+                                 
             or.setEstado(Estado.CONFIRMADA);
             or.setFechaOrdenC(fecha);
             
             //como para redirigirlo a algun lugar
             request.getRequestDispatcher("/WEB-INF/usuarios/RegUsrOk.jsp").forward(request, response);
             
-            }else{
-                System.out.println("------- NO se cambió esl ESTADO -------");
-            }
+            
             
             
         }catch(Exception ex) {
