@@ -35,15 +35,6 @@
 
 
 <!doctype html>
-
-
-<head>
-    <jsp:include page="/WEB-INF/template/head.jsp"/>
-    <title>Ver Orden de Compra :: DirectMarket</title>
-    <jsp:include page="/WEB-INF/template/header.jsp"/>
-</head>
-
-
 <% String numerr = (String) request.getSession().getAttribute("numero"); %>
 <% Integer num = Integer.parseInt(numerr);%>
 
@@ -57,29 +48,51 @@
     lineaOrden = ICOC.getListadoLineasXord(num);
 
 %>
+
+<head>
+    <jsp:include page="/WEB-INF/template/head.jsp"/>
+    <title>Ver Orden de Compra :: DirectMarket</title>
+    <jsp:include page="/WEB-INF/template/header.jsp"/>
+</head>
+
 <div id="verOrdenCompra" class ="main">
-    <center> <h1> Orden de Compra N°: <%=num%></h1>  </center>
+
+
+    <center> <h1> Orden de Compra</h1>  </center>
     <div id="perfil_derecha">
 
         <b>Tu estado de Orden es : </b> <label><%=or.getEstado().toString()%></label>
+       
+        <form id="EstadoOrden" action="EstadoOrden" method="POST">
 
-        <%-- SI ESTA PREPARADA --%>
-        <% if (or.getEstado().toString().equals("PREPARADA")) {%>   
-        <br><br>
+            <br>
+            <b>N° Compra:</b> <label for="EstadoOrden" name="numero"><%=num%></label>
+            <%-- SI ESTA PREPARADA --%>
+            <% if (or.getEstado().toString().equals("PREPARADA")) {%>   
+            <br><br>
 
-        <div><br>
-            ¿Ya recibistes tú pedido? 
-            <select  id="dropdown2"  name="estado" onchange="evento(this);">
-                <option value="1" selected> N O </option>
-                <option value="2"> S I </option>
-            </select>
-        </div> 
 
-        <div id='ver' style=' display: none ;'>
-            <div id="estado_submit">
-                <br><center> <button type="submit" class="enviar"> Aceptar </button> </center>
+
+            <div><br>
+                ¿Ya recibistes tú pedido ? 
+                <select  id="dropdown2"  name="estado" onchange="evento(this);">
+                    <option value="1" selected> N O </option>
+                    <option value="2"> S I </option>
+                </select>
             </div> 
-        </div>
+
+
+
+            <div id='ver' style=' display: none ;'>
+                <br>
+
+                <div id="estado_submit">
+                    <br><center> <button type="submit" class="enviar"> Aceptar </button> </center>
+                </div> 
+
+            </div>
+
+        </form>    
 
         <%-- la función del div --%>
 
@@ -118,11 +131,17 @@
 
         <div id="principal" class="contenedor">
             <br/>
+            <label class="rotulo">Numero de Referencia:</label>
+            <label class="valor"><a  href="verProducto?numref=<%=lineaOrden.get(i).getP().getNumRef()%>" >  <%=lineaOrden.get(i).getP().getNumRef()%> </a></label>
+            <br>
             <label class="rotulo">Nombre: </label>
             <label class="valor"><%=lineaOrden.get(i).getP().getNombre()%></label>
             <br>
-            <label class="rotulo">Numero de Referencia:</label>
-            <label class="valor"><a  href="verProducto?numref=<%=lineaOrden.get(i).getP().getNumRef()%>" >  <%=lineaOrden.get(i).getP().getNumRef()%> </a></label>
+            <label class="rotulo">Cantidad:</label>
+            <label class="valor"> <%=lineaOrden.get(i).getCantidad()%> </a></label>
+            <br>
+            <label class="rotulo">Precio: (Unidad)</label>
+            <label class="valor"> <%=lineaOrden.get(i).getPrecioactual()%> </a></label>
             <br>
             <br/>
 
@@ -136,23 +155,15 @@
 
 
         <%}%>
+        <br>
+        <b>Precio Total:</b>
+        <label class="valor"> $ <%=or.getPrecioTotal()%> </a></label>
+
 
 
 
     </div>     
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
