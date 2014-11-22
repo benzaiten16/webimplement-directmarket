@@ -628,6 +628,17 @@ div #buscador{
 /*fin Buscador*/
 
 /*Select box*/
+select#dropdown2
+{
+    width: 90px;
+    height: 25px;
+    color: #2F4F4F;
+    background-color: #DDDDDD;
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
 
 select#dropdown
 {

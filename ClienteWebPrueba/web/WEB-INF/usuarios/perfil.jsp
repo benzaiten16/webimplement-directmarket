@@ -1,3 +1,6 @@
+<%@page import="org.omg.PortableInterceptor.SYSTEM_EXCEPTION"%>
+<%@page import="webService.OrdenCompra"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page errorPage="/WEB-INF/errorPages/500.jsp" %>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -12,6 +15,7 @@
 <%--NUEVOS IMPORTS--%>
 <%@page import="Servlets.ICcliente"%>
 <%@page import="Servlets.ICproveedor"%>
+<%@page import="Servlets.ICordenCompra"%>
 <%--NUEVOS IMPORTS--%>
 
 
@@ -110,7 +114,44 @@
 
                     <h2>Orden(es) de Compra</h2>
                 </div>
+                
+                
+                
+                
+            <%-- LISTA LAS ORDENES DE COMPRA --%>    
+            <%
+            ICordenCompra ICOC = new ICordenCompra();
+            
+            List<OrdenCompra> ListaOrdenCompra;
+            ListaOrdenCompra = ICOC.findOrdenCompraEntities();
 
+            %>
+            <% Boolean tiene=false;%>
+            <%for (int i = 0; i < ListaOrdenCompra.size(); i++) {
+               // Si coincide con el nombre del cliente...
+                if (  ( ListaOrdenCompra.get(i).getCliente().getNickname()).equals(ICC.findCliente(request.getAttribute("usuario").toString()).getNickname())    )  {%>
+
+                <label class="valor">  <a  href="verOrdenCompra?numero=<%=ListaOrdenCompra.get(i).getNumero()%>"> <b> Numero de compra: </b> <%=ListaOrdenCompra.get(i).getNumero()%>  <b>| </b> <%=ListaOrdenCompra.get(i).getEstado()%>  </a> <b> | </b> </label><br/><br>
+                    <% tiene = true; %>
+                <%}%>
+                           
+
+            <%}//FIN FOR %>
+            
+            <% if (!tiene){%>
+            <br><h6>No tienen ninguna orden asociada</h6>
+            <%}%>
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             </div>
             <% } else {%>
 
