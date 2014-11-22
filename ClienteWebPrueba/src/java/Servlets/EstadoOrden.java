@@ -65,7 +65,7 @@ public class EstadoOrden extends HttpServlet {
             
             //como para redirigirlo a algun lugar
             request.getRequestDispatcher("/WEB-INF/usuarios/RegUsrOk.jsp").forward(request, response);
-            
+            ///WEB-INF/ordenCompra/okCambioEstado.jsp
             
             
             
