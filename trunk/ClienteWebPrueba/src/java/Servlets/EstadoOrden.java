@@ -52,19 +52,29 @@ public class EstadoOrden extends HttpServlet {
 
         //ORDEN
         ICordenCompra ICORDC = new ICordenCompra();
-        OrdenCompra or = ICORDC.findOrdenCompra(num);
+//    ICordenCompra ICORDC = new ICordenCompra();
+//    OrdenCompra or = ICORDC.findOrdenCompra(num);
         
         
-//        WsIordenCompra clienteServices = (WsIordenCompra) new WsIordenCompraService();
-//        WsIordenCompra ICC = (WsIordenCompra) clienteServices.getListadoLineasXord(num);
+        //WsIordenCompra ordenServices = (WsIordenCompra) new WsIordenCompraService();
+//        WsIordenCompra ordenServices = (WsIordenCompra) new WsIordenCompraService();
+//        WsIordenCompra ICORDC = (WsIordenCompra) ordenServices.getListadoLineasXord(num);
+        
+        
+        
         
         try (PrintWriter out = response.getWriter()) {
-                                 
-            or.setEstado(Estado.CONFIRMADA);
-            or.setFechaOrdenC(fecha);
+             String usr = Login.getUsuarioLogueado(request);
+             request.setAttribute("usuario", usr);   
+             
+            //(int numeroOrdenCompra, String FechaOrden, float precioTotal, String Nickname, Estado estado, String fechaOrdenC, String fechaordenP)
+            ICORDC.editOrdenCompra2(num, ICORDC.findOrdenCompra(num).getFechaOrden(), ICORDC.findOrdenCompra(num).getPrecioTotal(), usr , Estado.CONFIRMADA, fecha, ICORDC.findOrdenCompra(num).getFechaOrdenP());
+            
+//            or.setEstado(Estado.CONFIRMADA);
+//            or.setFechaOrdenC(fecha);
             
             //como para redirigirlo a algun lugar
-            request.getRequestDispatcher("/WEB-INF/usuarios/RegUsrOk.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/ordenCompra/okCambioEstado.jsp").forward(request, response);
             ///WEB-INF/ordenCompra/okCambioEstado.jsp
             
             
