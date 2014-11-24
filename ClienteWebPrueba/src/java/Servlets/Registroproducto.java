@@ -6,7 +6,9 @@
 
 package Servlets;
 
+import Mail.javamail;
 import java.io.IOException;
+import java.util.List;
 import java.util.StringTokenizer;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -112,10 +114,40 @@ public class Registroproducto extends HttpServlet {
                 }   
                 //AGREGO PRODUCTO A SU PROVEEDOR
                 ICP.addProductoProveedor(numref,nick);
+                
+                
+                //ENVIO NOTIFICACIONES a todos los clientes que compraron productos de este proveedor
+                ICcliente ICcli = new ICcliente();
+                List<webService.Cliente> Listaclientes=ICcli.findClienteEntities();
+                for (int i = 0; i < Listaclientes.size(); i++) {
+                    try {
+                    javamail mail = new javamail();
+                    String cuerpo1="<label class=\"rotulo\"><b>Direct Market:</b></label><br><br><label>Estimado/a ";
+                    String cuerpo2 =Listaclientes.get(i).getNombre() ;
+                    String cuerpo3=", le informamos que el proveedor ";
+                    String cuerpo34=nick;
+                    String cuerpo35=" a publicado un nuevo producto el cual puede interesarle, por mas detalles ingrese en:</label>";        
+                    String cuerpo4 ="<br><label> http://localhost:8080/verProducto?numref=";
+                    String cuerpo5= Integer.toString(numref);
+                    String cuerpo6="</label>";
+                    String cuerpo7="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
+                    String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo34+cuerpo35+cuerpo4+cuerpo5+cuerpo6+cuerpo7;
+                    //System.out.println(e.getMessage());
+                    System.out.println(cuerpo);
+                    String subject=Listaclientes.get(i).getMail();
+                    mail.send(subject,"Direct Market",cuerpo);
+                    
+                    } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    }
+
+                }            
+                
                 //LO REDIRIGO A VER DETALLES PRODUCTO
                 request.setAttribute("usuario", nick);
                 request.getSession().setAttribute("estado_sesion", EstadoSesion.LOGIN_CORRECTO);
                 response.sendRedirect("http://localhost:8080/verProducto?numref="+numref);
+                
         }catch(Exception ex){
             request.getRequestDispatcher("/500").forward(request, response);
             }
