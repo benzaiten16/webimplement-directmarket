@@ -53,5 +53,12 @@ public class ICcliente {
         return port.findClienteEntities();
     }
 
+    public void editCliente2(java.lang.String arg0, boolean arg1, boolean arg2) throws MalformedURLException  {
+        webService.WsIclienteService service =new webService.WsIclienteService(this.getParametros());
+        webService.WsIcliente port = service.getWsIclientePort();
+        port.editCliente2(arg0, arg1, arg2);
+    }
+
+   
     
 }

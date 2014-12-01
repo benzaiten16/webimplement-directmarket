@@ -5,6 +5,7 @@
  */
 package Servlets;
 
+import Mail.javamail;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -15,7 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import webService.Estado;
+import webService.Cliente;
 import webService.OrdenCompra;
+import webService.WsIcliente;
+import webService.WsIclienteService;
 import webService.WsIordenCompra;
 import webService.WsIordenCompraService;
 
@@ -72,6 +76,34 @@ public class EstadoOrden extends HttpServlet {
             
 //            or.setEstado(Estado.CONFIRMADA);
 //            or.setFechaOrdenC(fecha);
+            
+            
+            //Envio notificacion al cliente
+            
+            //Enviar el correo electronico
+            
+            javamail mail = new javamail();
+            String cuerpo1="<label class=\"rotulo\"><b>Direct Market:</b></label><br><br><label>Estimado/a ";
+            String cuerpo2 =usr ;
+            String cuerpo3=", le informamos que su orden de compra número ";
+            String cuerpo34=Integer.toString(num);
+            String cuerpo35=" a sido modificada. Su estado es CONFIRMADA, por mas detalles puede consultar en: </label>";        
+            String cuerpo4 ="<br><label> http://localhost:8080/verOrdenCompra?numero=";
+            String cuerpo5= Integer.toString(num);
+            String cuerpo6="</label>";
+            String cuerpo7="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
+            String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo34+cuerpo35+cuerpo4+cuerpo5+cuerpo6+cuerpo7;
+            System.out.println(cuerpo);
+            
+            //COnsulto datos del cliente
+            ICcliente ICCLI = new ICcliente();
+            String subject=ICCLI.findCliente(usr).getMail();
+            //Si tiene las notificaciones activas le envia correo de notificacion.
+            if (ICCLI.findCliente(usr).isNotificacionesO()){
+            mail.send(subject,"Direct Market",cuerpo);
+            }
+            
+                      
             
             //como para redirigirlo a algun lugar
             request.getRequestDispatcher("WEB-INF/ordenCompra/okCambioEstado.jsp").forward(request, response);
