@@ -48,13 +48,18 @@ public class mnotificaciones extends HttpServlet {
                                 request.getSession().setAttribute("usuario_logueado", cli.getNickname());
                                 // redirige a la página principal para que luego rediriga a la página
                                 objSesion.setAttribute("estado_sesion", nuevoEstado);
-                                if (noto=="2"){
+                                if (noto.equalsIgnoreCase("2")){
                                     B=false;
                                 }
-                                if (notp=="2"){
-                                    A=true;
+                                if (notp.equalsIgnoreCase("2")){
+                                    A=false;
                                 }
+                                System.out.println(nick);
+                                System.out.println(A);
+                                System.out.println(B);
                                 ICC.editCliente2(nick, A, B);
+                                //
+                                ICC=null;
                                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/usuarios/notOK.jsp");
                                 dispatcher.forward(request, response);
             }
