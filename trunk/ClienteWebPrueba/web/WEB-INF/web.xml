@@ -9,6 +9,10 @@
         <servlet-class>Servlets.Login</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Desactivanotificaciones</servlet-name>
+        <servlet-class>Servlets.mnotificaciones</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>homepage</servlet-name>
         <servlet-class>Servlets.homePage</servlet-class>
     </servlet>
@@ -80,9 +84,17 @@
         <servlet-name>EstadoOrden</servlet-name>
         <servlet-class>Servlets.EstadoOrden</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>notifica</servlet-name>
+        <servlet-class>Servlets.notifica</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Iniciar Sesion</servlet-name>
         <url-pattern>/iniciar-sesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Desactivanotificaciones</servlet-name>
+        <url-pattern>/desactivar-notificaciones</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>homepage</servlet-name>
@@ -170,6 +182,10 @@
     <servlet-mapping>
         <servlet-name>EstadoOrden</servlet-name>
         <url-pattern>/EstadoOrden</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>notifica</servlet-name>
+        <url-pattern>/notificaciones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

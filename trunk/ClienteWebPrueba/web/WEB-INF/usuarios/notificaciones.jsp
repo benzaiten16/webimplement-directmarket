@@ -20,11 +20,42 @@
     <body>
         <jsp:include page="/WEB-INF/template/header.jsp"/>
         
-         <div class="contenedor">
+          <div id="inicio" class ="main">
               <h1>Editar notificaciones</h1>
               <br>
-              <h2>Notificaciones de cambio de orden</h2>
-              <h2>Notificaciones de nuevos productos</h2> 
+              
+              
+              <form action="desactivar-notificaciones" ACTION="POST">
+                  
+              <% String nickname = request.getAttribute("nick").toString();%>
+              
+              
+              <label class="rotulo">Usuario:  </label> 
+              <input id="nico" name="nico" value="<%=nickname%>" style="border-width:0;" >
+
+              <br>
+              <label class="rotulo">Notificaciones de Ordenes de Compra</label>
+              <br>
+              <select  id="notificacionesorden"  name="notificacionesorden" onchange="evento(this);">
+                    <option value="1" selected> Recibir </option>
+                    <option value="2"> No recibir </option>
+              </select>
+              <br>
+              <label class="rotulo">Notificaciones de nuevos productos</label> 
+              <select  id="notificacionesprod"  name="notificacionesprod" onchange="evento(this);">
+                    <option value="1" selected> Recibir </option>
+                    <option value="2"> No recibir </option>
+              </select>
+              <br>
+              <br>
+              <label class="rotulo">Confirma tu contraseña:</label> <br><input id="InputPasswd" type="password" name="password"/>
+              <br> 
+              
+               <input class="con_margen" type="button"
+                       value="E n t r a r" onclick="submit()"/>
+            
+           
+                </form>
          </div>
                 
     </body>

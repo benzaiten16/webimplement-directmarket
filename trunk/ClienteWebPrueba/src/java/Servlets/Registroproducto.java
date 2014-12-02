@@ -8,7 +8,11 @@ package Servlets;
 
 import Mail.javamail;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.StringTokenizer;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +32,10 @@ import Logica_Clases.Proveedor;
 
 //NUEVOS IMPORTS
 import webService.Proveedor;
+import webService.Cliente;
+import webService.OrdenCompra;
+import webService.LineaOrden;
+import webService.Producto;
 //NUEVOS IMPORTS
 
 
@@ -80,6 +88,10 @@ public class Registroproducto extends HttpServlet {
         
         ICproducto ICPR = new ICproducto();
         
+        ICordenCompra ICOC= new ICordenCompra();
+        
+        IClineaOrden ICLO= new IClineaOrden();
+        
         /*
         WsIcategoriaService CategoriaServices = new WsIcategoriaService();
         WsIcategoria ICC = CategoriaServices.getWsIcategoriaPort();
@@ -117,25 +129,83 @@ public class Registroproducto extends HttpServlet {
                 
                 
                 //ENVIO NOTIFICACIONES a todos los clientes que compraron productos de este proveedor
+                
                 ICcliente ICcli = new ICcliente();
-                List<webService.Cliente> Listaclientes=ICcli.findClienteEntities();
-                for (int i = 0; i < Listaclientes.size(); i++) {
+ 
+                //Obtengo todas las ordenes
+                List<webService.OrdenCompra > ListaOrdenes=ICOC.findOrdenCompraEntities();
+                System.out.println("El total de ordenes de compra es:");
+                System.out.println(ListaOrdenes.size());
+                //3-Genero un listado de clientes para mandar correos
+                List<webService.Cliente> clientesmail = new ArrayList<webService.Cliente>();
+                
+                //Recorro las ordenes.
+                
+                for (int i = 0; i < ListaOrdenes.size(); i++){
+                    List <webService.LineaOrden> lineas=ICOC.getListadoLineasXord(ListaOrdenes.get(i).getNumero());
+                    System.out.println("Esta orden tiene esta cantidad de lineas:");
+                    System.out.println(lineas.size());
+                    int x=0;
+                    while (x<lineas.size()){
+                        System.out.println("ENTRA EN EL WHILE");
+                        if (lineas.get(x).getP().getProveedor().getNickname().equals(prov.getNickname())){
+                             System.out.println("entra en el contains");
+                            //Agrego al cliente al listado de clientes para mandar el correo
+                            boolean yaagregado;
+                            yaagregado=false; 
+                            int y=0;
+                            while (y < clientesmail.size()){
+                                if (clientesmail.get(y).getNickname().equals(ListaOrdenes.get(i).getCliente().getNickname())){
+                                    yaagregado=true;
+                                    y=clientesmail.size();
+                                }
+                                else{
+                                y=y+1;
+                                }
+                                
+                            }
+                            if (yaagregado==false){
+                                clientesmail.add(ListaOrdenes.get(i).getCliente());
+                                
+                            }
+                            x=lineas.size();
+                            }
+                        else{
+                        System.out.println("entra en el else");    
+                        x=x+1;
+                        }      
+                    }
+                }
+                System.out.println("El total de clientesmail es:");
+                System.out.println(clientesmail.size());
+                
+                               
+                for (int i = 0; i < clientesmail.size(); i++) {
+
                     try {
                     javamail mail = new javamail();
                     String cuerpo1="<label class=\"rotulo\"><b>Direct Market:</b></label><br><br><label>Estimado/a ";
-                    String cuerpo2 =Listaclientes.get(i).getNombre() ;
+                    String cuerpo2 =clientesmail.get(i).getNombre() ;
                     String cuerpo3=", le informamos que el proveedor ";
-                    String cuerpo34=nick;
-                    String cuerpo35=" a publicado un nuevo producto el cual puede interesarle, por mas detalles ingrese en:</label>";        
-                    String cuerpo4 ="<br><label> http://localhost:8080/verProducto?numref=";
-                    String cuerpo5= Integer.toString(numref);
-                    String cuerpo6="</label>";
-                    String cuerpo7="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
-                    String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo34+cuerpo35+cuerpo4+cuerpo5+cuerpo6+cuerpo7;
-                    //System.out.println(e.getMessage());
+                    String cuerpo4=nick;
+                    String cuerpo5=" a publicado un nuevo producto el cual puede interesarle, por mas detalles ingrese en:</label>";        
+                    String cuerpo6 ="<br><label> http://localhost:8080/verProducto?numref=";
+                    String cuerpo7= Integer.toString(numref);
+                    String cuerpo8="</label>";
+                    String cuerpo9="<label> Para no recibir mas este correo electronico ingrese en:";
+                    String cuerpo10 ="<br><label> http://localhost:8080/notificaciones?nick=";
+                    String cuerpo11= clientesmail.get(i).getNickname();
+                    String cuerpo12="<br></label>";
+                    String cuerpo13="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
+                    String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo4+cuerpo5+cuerpo6+cuerpo7+cuerpo8+cuerpo9+cuerpo10+cuerpo11+cuerpo12+cuerpo13;
+   
                     System.out.println(cuerpo);
-                    String subject=Listaclientes.get(i).getMail();
+                    String subject=clientesmail.get(i).getMail();
+                    System.out.println(clientesmail.get(i).isNotificaciones());
+                    if (clientesmail.get(i).isNotificaciones()){
                     mail.send(subject,"Direct Market",cuerpo);
+                    }
+                    
                     
                     } catch (Exception e) {
                     System.out.println(e.getMessage());
