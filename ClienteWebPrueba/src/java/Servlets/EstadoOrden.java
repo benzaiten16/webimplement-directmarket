@@ -86,19 +86,25 @@ public class EstadoOrden extends HttpServlet {
             String cuerpo1="<label class=\"rotulo\"><b>Direct Market:</b></label><br><br><label>Estimado/a ";
             String cuerpo2 =usr ;
             String cuerpo3=", le informamos que su orden de compra número ";
-            String cuerpo34=Integer.toString(num);
-            String cuerpo35=" a sido modificada. Su estado es CONFIRMADA, por mas detalles puede consultar en: </label>";        
-            String cuerpo4 ="<br><label> http://localhost:8080/verOrdenCompra?numero=";
-            String cuerpo5= Integer.toString(num);
-            String cuerpo6="</label>";
-            String cuerpo7="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
-            String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo34+cuerpo35+cuerpo4+cuerpo5+cuerpo6+cuerpo7;
+            String cuerpo4=Integer.toString(num);
+            String cuerpo5=" a sido modificada. Su estado es CONFIRMADA, por mas detalles puede consultar en: </label>";        
+            String cuerpo6 ="<br><label> http://localhost:8080/verOrdenCompra?numero=";
+            String cuerpo7= Integer.toString(num);
+            String cuerpo8="</label>";
+            String cuerpo9="<label><br> Para no recibir mas este correo electronico ingrese en:";
+            String cuerpo10 ="<br><label> http://localhost:8080/notificaciones?nick=";
+            String cuerpo11= usr;
+            String cuerpo12="<br></label>";
+            String cuerpo13="<br><label>Saludos,</label><br><label> El equipo de Direct Market.</label>";
+            String cuerpo=cuerpo1+cuerpo2+cuerpo3+cuerpo4+cuerpo5+cuerpo6+cuerpo7+cuerpo8+cuerpo9+cuerpo10+cuerpo11+cuerpo12+cuerpo13;
             System.out.println(cuerpo);
             
             //COnsulto datos del cliente
             ICcliente ICCLI = new ICcliente();
             String subject=ICCLI.findCliente(usr).getMail();
             //Si tiene las notificaciones activas le envia correo de notificacion.
+            System.out.println("El estado de las notificaciones es:");
+            System.out.println(ICCLI.findCliente(usr).isNotificacionesO());
             if (ICCLI.findCliente(usr).isNotificacionesO()){
             mail.send(subject,"Direct Market",cuerpo);
             }
