@@ -100,7 +100,7 @@ $(document).ready(function(){
         
         $("#registrar_submit button").click(function(event){
             //selecciono todo el form sin ser el id dropdown
-            var form_data=$("form#registrar :not('#dropdown,#registrar_nombreComp,#registrar_URLweb')").serializeArray();;
+            var form_data=$("form#registrar :not('#dropdown,#registrar_nombreComp,#registrar_URLweb,#dropdown2,#notificacionesorden,#notificacionesprod')").serializeArray();;
         console.log(form_data);
             var error_free=true;
             for (var input in form_data){

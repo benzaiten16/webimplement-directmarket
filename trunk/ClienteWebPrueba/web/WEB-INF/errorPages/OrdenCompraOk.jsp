@@ -12,11 +12,11 @@
     <link href="media/images/faviconn.ico" rel="icon" type="image/x-icon" />
     <link href="media/images/faviconn.ico" rel="shortcut icon" />
 
-    <TITLE>Direct Market</TITLE>
+    <TITLE>Página no encontrada :: Direct Market</TITLE>
 </HEAD>
  <body id="error_page">
         <div class="gameover">          
-            <h2>Notificaciones modificadas correctamente . . . </h2> 
+            <h2>Gracias por Comprar en . . . </h2> 
             <h1>. . . Direct Market!</h1>
 
 
@@ -30,7 +30,7 @@
             <br><br><br><br>
             
         </div>   
-        <p>Volver a <a href="/home">Volver</a></p>    
+        <p>Volver a <a href="/home">Pagina Principal</a> para iniciar sesion </p>    
     
 </body>
 
