@@ -96,7 +96,8 @@
                         <h2>Datos Empresa</h2>
                         <div class="contenedor" >
                             <div>
-                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> <input id="registrar_nombreComp" type="text" name="nombreComp"/><span class="error_no">Ingrese nombre Company</span>
+                            <label for="registrar_nombreComp" class="rotulo">Nombre Compañia:</label> 
+                            <input id="registrar_nombreComp" type="text" name="nombreComp"/><span class="error_no">Ingrese nombre Company</span>
                             <br>
                             </div>
                             <div>
@@ -104,23 +105,42 @@
                             </div>
                             <label class="divisor">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </label>
                             <br><br>
- 
+                            (*) - Campos Obligatorios 
+                    
+                    
                         </div>
                     </div>
-                    (*) - Campos Obligatorios 
+                    *******************************************************************
+                    <div id='ver2'>
+                      <label for="dropdown2" class="rotulo">Notificaciones de Ordenes de Compra</label>
+                        <br>
+                        <select  id="registrar_notificacionesorden"  name="notificacionesorden">
+                            <option value="1" selected> Recibir </option>
+                            <option value="2"> No recibir </option>
+                        </select>
+                        <br>
+                        <label class="rotulo">Notificaciones de nuevos productos</label> 
+                        <select  id="registrar_notificacionesprod"  name="notificacionesprod">
+                            <option value="1" selected> Recibir </option>
+                            <option value="2"> No recibir </option>
+                        </select>
+                    </div>
+                    
                     <%-- la función del div --%>
-
+                    *********************************************************************
                     <script type="text/javascript">
                         function evento(sel) {
                             if (sel.value == "1") {
 
                                 divT = document.getElementById("ver");
                                 divT.style.display = "none";
+                                divS = document.getElementById("ver2");
+                                divS.style.display = "";
 
                             } else {
 
-
-
+                                divS = document.getElementById("ver2");
+                                divS.style.display = "none";
                                 divT = document.getElementById("ver");
                                 divT.style.display = "";
                             }
@@ -137,8 +157,9 @@
                     
             </div>
         </div>
+                     <%--
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/media/jQuerys/RegisterUserValidate.js"></script>
+    <script type="text/javascript" src="/media/jQuerys/RegisterUserValidate.js"></script>  --%>
     </body>
     <jsp:include page="/WEB-INF/template/footer.jsp"/>
     
