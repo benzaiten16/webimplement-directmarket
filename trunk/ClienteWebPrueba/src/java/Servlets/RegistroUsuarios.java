@@ -60,6 +60,12 @@ public class RegistroUsuarios extends HttpServlet {
         String nomCompania = request.getParameter("nombreComp");
         String URLweb = request.getParameter("URLweb");
         
+        //ESPECIALIZACION EN CASO DE SER USUARIO COMUN
+        String noto = request.getParameter("notificacionesorden");
+        String notp = request.getParameter("notificacionesprod");
+        boolean A=true;
+        boolean B=true;
+        
         WsIclienteService clienteServices = new WsIclienteService();
         WsIcliente ICC = clienteServices.getWsIclientePort();
        
@@ -74,6 +80,13 @@ public class RegistroUsuarios extends HttpServlet {
         try{
             if(TipoUsr == 1){
                 ICC.createCliente(nick, nombre, apellido, fnac, password, mail);
+                            if (noto.equalsIgnoreCase("2")){
+                                    B=false;
+                                }
+                            if (notp.equalsIgnoreCase("2")){
+                                    A=false;
+                            }
+                            ICC.editCliente2(nick, A, B);
                            request.getRequestDispatcher("/WEB-INF/usuarios/RegUsrOk.jsp").forward(request, response);
             }
             
